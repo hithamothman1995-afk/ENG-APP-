@@ -38,7 +38,7 @@ export function progressPercent(p: Progress, classes: ClassContent[]): number {
 }
 
 // يوم نشط = تعلمت فيه دقيقة على الأقل أو أكملت درسًا
-function isActive(p: Progress, date: string): boolean {
+export function isActive(p: Progress, date: string): boolean {
   const a = p.activity[date]
   return !!a && (a.seconds >= 60 || a.lessonsCompleted > 0)
 }

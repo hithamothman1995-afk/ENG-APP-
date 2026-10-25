@@ -1,15 +1,16 @@
 import type { Route } from '../router'
+import { Icon } from './Icon'
 
 export function BottomNav({ route }: { route: Route }) {
-  const onMap = route.name !== 'home'
+  const onHome = route.name === 'home'
   return (
     <nav className="bottom-nav" aria-label="التنقل الرئيسي">
-      <a href="#/" className={!onMap ? 'active' : ''} aria-current={!onMap ? 'page' : undefined}>
-        <span aria-hidden>🏠</span>
+      <a href="#/" className={onHome ? 'active' : ''} aria-current={onHome ? 'page' : undefined}>
+        <Icon name="home" />
         الرئيسية
       </a>
-      <a href="#/map" className={onMap ? 'active' : ''} aria-current={onMap ? 'page' : undefined}>
-        <span aria-hidden>🗺️</span>
+      <a href="#/map" className={!onHome ? 'active' : ''} aria-current={!onHome ? 'page' : undefined}>
+        <Icon name="map" />
         المستويات
       </a>
     </nav>

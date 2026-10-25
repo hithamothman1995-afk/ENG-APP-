@@ -1,17 +1,24 @@
 /* تصميم داكن هادئ، مصمم للجوال أولًا */
+@import './fonts.css';
+
 :root {
-  --bg: #0f171e;
-  --surface: #17222b;
-  --surface-2: #1f2d38;
-  --border: #2a3a47;
-  --text: #e8eef2;
-  --muted: #93a4b1;
-  --accent: #3fb8a5;
-  --accent-strong: #5fd3c0;
-  --accent-ink: #0b1a17;
-  --gold: #e9b949;
-  --radius: 18px;
+  --bg: #0d1418;
+  --surface: #141e24;
+  --surface-2: #1b2830;
+  --surface-3: #223340;
+  --border: #253641;
+  --text: #edf2f4;
+  --muted: #8fa3ae;
+  --accent: #45c4b0;
+  --accent-soft: rgba(69, 196, 176, 0.14);
+  --accent-ink: #062520;
+  --gold: #f0b95a;
+  --flame: #f2895c;
+  --radius: 20px;
+  --radius-sm: 14px;
   --tap: 56px;
+  --font-body: 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+  --font-head: 'Readex Pro', 'IBM Plex Sans Arabic', system-ui, sans-serif;
   color-scheme: dark;
 }
 
@@ -24,9 +31,10 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, 'Geeza Pro', 'Noto Sans Arabic', sans-serif;
+  font-family: var(--font-body);
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -38,30 +46,50 @@ a {
 h1,
 h2 {
   margin: 0;
-  line-height: 1.3;
+  font-family: var(--font-head);
+  line-height: 1.35;
+  letter-spacing: 0;
 }
 
 h1 {
-  font-size: 1.6rem;
+  font-size: 1.75rem;
+  font-weight: 700;
 }
 
 h2 {
   font-size: 1.15rem;
+  font-weight: 600;
 }
 
 .muted {
   color: var(--muted);
-  margin: 0.15rem 0 0;
+  margin: 0;
   font-size: 0.95rem;
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.eyebrow {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0;
 }
 
 .en {
   unicode-bidi: isolate;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.icon {
+  flex: none;
+  display: block;
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent-strong);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -69,11 +97,11 @@ h2 {
   max-width: 560px;
   margin: 0 auto;
   min-height: 100dvh;
-  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  padding-bottom: calc(88px + env(safe-area-inset-bottom));
 }
 
 .screen {
-  padding: calc(20px + env(safe-area-inset-top)) 16px 24px;
+  padding: calc(24px + env(safe-area-inset-top)) 16px 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -81,7 +109,7 @@ h2 {
 
 .screen-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
@@ -94,7 +122,7 @@ h2 {
 }
 
 .card h2 {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .button {
@@ -103,10 +131,24 @@ h2 {
   justify-content: center;
   min-height: var(--tap);
   padding: 0 20px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background: var(--surface-2);
   border: 1px solid var(--border);
   font-weight: 700;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: var(--tap);
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .back-link {
@@ -114,11 +156,30 @@ h2 {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  gap: 4px;
   align-self: flex-start;
+  font-weight: 500;
+}
+
+.bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width 0.4s ease;
 }
 
 /* اللوحة الرئيسية */
 .xp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -128,73 +189,205 @@ h2 {
   color: var(--gold);
 }
 
-.continue-card {
+.hero {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 12px;
   padding: 20px;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, #1e4d48, #17323a);
-  border: 1px solid #2f6b63;
+  background: radial-gradient(120% 140% at 100% 0%, #1f4f49 0%, #15282d 60%, #141e24 100%);
+  border: 1px solid #2c5a54;
 }
 
-.continue-label {
-  color: #b6e3da;
-  font-size: 0.95rem;
-}
-
-.continue-card strong {
-  font-size: 1.3rem;
-}
-
-.continue-button {
-  margin-top: 12px;
-  min-height: var(--tap);
+.hero-top {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-weight: 800;
-  font-size: 1.1rem;
+  gap: 14px;
 }
 
-.stats-grid {
+.hero-icon {
+  flex: none;
+  width: 56px;
+  height: 56px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  font-size: 1.8rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hero-label {
+  color: #a9ddd4;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hero-text strong {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hero-progress {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: -6px;
+}
+
+.streak-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.streak-head {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
-.stat-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
+.streak-flame {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--flame);
+  background: rgba(242, 137, 92, 0.14);
 }
 
-.stat-icon {
-  font-size: 1.3rem;
+.big-number {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.week-dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.week-dots li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 2px solid var(--border);
+}
+
+.week-dots li.on .dot {
+  background: var(--flame);
+  border-color: var(--flame);
+}
+
+.week-dots li:last-child .dot {
+  border-color: var(--muted);
+}
+
+.dot-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 12px;
+}
+
+.stat-ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ring-track {
+  stroke: var(--surface-3);
+}
+
+.ring-fill {
+  stroke: var(--accent);
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.ring-text {
+  fill: var(--text);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.stat-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+}
+
+.stat-mini > div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.stat-mini-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .stat-value {
-  font-size: 1.8rem;
-  font-weight: 800;
-  line-height: 1.2;
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .stat-label {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .week-chart {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 6px;
-  height: 150px;
+  height: 140px;
 }
 
 .week-bar {
@@ -208,13 +401,13 @@ h2 {
 .week-bar-value {
   font-size: 0.8rem;
   color: var(--muted);
-  min-height: 1.2em;
+  min-height: 1.3em;
 }
 
 .week-bar-track {
   flex: 1;
-  width: 70%;
-  max-width: 28px;
+  width: 100%;
+  max-width: 26px;
   background: var(--surface-2);
   border-radius: 8px;
   display: flex;
@@ -229,13 +422,18 @@ h2 {
 }
 
 .week-bar-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--muted);
   white-space: nowrap;
 }
 
-/* خريطة المستويات */
-.level-list,
+.week-bar.today .week-bar-label {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* خريطة المستويات: مسار عمودي */
+.path,
 .class-list,
 .lesson-list {
   list-style: none;
@@ -243,51 +441,58 @@ h2 {
   padding: 0;
 }
 
-.level-list {
+.path-level {
+  position: relative;
   display: flex;
-  flex-direction: column;
   gap: 14px;
+  padding-bottom: 22px;
 }
 
-.level {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px;
+.path-level::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  bottom: 0;
+  inset-inline-start: 21px;
+  width: 2px;
+  background: var(--border);
 }
 
-.level.open {
-  border-color: #2f6b63;
+.path-level:last-child::before {
+  display: none;
 }
 
-.level.locked .level-head {
-  opacity: 0.7;
-}
-
-.level-head {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.level-head > div {
-  flex: 1;
-}
-
-.level-number {
+.path-node {
+  position: relative;
+  z-index: 1;
   flex: none;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: grid;
   place-items: center;
+  font-family: var(--font-head);
+  font-weight: 700;
   background: var(--surface-2);
-  font-weight: 800;
+  border: 2px solid var(--border);
+  color: var(--muted);
 }
 
-.level.open .level-number {
+.path-level.open .path-node {
   background: var(--accent);
+  border-color: var(--accent);
   color: var(--accent-ink);
+  box-shadow: 0 0 0 6px var(--accent-soft);
+}
+
+.path-body {
+  flex: 1;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.path-level.locked h2 {
+  color: #c3cfd5;
 }
 
 .class-list {
@@ -301,46 +506,85 @@ h2 {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: var(--tap);
-  padding: 8px 14px;
-  border-radius: 14px;
-  background: var(--surface-2);
+  min-height: 64px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
   border: 1px solid var(--border);
 }
 
 a.class-row {
+  background: var(--surface-2);
   border-color: #2f6b63;
 }
 
 .class-row.disabled {
-  opacity: 0.5;
+  opacity: 0.55;
 }
 
 .class-icon {
-  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .class-titles {
   flex: 1;
   display: flex;
   flex-direction: column;
-  line-height: 1.3;
+  line-height: 1.35;
+  min-width: 0;
+}
+
+.class-titles strong {
+  font-weight: 700;
 }
 
 .class-titles .en {
+  align-self: flex-start;
   color: var(--muted);
   font-size: 0.85rem;
 }
 
-/* صفحة الكلاس */
-.class-header {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+.class-end {
+  color: var(--muted);
 }
 
-.class-header .en {
+a.class-row .class-end {
+  color: var(--accent);
+}
+
+/* صفحة الكلاس */
+.class-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.class-hero-icon {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  border-radius: 18px;
+  background: var(--accent-soft);
+  margin-bottom: 8px;
+}
+
+.class-hero > .en {
+  align-self: flex-start;
   color: var(--muted);
+  margin-bottom: 10px;
 }
 
 .lesson-list {
@@ -355,50 +599,71 @@ a.class-row {
   gap: 12px;
   min-height: 64px;
   padding: 10px 14px;
-  border-radius: 16px;
+  border-radius: var(--radius-sm);
   background: var(--surface);
   border: 1px solid var(--border);
 }
 
-.lesson-row.next {
+.lesson.next .lesson-row {
   border-color: var(--accent);
-  background: #173430;
+  background: linear-gradient(0deg, var(--accent-soft), var(--accent-soft)), var(--surface);
 }
 
 .lesson-step {
   flex: none;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   background: var(--surface-2);
+  font-family: var(--font-head);
   font-size: 0.9rem;
   font-weight: 700;
+  color: var(--muted);
 }
 
-.lesson-row.done .lesson-step {
+.lesson.next .lesson-step {
   background: var(--accent);
   color: var(--accent-ink);
 }
 
+.lesson.done .lesson-step {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
 .lesson-icon {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
 }
 
 .lesson-title {
   flex: 1;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .lesson-stars {
+  display: flex;
+  gap: 2px;
   color: var(--gold);
-  font-size: 0.95rem;
+}
+
+.lesson-start {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .lesson-placeholder {
   text-align: center;
-  padding: 32px 18px;
+  padding: 36px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
 }
 
 .big-icon {
@@ -414,7 +679,9 @@ a.class-row {
   justify-content: center;
   gap: 8px;
   padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
-  background: rgba(15, 23, 30, 0.96);
+  background: rgba(13, 20, 24, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border);
 }
 
@@ -426,23 +693,15 @@ a.class-row {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
+  gap: 2px;
+  border-radius: var(--radius-sm);
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
   line-height: 1.2;
 }
 
-.bottom-nav a span {
-  font-size: 1.3rem;
-}
-
 .bottom-nav a.active {
-  color: var(--text);
-  background: var(--surface-2);
-}
-
-/* العنوان الإنجليزي يبقى في جهة اليمين مع العنوان العربي */
-.class-header .en,
-.class-titles .en {
-  align-self: flex-start;
+  color: var(--accent);
+  background: var(--accent-soft);
 }

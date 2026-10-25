@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { LESSON_ICONS, getClass } from '../content'
+import { Icon } from '../components/Icon'
 import { href } from '../router'
 import { setLastLesson } from '../storage/progress'
 import { useProgress } from '../storage/ProgressContext'
@@ -25,7 +26,10 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
 
   return (
     <main className="screen">
-      <a className="back-link" href={href({ name: 'class', classId })}>→ {cls.titleAr}</a>
+      <a className="back-link" href={href({ name: 'class', classId })}>
+        <Icon name="back" size={20} />
+        {cls.titleAr}
+      </a>
       <section className="card lesson-placeholder">
         <span className="big-icon" aria-hidden>{LESSON_ICONS[lesson.type]}</span>
         <h1>{lesson.titleAr}</h1>
