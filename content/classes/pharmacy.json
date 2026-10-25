@@ -4,14 +4,232 @@
   "titleAr": "الصيدلية",
   "titleEn": "At the Pharmacy",
   "lessons": [
-    { "id": "intro", "type": "intro", "titleAr": "مقدمة الموقف" },
-    { "id": "phrases", "type": "phrases", "titleAr": "تكرار العبارات" },
-    { "id": "vocab", "type": "vocab", "titleAr": "أهم الكلمات" },
-    { "id": "vocab-practice", "type": "vocab-practice", "titleAr": "ممارسة الكلمات" },
-    { "id": "idiom", "type": "idiom", "titleAr": "تعبير اصطلاحي" },
-    { "id": "listening", "type": "listening", "titleAr": "استماع" },
-    { "id": "grammar", "type": "grammar", "titleAr": "قاعدة اليوم" },
-    { "id": "ai-chat", "type": "ai-chat", "titleAr": "محادثة مع الصيدلي" },
-    { "id": "review", "type": "review", "titleAr": "مراجعة" }
+    {
+      "id": "intro",
+      "type": "intro",
+      "titleAr": "مقدمة الموقف",
+      "situationAr": "أنت في صيدلية ومعك وصفة من طبيبك. تريد أن تستلم الدواء، وتفهم الجرعة المكتوبة على العلبة، وتخبر الصيدلي أن عندك حساسية من دواء معيّن، ثم تدفع وتشكره.",
+      "goalsAr": [
+        "تقول إن معك وصفة من الطبيب",
+        "تسأل عن عدد الحبات المكتوب على الملصق",
+        "تخبر الصيدلي عن الحساسية",
+        "تسأل عن بديل أرخص وتدفع بالبطاقة"
+      ],
+      "soundsAr": "في هذا الكلاس نركّز على صوت p (وليس b)، وصوت v (وليس f)، والفرق بين i القصيرة في pill وi الطويلة في please، وصوت ng في evening.",
+      "noteAr": "هذا الكلاس لتعلّم التواصل فقط، وليس نصيحة طبية. اتبع دائمًا تعليمات طبيبك والصيدلي."
+    },
+    {
+      "id": "phrases",
+      "type": "phrases",
+      "titleAr": "تكرار العبارات",
+      "phrases": [
+        {
+          "id": "have-prescription",
+          "promptAr": "وصلت إلى الصيدلية. أخبر الصيدلي أن معك وصفة من طبيبك.",
+          "en": "Hi, I have a prescription from my doctor.",
+          "ar": "مرحبًا، معي وصفة من طبيبي.",
+          "focus": {
+            "sound": "p",
+            "contrast": "b",
+            "word": "prescription",
+            "wrong": "brescription",
+            "tipAr": "حرف p في prescription يُنطق بنفخة هواء من الشفتين، بدون صوت من الحنجرة. إذا اهتزت حنجرتك فقد قلت b."
+          }
+        },
+        {
+          "id": "how-many-pills",
+          "promptAr": "تريد أن تعرف كم حبة تأخذ في اليوم حسب الوصفة.",
+          "en": "How many pills do I take each day?",
+          "ar": "كم حبة آخذ كل يوم؟",
+          "focus": {
+            "sound": "ɪ",
+            "contrast": "iː",
+            "word": "pills",
+            "wrong": "peels",
+            "tipAr": "حرف i في pills قصير وسريع. إذا مددته صارت الكلمة peels (قشور)."
+          }
+        },
+        {
+          "id": "read-dose",
+          "promptAr": "الخط على العلبة صغير. اطلب من الصيدلي أن يقرأ لك الجرعة.",
+          "en": "Can you read the dose for me, please?",
+          "ar": "هل يمكنك أن تقرأ لي الجرعة من فضلك؟",
+          "focus": {
+            "sound": "iː",
+            "contrast": "ɪ",
+            "word": "please",
+            "wrong": "pliz",
+            "tipAr": "صوت ee في please وread طويل، مثل الياء الممدودة في «سعيد». ولا تنسَ أن حرف p في please بدون صوت من الحنجرة."
+          }
+        },
+        {
+          "id": "with-food",
+          "promptAr": "تريد أن تتأكد: هل الملصق يقول أن تأخذ الدواء مع الأكل؟",
+          "en": "Does it say to take it with food?",
+          "ar": "هل مكتوب أن آخذه مع الأكل؟",
+          "focus": {
+            "sound": "stress",
+            "word": "food",
+            "tipAr": "في الأسئلة القصيرة نضغط على الكلمة المهمة: does it say to take it with FOOD? ارفع صوتك قليلًا على food."
+          }
+        },
+        {
+          "id": "allergic",
+          "promptAr": "مهم جدًا: أخبر الصيدلي أن عندك حساسية من البنسلين.",
+          "en": "I'm allergic to penicillin.",
+          "ar": "عندي حساسية من البنسلين.",
+          "focus": {
+            "sound": "stress",
+            "word": "allergic",
+            "wrong": "AL-ler-gic",
+            "tipAr": "النبرة في allergic على المقطع الثاني: a-LER-gic. أما الاسم allergy فنبرته على الأول: AL-ler-gy."
+          }
+        },
+        {
+          "id": "cheaper-version",
+          "promptAr": "السعر مرتفع. اسأل إن كان هناك نوع أرخص من نفس الدواء.",
+          "en": "Is there a cheaper version?",
+          "ar": "هل يوجد نوع أرخص؟",
+          "focus": {
+            "sound": "v",
+            "contrast": "f",
+            "word": "version",
+            "wrong": "fersion",
+            "tipAr": "حرف v يُنطق بأسنانك العليا على شفتك السفلى مع صوت من الحنجرة. حرف f نفس المكان لكن بدون صوت. ضع يدك على حلقك: مع v تشعر باهتزاز."
+          }
+        },
+        {
+          "id": "pay-by-card",
+          "promptAr": "تريد أن تدفع ببطاقة البنك وليس نقدًا.",
+          "en": "Can I pay by card?",
+          "ar": "هل أستطيع الدفع بالبطاقة؟",
+          "focus": {
+            "sound": "p",
+            "contrast": "b",
+            "word": "pay",
+            "wrong": "bay",
+            "tipAr": "هذه العبارة فيها الصوتان معًا: pay ثم by. حرف p بنفخة هواء بدون صوت، وحرف b مع صوت من الحنجرة. لو قلت bay by فقد ضاع الفرق."
+          }
+        },
+        {
+          "id": "nice-evening",
+          "promptAr": "انتهيت. اشكر الصيدلي وودّعه بلطف في المساء.",
+          "en": "Thank you, have a nice evening.",
+          "ar": "شكرًا لك، أتمنى لك مساءً لطيفًا.",
+          "focus": {
+            "sound": "ŋ",
+            "word": "evening",
+            "wrong": "evenin-g",
+            "tipAr": "صوت ng في آخر evening صوت واحد من الأنف، بدون أن تنطق g واضحة في النهاية. وانتبه: حرف v في evening مع صوت، وليست f."
+          }
+        }
+      ]
+    },
+    {
+      "id": "vocab",
+      "type": "vocab",
+      "titleAr": "أهم الكلمات",
+      "words": [
+        { "id": "pharmacy", "en": "pharmacy", "ar": "صيدلية", "ipa": "/ˈfɑːrməsi/", "stress": "PHAR-ma-cy", "exampleEn": "The pharmacy is next to the bank.", "exampleAr": "الصيدلية بجانب البنك." },
+        { "id": "pharmacist", "en": "pharmacist", "ar": "صيدلي", "ipa": "/ˈfɑːrməsɪst/", "stress": "PHAR-ma-cist", "exampleEn": "The pharmacist is very helpful.", "exampleAr": "الصيدلي متعاون جدًا." },
+        { "id": "prescription", "en": "prescription", "ar": "وصفة طبية", "ipa": "/prɪˈskrɪpʃən/", "stress": "pre-SCRIP-tion", "exampleEn": "I have a prescription from my doctor.", "exampleAr": "معي وصفة من طبيبي." },
+        { "id": "pill", "en": "pill", "ar": "حبة دواء", "ipa": "/pɪl/", "stress": "PILL", "exampleEn": "Take one pill in the morning.", "exampleAr": "خذ حبة واحدة في الصباح." },
+        { "id": "dose", "en": "dose", "ar": "جرعة", "ipa": "/doʊs/", "stress": "DOSE", "exampleEn": "The dose is on the label.", "exampleAr": "الجرعة مكتوبة على الملصق." },
+        { "id": "label", "en": "label", "ar": "ملصق (على العلبة)", "ipa": "/ˈleɪbəl/", "stress": "LA-bel", "exampleEn": "Please read the label.", "exampleAr": "من فضلك اقرأ الملصق." },
+        { "id": "allergy", "en": "allergy", "ar": "حساسية", "ipa": "/ˈælərdʒi/", "stress": "AL-ler-gy", "exampleEn": "Do you have any allergies?", "exampleAr": "هل عندك أي حساسية؟" },
+        { "id": "receipt", "en": "receipt", "ar": "إيصال", "ipa": "/rɪˈsiːt/", "stress": "re-CEIPT", "exampleEn": "Can I have a receipt, please?", "exampleAr": "هل يمكنني الحصول على إيصال من فضلك؟", "noteAr": "حرف p في receipt لا يُنطق." },
+        { "id": "cheaper", "en": "cheaper", "ar": "أرخص", "ipa": "/ˈtʃiːpər/", "stress": "CHEAP-er", "exampleEn": "This box is cheaper.", "exampleAr": "هذه العلبة أرخص." }
+      ]
+    },
+    {
+      "id": "vocab-practice",
+      "type": "vocab-practice",
+      "titleAr": "ممارسة الكلمات",
+      "exercises": [
+        { "kind": "choice", "questionAr": "ما معنى prescription؟", "options": ["وصفة طبية", "صيدلية", "إيصال"], "answer": 0 },
+        { "kind": "choice", "questionAr": "اختر الكلمة الإنجليزية لـ «جرعة»", "options": ["label", "dose", "pill"], "answer": 1, "optionsLtr": true },
+        { "kind": "fill", "questionAr": "أكمل الجملة: «الجرعة مكتوبة على الملصق»", "sentence": "The dose is on the ___.", "options": ["receipt", "label", "pharmacy"], "answer": 1 },
+        { "kind": "fill", "questionAr": "أكمل الجملة: «عندي حساسية من البنسلين»", "sentence": "I'm ___ to penicillin.", "options": ["allergic", "allergy", "cheaper"], "answer": 0 },
+        { "kind": "choice", "questionAr": "من الشخص الذي يعطيك الدواء في الصيدلية؟", "options": ["pharmacy", "pharmacist", "prescription"], "answer": 1, "optionsLtr": true },
+        { "kind": "type", "questionAr": "اكتب بالإنجليزية: «حبة دواء»", "answer": "pill" },
+        { "kind": "fill", "questionAr": "أكمل الجملة: «هل يوجد نوع أرخص؟»", "sentence": "Is there a ___ version?", "options": ["cheaper", "dose", "label"], "answer": 0 },
+        { "kind": "type", "questionAr": "اكتب بالإنجليزية: «إيصال» (انتبه: فيها حرف لا يُنطق)", "answer": "receipt" }
+      ]
+    },
+    {
+      "id": "idiom",
+      "type": "idiom",
+      "titleAr": "تعبير اصطلاحي",
+      "en": "Better safe than sorry.",
+      "ar": "الوقاية خير من الندم.",
+      "literalAr": "حرفيًا: «آمن أفضل من آسف».",
+      "meaningAr": "نقولها عندما نختار الحذر حتى لو بدا الأمر غير ضروري. مثلًا: تخبر الصيدلي عن الحساسية دائمًا، حتى لو كنت متأكدًا أن الدواء مناسب.",
+      "examples": [
+        { "en": "I always tell the pharmacist about my allergy. Better safe than sorry.", "ar": "دائمًا أخبر الصيدلي عن حساسيتي. الوقاية خير من الندم." },
+        { "en": "Let's ask the pharmacist again. Better safe than sorry.", "ar": "لنسأل الصيدلي مرة أخرى. الحذر أفضل." }
+      ]
+    },
+    {
+      "id": "listening",
+      "type": "listening",
+      "titleAr": "استماع",
+      "introAr": "حوار بين زبون وصيدلية. اقرأه (وفي المرحلة القادمة ستسمعه)، ثم أجب عن الأسئلة.",
+      "dialogue": [
+        { "speaker": "pharmacist", "en": "Hi there. How can I help you?", "ar": "أهلًا. كيف أستطيع مساعدتك؟" },
+        { "speaker": "customer", "en": "Hi, I have a prescription from my doctor.", "ar": "مرحبًا، معي وصفة من طبيبي." },
+        { "speaker": "pharmacist", "en": "Sure, let me take a look. Do you have any allergies?", "ar": "بالتأكيد، دعني أرى. هل عندك أي حساسية؟" },
+        { "speaker": "customer", "en": "Yes, I'm allergic to penicillin.", "ar": "نعم، عندي حساسية من البنسلين." },
+        { "speaker": "pharmacist", "en": "Thanks for telling me. I'll add that to your file.", "ar": "شكرًا لأنك أخبرتني. سأضيف ذلك إلى ملفك." },
+        { "speaker": "customer", "en": "Better safe than sorry. How many pills do I take each day?", "ar": "الوقاية خير من الندم. كم حبة آخذ كل يوم؟" },
+        { "speaker": "pharmacist", "en": "The label says two pills a day: one in the morning and one in the evening.", "ar": "الملصق يقول حبتين في اليوم: واحدة في الصباح وواحدة في المساء." },
+        { "speaker": "customer", "en": "Does it say to take it with food?", "ar": "هل مكتوب أن آخذه مع الأكل؟" },
+        { "speaker": "pharmacist", "en": "Yes, with food. It's all on the label.", "ar": "نعم، مع الأكل. كل شيء مكتوب على الملصق." },
+        { "speaker": "customer", "en": "Great. Can I pay by card?", "ar": "ممتاز. هل أستطيع الدفع بالبطاقة؟" },
+        { "speaker": "pharmacist", "en": "Of course. That's twelve dollars.", "ar": "بالتأكيد. المبلغ اثنا عشر دولارًا." },
+        { "speaker": "customer", "en": "Thank you, have a nice evening.", "ar": "شكرًا لك، أتمنى لك مساءً لطيفًا." },
+        { "speaker": "pharmacist", "en": "You too!", "ar": "وأنت أيضًا!" }
+      ],
+      "speakers": { "pharmacist": "الصيدلانية", "customer": "الزبون" },
+      "questions": [
+        { "questionAr": "ماذا أخبر الزبون الصيدلانية عن نفسه؟", "options": ["عنده حساسية من البنسلين", "عنده موعد مع الطبيب", "يريد دواءً بدون وصفة"], "answer": 0 },
+        { "questionAr": "كم حبة يأخذ في اليوم حسب الملصق؟", "options": ["حبة واحدة", "حبتين", "ثلاث حبات"], "answer": 1 },
+        { "questionAr": "متى يأخذ الحبات؟", "options": ["قبل النوم فقط", "في الصباح والمساء", "كل ساعتين"], "answer": 1 },
+        { "questionAr": "كيف سيدفع الزبون؟", "options": ["نقدًا", "بالبطاقة", "سيدفع غدًا"], "answer": 1 },
+        { "questionAr": "كم السعر؟", "options": ["12 دولارًا", "20 دولارًا", "2 دولار"], "answer": 0 }
+      ]
+    },
+    {
+      "id": "grammar",
+      "type": "grammar",
+      "titleAr": "قاعدة اليوم",
+      "ruleTitleAr": "السؤال بـ do وdoes",
+      "explanationAr": "في المضارع البسيط، لنسأل سؤالًا نضع do أو does قبل الفاعل، ويبقى الفعل بدون تغيير.",
+      "points": [
+        { "ar": "مع I / you / we / they نستخدم do", "en": "How many pills do I take?" },
+        { "ar": "مع he / she / it نستخدم does", "en": "Does it say to take it with food?" },
+        { "ar": "بعد does لا نضيف s للفعل: نقول does it say وليس does it says", "en": "Does it say… ✓   Does it says… ✗" }
+      ],
+      "exercises": [
+        { "kind": "fill", "questionAr": "اختر الكلمة الصحيحة", "sentence": "___ you have a prescription?", "options": ["Do", "Does"], "answer": 0 },
+        { "kind": "fill", "questionAr": "اختر الكلمة الصحيحة", "sentence": "___ the label say two pills?", "options": ["Do", "Does"], "answer": 1 },
+        { "kind": "fill", "questionAr": "اختر الكلمة الصحيحة", "sentence": "How many pills ___ I take?", "options": ["do", "does"], "answer": 0 },
+        { "kind": "fill", "questionAr": "اختر الجملة الصحيحة", "sentence": "Does it ___ with food?", "options": ["say", "says"], "answer": 0 }
+      ]
+    },
+    {
+      "id": "ai-chat",
+      "type": "ai-chat",
+      "titleAr": "محادثة مع الصيدلي",
+      "roleAr": "الصيدلي",
+      "scenarioAr": "ستتكلم مع صيدلي (ذكاء اصطناعي) في نفس الموقف: تعطيه الوصفة، وتسأل عن الجرعة، وتذكر الحساسية، ثم تدفع. لن يقاطعك بالتصحيح، وفي النهاية يعطيك ملخصًا بما قلته صحيحًا وأهم 3 أخطاء.",
+      "targetPhraseIds": ["have-prescription", "how-many-pills", "allergic", "pay-by-card"],
+      "openingEn": "Hi there. How can I help you today?"
+    },
+    {
+      "id": "review",
+      "type": "review",
+      "titleAr": "مراجعة",
+      "introAr": "راجع عبارات وكلمات هذا الكلاس. في المرحلة 4 سيختار نظام التكرار المتباعد ما تحتاج مراجعته حسب أدائك."
+    }
   ]
 }

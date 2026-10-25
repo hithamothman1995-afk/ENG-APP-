@@ -705,3 +705,305 @@ a.class-row .class-end {
   color: var(--accent);
   background: var(--accent-soft);
 }
+
+/* شاشات الدروس */
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+button.primary-button {
+  border: none;
+  width: 100%;
+}
+
+button.button {
+  width: 100%;
+}
+
+.lesson-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lesson-header-icon {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  border-radius: 16px;
+  background: var(--accent-soft);
+}
+
+.lead {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card > * + * {
+  margin-top: 8px;
+}
+
+.notice {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(240, 185, 90, 0.08);
+  border: 1px solid rgba(240, 185, 90, 0.25);
+  color: #e9d3a8;
+  font-size: 0.92rem;
+}
+
+.hint {
+  color: var(--gold);
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 8px 0;
+  min-height: 44px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.check-list {
+  margin: 0;
+  padding-inline-start: 1.2rem;
+}
+
+.check-list li + li {
+  margin-top: 4px;
+}
+
+.step-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-bar .bar {
+  flex: 1;
+}
+
+.situation-card {
+  border-color: #2c5a54;
+}
+
+.phrase-card {
+  text-align: center;
+  padding: 24px 18px;
+}
+
+.phrase-en {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.focus-card {
+  border-color: rgba(240, 185, 90, 0.35);
+}
+
+.focus-card .eyebrow {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.rating-buttons,
+.options,
+.done-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 10px;
+}
+
+.word-card {
+  text-align: center;
+  padding: 26px 18px;
+}
+
+.word-en {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-head);
+}
+
+.word-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.word-ar {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.example {
+  margin-top: 14px !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.sentence {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.option {
+  min-height: var(--tap);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-align: start;
+}
+
+.option.picked {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.option.right {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  opacity: 1;
+}
+
+.option.wrong {
+  border-color: #e0736a;
+  background: rgba(224, 115, 106, 0.12);
+  opacity: 1;
+}
+
+.text-input {
+  min-height: var(--tap);
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.feedback {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.feedback.right {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.feedback.wrong {
+  background: rgba(224, 115, 106, 0.12);
+  color: #f0a39c;
+}
+
+.example-list,
+.rule-points,
+.dialogue {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.example-list li + li {
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.rule-example {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.bubble {
+  max-width: 88%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.bubble p {
+  margin: 0;
+}
+
+.bubble.me {
+  align-self: flex-start;
+  background: #173430;
+  border-color: #2c5a54;
+}
+
+.bubble.them {
+  align-self: flex-end;
+}
+
+.bubble-speaker {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.stars {
+  display: inline-flex;
+  gap: 4px;
+  color: var(--gold);
+}
+
+.done-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 18px;
+}
+
+.done-card .done-actions {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.xp-gain {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.1rem;
+}

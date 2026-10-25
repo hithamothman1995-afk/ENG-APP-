@@ -1,4 +1,3 @@
-import type { ClassContent } from '../content/types'
 import type { Progress } from '../storage/progress'
 import { addDays, dayKey, lastNDays } from './dates'
 
@@ -25,7 +24,7 @@ export function weekStats(p: Progress, today: Date) {
 }
 
 // نسبة الدروس المكتملة من كل دروس الكلاسات المتاحة
-export function progressPercent(p: Progress, classes: ClassContent[]): number {
+export function progressPercent(p: Progress, classes: { id: string; lessons: { id: string }[] }[]): number {
   let total = 0
   let done = 0
   for (const c of classes) {
