@@ -1,0 +1,75 @@
+{
+  "levels": [
+    {
+      "id": "trial",
+      "titleAr": "الجولة التجريبية",
+      "descriptionAr": "تعرّف على طريقة التعلم بالمواقف في دقائق.",
+      "classes": [
+        { "id": "greetings", "titleAr": "التحية والتعارف", "titleEn": "Greetings", "icon": "👋" }
+      ]
+    },
+    {
+      "id": "intro",
+      "titleAr": "التعريف",
+      "descriptionAr": "عبارات أساسية لمواقف يومية بسيطة.",
+      "classes": [
+        { "id": "pharmacy", "titleAr": "الصيدلية", "titleEn": "At the Pharmacy", "icon": "💊" },
+        { "id": "directions", "titleAr": "الاتجاهات", "titleEn": "Asking for Directions", "icon": "🧭" },
+        { "id": "restaurant", "titleAr": "المطعم", "titleEn": "At the Restaurant", "icon": "🍽️" }
+      ]
+    },
+    {
+      "id": "practice",
+      "titleAr": "الممارسة",
+      "descriptionAr": "تمرّن على مواقف الخدمات اليومية.",
+      "classes": [
+        { "id": "barber", "titleAr": "الحلاق", "titleEn": "At the Barber", "icon": "💈" },
+        { "id": "salon", "titleAr": "الصالون", "titleEn": "At the Salon", "icon": "💇" },
+        { "id": "gym", "titleAr": "الجيم", "titleEn": "At the Gym", "icon": "🏋️" }
+      ]
+    },
+    {
+      "id": "confidence",
+      "titleAr": "الثقة",
+      "descriptionAr": "مواقف تحتاج شرحًا أطول وأسئلة متابعة.",
+      "classes": [
+        { "id": "health", "titleAr": "الصحة", "titleEn": "Talking About Health", "icon": "🩺" },
+        { "id": "doctor", "titleAr": "عند الطبيب", "titleEn": "At the Doctor", "icon": "👩‍⚕️" },
+        { "id": "library", "titleAr": "المكتبة", "titleEn": "At the Library", "icon": "📚" }
+      ]
+    },
+    {
+      "id": "fluency",
+      "titleAr": "الطلاقة",
+      "descriptionAr": "تكلّم بسلاسة في مواقف فيها تفاصيل.",
+      "classes": [
+        { "id": "hospital", "titleAr": "المستشفى", "titleEn": "At the Hospital", "icon": "🏥" },
+        { "id": "bank", "titleAr": "البنك", "titleEn": "At the Bank", "icon": "🏦" }
+      ]
+    },
+    {
+      "id": "conversation",
+      "titleAr": "احتراف المحادثة",
+      "descriptionAr": "حوارات طبيعية مع الناس من حولك.",
+      "classes": [
+        { "id": "coworkers", "titleAr": "زملاء العمل", "titleEn": "Coworkers", "icon": "🤝" }
+      ]
+    },
+    {
+      "id": "interviews",
+      "titleAr": "مقابلات العمل",
+      "descriptionAr": "استعد لمقابلة عمل بالإنجليزي.",
+      "classes": [
+        { "id": "job-interview", "titleAr": "مقابلة عمل", "titleEn": "Job Interview", "icon": "💼" }
+      ]
+    },
+    {
+      "id": "professional",
+      "titleAr": "الإنجليزي المهني",
+      "descriptionAr": "تواصل باحتراف في بيئة العمل.",
+      "classes": [
+        { "id": "meetings", "titleAr": "اجتماعات العمل", "titleEn": "Work Meetings", "icon": "📊" }
+      ]
+    }
+  ]
+}

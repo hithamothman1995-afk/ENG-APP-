@@ -1,0 +1,17 @@
+{
+  "id": "pharmacy",
+  "levelId": "intro",
+  "titleAr": "الصيدلية",
+  "titleEn": "At the Pharmacy",
+  "lessons": [
+    { "id": "intro", "type": "intro", "titleAr": "مقدمة الموقف" },
+    { "id": "phrases", "type": "phrases", "titleAr": "تكرار العبارات" },
+    { "id": "vocab", "type": "vocab", "titleAr": "أهم الكلمات" },
+    { "id": "vocab-practice", "type": "vocab-practice", "titleAr": "ممارسة الكلمات" },
+    { "id": "idiom", "type": "idiom", "titleAr": "تعبير اصطلاحي" },
+    { "id": "listening", "type": "listening", "titleAr": "استماع" },
+    { "id": "grammar", "type": "grammar", "titleAr": "قاعدة اليوم" },
+    { "id": "ai-chat", "type": "ai-chat", "titleAr": "محادثة مع الصيدلي" },
+    { "id": "review", "type": "review", "titleAr": "مراجعة" }
+  ]
+}
