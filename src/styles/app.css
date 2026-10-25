@@ -1,0 +1,448 @@
+/* تصميم داكن هادئ، مصمم للجوال أولًا */
+:root {
+  --bg: #0f171e;
+  --surface: #17222b;
+  --surface-2: #1f2d38;
+  --border: #2a3a47;
+  --text: #e8eef2;
+  --muted: #93a4b1;
+  --accent: #3fb8a5;
+  --accent-strong: #5fd3c0;
+  --accent-ink: #0b1a17;
+  --gold: #e9b949;
+  --radius: 18px;
+  --tap: 56px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, 'Geeza Pro', 'Noto Sans Arabic', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  margin: 0;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+}
+
+.en {
+  unicode-bidi: isolate;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+}
+
+.screen {
+  padding: calc(20px + env(safe-area-inset-top)) 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.screen-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.card h2 {
+  margin-bottom: 12px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap);
+  padding: 0 20px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.back-link {
+  color: var(--muted);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+}
+
+/* اللوحة الرئيسية */
+.xp-badge {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--gold);
+}
+
+.continue-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #1e4d48, #17323a);
+  border: 1px solid #2f6b63;
+}
+
+.continue-label {
+  color: #b6e3da;
+  font-size: 0.95rem;
+}
+
+.continue-card strong {
+  font-size: 1.3rem;
+}
+
+.continue-button {
+  margin-top: 12px;
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-icon {
+  font-size: 1.3rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.week-chart {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  height: 150px;
+}
+
+.week-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.week-bar-value {
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-height: 1.2em;
+}
+
+.week-bar-track {
+  flex: 1;
+  width: 70%;
+  max-width: 28px;
+  background: var(--surface-2);
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.week-bar-fill {
+  width: 100%;
+  background: var(--accent);
+  border-radius: 8px;
+}
+
+.week-bar-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* خريطة المستويات */
+.level-list,
+.class-list,
+.lesson-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.level-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.level {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.level.open {
+  border-color: #2f6b63;
+}
+
+.level.locked .level-head {
+  opacity: 0.7;
+}
+
+.level-head {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.level-head > div {
+  flex: 1;
+}
+
+.level-number {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  font-weight: 800;
+}
+
+.level.open .level-number {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.class-list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.class-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: var(--tap);
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+a.class-row {
+  border-color: #2f6b63;
+}
+
+.class-row.disabled {
+  opacity: 0.5;
+}
+
+.class-icon {
+  font-size: 1.5rem;
+}
+
+.class-titles {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.class-titles .en {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* صفحة الكلاس */
+.class-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.class-header .en {
+  color: var(--muted);
+}
+
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.lesson-row.next {
+  border-color: var(--accent);
+  background: #173430;
+}
+
+.lesson-step {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.lesson-row.done .lesson-step {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.lesson-icon {
+  font-size: 1.4rem;
+}
+
+.lesson-title {
+  flex: 1;
+  font-weight: 600;
+}
+
+.lesson-stars {
+  color: var(--gold);
+  font-size: 0.95rem;
+}
+
+.lesson-placeholder {
+  text-align: center;
+  padding: 32px 18px;
+}
+
+.big-icon {
+  font-size: 3rem;
+}
+
+/* شريط التنقل السفلي */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+  background: rgba(15, 23, 30, 0.96);
+  border-top: 1px solid var(--border);
+}
+
+.bottom-nav a {
+  flex: 1;
+  max-width: 260px;
+  min-height: var(--tap);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.bottom-nav a span {
+  font-size: 1.3rem;
+}
+
+.bottom-nav a.active {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+/* العنوان الإنجليزي يبقى في جهة اليمين مع العنوان العربي */
+.class-header .en,
+.class-titles .en {
+  align-self: flex-start;
+}
