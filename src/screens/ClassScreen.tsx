@@ -28,8 +28,12 @@ export function ClassScreen({ classId }: { classId: string }) {
         <Icon name="back" size={20} />
         المستويات
       </a>
-      <header className="class-hero">
-        <span className="class-hero-icon" aria-hidden>{icon}</span>
+      <header className={`class-hero ${cls.cover ? 'with-cover' : ''}`}>
+        {cls.cover ? (
+          <img className="class-cover" src={`${import.meta.env.BASE_URL}${cls.cover}`} alt="" />
+        ) : (
+          <span className="class-hero-icon" aria-hidden>{icon}</span>
+        )}
         <span className="eyebrow">المستوى {levelNumber} · {level?.titleAr}</span>
         <h1>{cls.titleAr}</h1>
         <En>{cls.titleEn}</En>

@@ -2118,3 +2118,25 @@ mark.key {
 @media (prefers-reduced-motion: reduce) {
   .word-picture, .word-picture img.boing { animation: none; }
 }
+
+/* ===== أغلفة ===== */
+.class-hero.with-cover {
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.class-cover {
+  display: block;
+  width: calc(100% + 40px);
+  margin: 0 -20px 14px;
+  aspect-ratio: 640 / 300;
+  object-fit: cover;
+}
+
+.welcome-art {
+  display: block;
+  width: calc(100% + 36px);
+  margin: -18px -18px 4px;
+  aspect-ratio: 640 / 300;
+  border-radius: var(--radius) var(--radius) 0 0;
+}

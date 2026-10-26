@@ -206,6 +206,7 @@ export interface ClassContent {
   levelId: string
   titleAr: string
   titleEn: string
+  cover?: string // صورة الغلاف داخل public/
   lessons: Lesson[]
 }
 

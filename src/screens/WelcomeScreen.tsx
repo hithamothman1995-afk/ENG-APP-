@@ -46,7 +46,11 @@ export function WelcomeScreen() {
       </div>
 
       <section key={i} className="card welcome-card">
-        <span className="welcome-emoji" aria-hidden>{step.emoji}</span>
+        {i === 0 ? (
+          <img className="welcome-art" src={`${import.meta.env.BASE_URL}art/covers/welcome.svg`} alt="" />
+        ) : (
+          <span className="welcome-emoji" aria-hidden>{step.emoji}</span>
+        )}
         <h1>{step.titleAr}</h1>
         {step.bodyAr && <p className="lead"><ArText text={step.bodyAr} /></p>}
         <ul className="welcome-points">

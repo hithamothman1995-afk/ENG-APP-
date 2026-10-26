@@ -28,12 +28,14 @@ describe('end-of-lesson takeaway', () => {
 })
 
 describe('word pictures', () => {
-  it('every vocab word with an image points to a real file', async () => {
-    const { existsSync } = await import('node:fs')
+  it('every vocab word with an image points to a real file', () => {
+    const files = Object.keys(import.meta.glob('/public/art/**/*'))
+    const existsSync = (p: string) => files.includes('/' + p)
     const cls = getClass('pharmacy')!
     for (const l of cls.lessons) {
       if (l.type !== 'vocab') continue
       for (const w of l.words) if (w.image) expect(existsSync(`public/${w.image}`), w.image).toBe(true)
     }
+    if (cls.cover) expect(existsSync(`public/${cls.cover}`), cls.cover).toBe(true)
   })
 })
