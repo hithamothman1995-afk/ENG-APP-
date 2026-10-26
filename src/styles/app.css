@@ -1712,3 +1712,8 @@ button.button {
 .send-button .icon {
   transform: scaleX(-1);
 }
+
+.feedback.retry {
+  background: var(--gold-soft);
+  color: var(--gold);
+}

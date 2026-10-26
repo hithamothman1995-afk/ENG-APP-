@@ -4,6 +4,7 @@ import { useSpeech } from '../audio/useSpeech'
 import { ArText } from '../components/ArText'
 import { ListenButton } from '../components/Audio'
 import { En } from '../components/En'
+import { attemptPoints, isSettled, MAX_ATTEMPTS } from '../logic/attempts'
 import { starsFromAccuracy } from '../logic/rewards'
 import { shuffled } from '../logic/shuffle'
 import { Dots, PrimaryButton, type Finish } from './common'
@@ -13,6 +14,8 @@ export function VocabView({ lesson, onFinish }: { lesson: VocabLesson; onFinish:
   const [index, setIndex] = useState(0)
   const [picked, setPicked] = useState<string | null>(null)
   const [results, setResults] = useState<boolean[]>([])
+  const [points, setPoints] = useState(0)
+  const [wrongPicks, setWrongPicks] = useState<string[]>([])
   const { play } = useSpeech()
 
   const word = lesson.words[index]
@@ -21,9 +24,16 @@ export function VocabView({ lesson, onFinish }: { lesson: VocabLesson; onFinish:
   const last = index === lesson.words.length - 1
 
   function choose(o: string) {
-    if (answered) return
+    if (answered || wrongPicks.includes(o)) return
+    const isRight = o === word.en
+    const attempt = wrongPicks.length + 1
+    if (!isSettled(isRight, attempt)) {
+      setWrongPicks([...wrongPicks, o]) // خطأ أول: محاولة ثانية بدون كشف الجواب
+      return
+    }
     setPicked(o)
-    setResults([...results, o === word.en])
+    setResults([...results, isRight])
+    if (isRight) setPoints(points + attemptPoints(attempt))
     void play(word.en)
   }
 
@@ -40,14 +50,24 @@ export function VocabView({ lesson, onFinish }: { lesson: VocabLesson; onFinish:
       </section>
       <div className="options">
         {options.map((o) => {
-          const state = !answered ? '' : o === word.en ? 'right' : picked === o ? 'wrong' : 'dim'
+          const tried = wrongPicks.includes(o)
+          const state = !answered ? (tried ? 'wrong' : '') : o === word.en ? 'right' : picked === o || tried ? 'wrong' : 'dim'
           return (
-            <button key={o} type="button" className={`option ${state}`} disabled={answered} onClick={() => choose(o)}>
+            <button key={o} type="button" className={`option ${state}`} disabled={answered || tried} onClick={() => choose(o)}>
               <En>{o}</En>
             </button>
           )
         })}
       </div>
+
+      {!answered && wrongPicks.length > 0 && (
+        <p className="feedback retry" role="status">
+          خطأ، عندك محاولة ثانية ({wrongPicks.length + 1} من {MAX_ATTEMPTS})
+        </p>
+      )}
+      {answered && picked !== word.en && (
+        <p className="feedback wrong" role="status">الإجابة الصحيحة: <En>{word.en}</En></p>
+      )}
 
       {answered && (
         <>
@@ -73,11 +93,12 @@ export function VocabView({ lesson, onFinish }: { lesson: VocabLesson; onFinish:
           <PrimaryButton
             onClick={() => {
               if (last) {
-                onFinish(starsFromAccuracy(results.filter(Boolean).length, lesson.words.length))
+                onFinish(starsFromAccuracy(points, lesson.words.length))
                 return
               }
               setIndex(index + 1)
               setPicked(null)
+              setWrongPicks([])
             }}
           >
             {last ? 'إنهاء' : 'التالي'}

@@ -55,9 +55,9 @@ export function PodcastView({ lesson, onFinish }: { lesson: PodcastLesson; onFin
         <p className="eyebrow">أسئلة الجزء {seg + 1} من {lesson.segments.length}</p>
         <ExerciseRunner
           exercises={segment.questions.map((q) => ({ kind: 'choice', ...q, labelAr: TAGS[q.tag] }))}
-          onDone={(correct, total) => {
-            setScore((s) => ({ correct: s.correct + correct, total: s.total + total }))
-            setSegScore(correct)
+          onDone={(points, total, right) => {
+            setScore((s) => ({ correct: s.correct + points, total: s.total + total }))
+            setSegScore(right)
             setStage('recap')
             window.scrollTo(0, 0)
           }}

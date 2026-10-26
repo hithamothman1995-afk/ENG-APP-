@@ -6,6 +6,7 @@ import { ArText } from '../components/ArText'
 import { NoAudioNotice, SpeedToggle, Wave } from '../components/Audio'
 import { En } from '../components/En'
 import { Icon } from '../components/Icon'
+import { attemptPoints, isSettled, MAX_ATTEMPTS } from '../logic/attempts'
 import { starsFromAccuracy } from '../logic/rewards'
 import { Dots, Notice, PrimaryButton, type Finish } from './common'
 
@@ -15,6 +16,8 @@ export function ListenChooseView({ lesson, onFinish }: { lesson: ListenChooseLes
   const [index, setIndex] = useState(0)
   const [picked, setPicked] = useState<number | null>(null)
   const [results, setResults] = useState<boolean[]>([])
+  const [points, setPoints] = useState(0)
+  const [wrongPicks, setWrongPicks] = useState<number[]>([])
   const [plays, setPlays] = useState(0)
   const { play, stop, speaking } = useSpeech()
 
@@ -30,19 +33,30 @@ export function ListenChooseView({ lesson, onFinish }: { lesson: ListenChooseLes
   }
 
   function choose(i: number) {
-    if (answered) return
+    if (answered || wrongPicks.includes(i)) return
     stop()
+    const isRight = i === item.answer
+    const attempt = wrongPicks.length + 1
+    if (!isSettled(isRight, attempt)) {
+      // خطأ أول: محاولة ثانية، ونعيد الجملة من نفس الضغطة
+      setWrongPicks([...wrongPicks, i])
+      setPlays((p) => p + 1)
+      void play(item.audioEn)
+      return
+    }
     setPicked(i)
-    setResults([...results, i === item.answer])
+    setResults([...results, isRight])
+    if (isRight) setPoints(points + attemptPoints(attempt))
   }
 
   function next() {
     if (index === lesson.items.length - 1) {
-      onFinish(starsFromAccuracy(correctCount, lesson.items.length))
+      onFinish(starsFromAccuracy(points, lesson.items.length))
       return
     }
     setIndex(index + 1)
     setPicked(null)
+    setWrongPicks([])
     setPlays(1)
     // نشغّل الجملة التالية مباشرة من ضغطة الزر (آيفون يمنع التشغيل التلقائي بدون ضغطة)
     void play(lesson.items[index + 1].audioEn)
@@ -95,19 +109,26 @@ export function ListenChooseView({ lesson, onFinish }: { lesson: ListenChooseLes
 
       <div className="options">
         {item.options.map((o, i) => {
-          const state = !answered ? '' : i === item.answer ? 'right' : picked === i ? 'wrong' : 'dim'
+          const tried = wrongPicks.includes(i)
+          const state = !answered ? (tried ? 'wrong' : '') : i === item.answer ? 'right' : picked === i || tried ? 'wrong' : 'dim'
           return (
-            <button key={i} type="button" className={`option ${state}`} disabled={answered} onClick={() => choose(i)}>
+            <button key={i} type="button" className={`option ${state}`} disabled={answered || tried} onClick={() => choose(i)}>
               {ltr ? <En>{o}</En> : o}
             </button>
           )
         })}
       </div>
 
+      {!answered && wrongPicks.length > 0 && (
+        <p className="feedback retry" role="status">
+          خطأ، اسمعها مرة ثانية وجرّب ({wrongPicks.length + 1} من {MAX_ATTEMPTS})
+        </p>
+      )}
+
       {answered && (
         <>
           <section className={`card answer-card ${picked === item.answer ? 'good' : 'retry'}`} role="status">
-            <p className="feedback-title">{picked === item.answer ? 'صح! 👏' : 'قريبة، انتبه للفرق'}</p>
+            <p className="feedback-title">{picked !== item.answer ? 'الإجابة الصحيحة:' : wrongPicks.length ? 'صح من المحاولة الثانية 👍' : 'صح! 👏'}</p>
             <p className="phrase-en small-phrase"><En>{item.audioEn}</En></p>
             {item.ar && <p className="muted">{item.ar}</p>}
             {item.noteAr && <Notice><ArText text={item.noteAr} /></Notice>}
