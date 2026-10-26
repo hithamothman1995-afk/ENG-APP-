@@ -1789,3 +1789,227 @@ button.button {
 .feedback-card p {
   margin: 0;
 }
+
+/* ===== أصوات وتفاعل الصح والغلط ===== */
+.question-row {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.question-row .lead {
+  margin: 0;
+}
+
+.option.wrong {
+  animation: shake 0.38s ease-in-out;
+}
+
+.option.right {
+  animation: pop 0.32s ease-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(3px); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.035); }
+  100% { transform: scale(1); }
+}
+
+.lesson-header .sound-toggle {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+/* ===== بطاقة نهاية الدرس ===== */
+.done-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.done-stars {
+  animation: pop 0.5s ease-out 0.1s both;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti i {
+  position: absolute;
+  top: -12px;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  opacity: 0;
+  animation-name: fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+  0% { opacity: 1; translate: 0 0; }
+  100% { opacity: 0; translate: 0 420px; rotate: 540deg; }
+}
+
+.takeaway {
+  width: 100%;
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  text-align: start;
+}
+
+.takeaway p {
+  margin: 0;
+}
+
+.feelings {
+  display: flex;
+  gap: 8px;
+}
+
+.feelings button {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 76px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.feelings button.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.feeling-emoji {
+  font-size: 1.6rem;
+  transition: transform 0.2s;
+}
+
+.feelings button.on .feeling-emoji {
+  transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option.wrong, .option.right, .done-stars, .confetti { animation: none; display: revert; }
+  .confetti { display: none; }
+}
+
+/* ===== الجولة الترحيبية ===== */
+.welcome-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-color: rgba(240, 185, 90, 0.45);
+  background: linear-gradient(135deg, var(--gold-soft), transparent 70%), var(--surface);
+}
+
+.welcome-banner > span:nth-child(2) {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+}
+
+.welcome-banner-emoji {
+  font-size: 1.8rem;
+}
+
+.welcome-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.welcome-dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 999px;
+  border: 0;
+  background: var(--border);
+  cursor: pointer;
+  transition: width 0.25s, background 0.25s;
+}
+
+.welcome-dots button.done {
+  background: rgba(69, 196, 176, 0.5);
+}
+
+.welcome-dots button.on {
+  width: 26px;
+  background: var(--accent);
+}
+
+.welcome-card {
+  display: grid;
+  gap: 12px;
+  animation: slide-in 0.3s ease-out;
+}
+
+.welcome-card h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.welcome-card .lead {
+  margin: 0;
+}
+
+.welcome-emoji {
+  font-size: 3rem;
+}
+
+.welcome-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.welcome-points li {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.link-button.center {
+  align-self: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-card { animation: none; }
+}

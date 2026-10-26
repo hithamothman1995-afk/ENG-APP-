@@ -54,7 +54,7 @@ export interface Idiom {
 }
 
 export type Exercise =
-  | { kind: 'choice'; questionAr: string; options: string[]; answer: number; optionsLtr?: boolean; labelAr?: string }
+  | { kind: 'choice'; questionAr: string; options: string[]; answer: number; optionsLtr?: boolean; labelAr?: string; sayEn?: string }
   | { kind: 'fill'; questionAr: string; sentence: string; options: string[]; answer: number }
   | { kind: 'type'; questionAr: string; answer: string }
 
@@ -102,6 +102,7 @@ export interface ChoiceQuestion {
   options: string[]
   answer: number
   optionsLtr?: boolean
+  sayEn?: string // كلمة أو عبارة إنجليزية يقدر المتعلم يسمعها بجانب السؤال
 }
 
 export interface Line extends Bilingual {

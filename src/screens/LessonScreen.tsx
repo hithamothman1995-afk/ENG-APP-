@@ -4,8 +4,9 @@ import type { ClassContent, Lesson } from '../content/types'
 import { Icon } from '../components/Icon'
 import { completeLesson, type CompletionResult } from '../logic/rewards'
 import { href } from '../router'
-import { lessonKey, setDifficulty, setLastLesson, type Difficulty } from '../storage/progress'
+import { lessonKey, setDifficulty, setLastLesson } from '../storage/progress'
 import { useProgress } from '../storage/ProgressContext'
+import { playComplete } from '../audio/sfx'
 import { AiChatView } from '../lessons/AiChatView'
 import { GrammarView } from '../lessons/GrammarView'
 import { IntroView } from '../lessons/IntroView'
@@ -15,7 +16,9 @@ import { PodcastView } from '../lessons/PodcastView'
 import { ReviewView } from '../lessons/ReviewView'
 import { SceneView } from '../lessons/SceneView'
 import { VocabView } from '../lessons/VocabView'
-import { Stars, type Finish } from '../lessons/common'
+import { type Finish } from '../lessons/common'
+import { DoneCard } from './DoneCard'
+import { SoundToggle } from '../components/SoundToggle'
 import { Thomson } from '../ai/Thomson'
 
 function LessonBody({ cls, lesson, onFinish }: { cls: ClassContent; lesson: Lesson; onFinish: Finish }) {
@@ -70,6 +73,7 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
     const r = completeLesson(progress, classId, lessonId, stars, next?.id ?? null)
     update(() => r.progress)
     setResult(r)
+    if (r.passed) playComplete()
     window.scrollTo(0, 0)
   }
 
@@ -85,40 +89,22 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
           <span className="eyebrow">الدرس {index + 1} من {cls.lessons.length}</span>
           <h1>{lesson.titleAr}</h1>
         </div>
+        <SoundToggle />
       </header>
 
       {result ? (
-        <section className={`card done-card ${result.passed ? 'passed' : ''}`} role="status">
-          <Stars count={result.stars} size={40} />
-          <h2>{result.passed ? (result.stars === 3 ? 'ممتاز! 🎉' : 'أحسنت!') : 'قربت!'}</h2>
-          {result.passed ? (
-            <p className="xp-gain">{result.xpGained > 0 ? `+${result.xpGained} نقطة` : 'لا نقاط جديدة هذه المرة'}</p>
-          ) : (
-            <p className="muted">قاعدة اللعبة: تحتاج نجمتين على الأقل حتى يكتمل الدرس. أعده، المرة الثانية دائمًا أسهل.</p>
-          )}
-          <div className="done-actions">
-            {result.passed && next && (
-              <a className="primary-button" href={href({ name: 'lesson', classId, lessonId: next.id })}>
-                الدرس التالي: {next.titleAr}
-              </a>
-            )}
-            <button
-              type="button"
-              className={result.passed ? 'button' : 'primary-button'}
-              onClick={() => {
-                setResult(null)
-                setAttempt(attempt + 1)
-              }}
-            >
-              أعد الدرس
-            </button>
-            <a className="button" href={href({ name: 'class', classId })}>رجوع للكلاس</a>
-          </div>
-          <DifficultyPicker
-            value={progress.difficulty?.[lessonKey(classId, lessonId)]}
-            onPick={(d) => update((p) => setDifficulty(p, classId, lessonId, d))}
-          />
-        </section>
+        <DoneCard
+          cls={cls}
+          lesson={lesson}
+          next={next}
+          result={result}
+          feeling={progress.difficulty?.[lessonKey(classId, lessonId)]}
+          onFeeling={(d) => update((p) => setDifficulty(p, classId, lessonId, d))}
+          onRetry={() => {
+            setResult(null)
+            setAttempt(attempt + 1)
+          }}
+        />
       ) : (
         <div className="lesson-body">
           <LessonBody key={`${lessonId}-${attempt}`} cls={cls} lesson={lesson} onFinish={finish} />
@@ -126,26 +112,5 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
       )}
       <Thomson cls={cls} lesson={lesson} />
     </main>
-  )
-}
-
-const DIFFICULTIES: { value: Difficulty; label: string }[] = [
-  { value: 'easy', label: 'سهل جدًا' },
-  { value: 'ok', label: 'مناسب' },
-  { value: 'hard', label: 'صعب جدًا' },
-]
-
-function DifficultyPicker({ value, onPick }: { value?: Difficulty; onPick: (d: Difficulty) => void }) {
-  return (
-    <div className="difficulty">
-      <span className="muted small">ما مدى صعوبة هذا الدرس؟</span>
-      <div className="segmented" role="group" aria-label="صعوبة الدرس">
-        {DIFFICULTIES.map((d) => (
-          <button key={d.value} type="button" className={value === d.value ? 'on' : ''} aria-pressed={value === d.value} onClick={() => onPick(d.value)}>
-            {d.label}
-          </button>
-        ))}
-      </div>
-    </div>
   )
 }

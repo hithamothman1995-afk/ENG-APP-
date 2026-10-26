@@ -6,6 +6,7 @@ import { ArText } from '../components/ArText'
 import { NoAudioNotice, SpeedToggle, Wave } from '../components/Audio'
 import { En } from '../components/En'
 import { Icon } from '../components/Icon'
+import { playCorrect, playWrong } from '../audio/sfx'
 import { attemptPoints, isSettled, MAX_ATTEMPTS } from '../logic/attempts'
 import { starsFromAccuracy } from '../logic/rewards'
 import { Dots, Notice, PrimaryButton, type Finish } from './common'
@@ -37,6 +38,8 @@ export function ListenChooseView({ lesson, onFinish }: { lesson: ListenChooseLes
     stop()
     const isRight = i === item.answer
     const attempt = wrongPicks.length + 1
+    if (isRight) playCorrect()
+    else playWrong()
     if (!isSettled(isRight, attempt)) {
       // خطأ أول: محاولة ثانية، ونعيد الجملة من نفس الضغطة
       setWrongPicks([...wrongPicks, i])

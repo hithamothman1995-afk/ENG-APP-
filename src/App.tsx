@@ -4,6 +4,7 @@ import { ClassScreen } from './screens/ClassScreen'
 import { Dashboard } from './screens/Dashboard'
 import { LessonScreen } from './screens/LessonScreen'
 import { LevelMap } from './screens/LevelMap'
+import { WelcomeScreen } from './screens/WelcomeScreen'
 import { useStudyTimer } from './storage/useStudyTimer'
 
 export function App() {
@@ -14,6 +15,7 @@ export function App() {
     <div className="app">
       {route.name === 'home' && <Dashboard />}
       {route.name === 'map' && <LevelMap />}
+      {route.name === 'welcome' && <WelcomeScreen />}
       {route.name === 'class' && <ClassScreen classId={route.classId} />}
       {route.name === 'lesson' && <LessonScreen classId={route.classId} lessonId={route.lessonId} />}
       <BottomNav route={route} />

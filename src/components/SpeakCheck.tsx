@@ -1,3 +1,4 @@
+import { playCorrect, playWrong } from '../audio/sfx'
 import { useState } from 'react'
 import { LISTEN_ERRORS_AR, listenOnce, recognitionSupported, type ListenError } from '../audio/recognition'
 import { stopSpeaking } from '../audio/speech'
@@ -34,6 +35,8 @@ export function SpeakCheck({ target, onScore }: { target: string; onScore: (star
       const best = bestMatch(target, alts)
       setHeard(best.heard)
       setComparison(best.comparison)
+      if (speechStars(best.comparison.accuracy) >= 2) playCorrect()
+      else playWrong()
       setTries((t) => t + 1)
       setState('result')
     } catch (e) {

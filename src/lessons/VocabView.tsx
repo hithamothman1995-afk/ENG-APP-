@@ -4,6 +4,7 @@ import { useSpeech } from '../audio/useSpeech'
 import { ArText } from '../components/ArText'
 import { ListenButton } from '../components/Audio'
 import { En } from '../components/En'
+import { playCorrect, playWrong } from '../audio/sfx'
 import { attemptPoints, isSettled, MAX_ATTEMPTS } from '../logic/attempts'
 import { starsFromAccuracy } from '../logic/rewards'
 import { shuffled } from '../logic/shuffle'
@@ -27,6 +28,8 @@ export function VocabView({ lesson, onFinish }: { lesson: VocabLesson; onFinish:
     if (answered || wrongPicks.includes(o)) return
     const isRight = o === word.en
     const attempt = wrongPicks.length + 1
+    if (isRight) playCorrect()
+    else playWrong()
     if (!isSettled(isRight, attempt)) {
       setWrongPicks([...wrongPicks, o]) // خطأ أول: محاولة ثانية بدون كشف الجواب
       return

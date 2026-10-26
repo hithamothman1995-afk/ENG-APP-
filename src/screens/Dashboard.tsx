@@ -7,6 +7,7 @@ import { basicStreak, isActive, progressPercent, weekStats } from '../logic/stat
 import { href } from '../router'
 import { lessonKey } from '../storage/progress'
 import { useProgress } from '../storage/ProgressContext'
+import { welcomeSeen } from './WelcomeScreen'
 
 const todayLabel = new Intl.DateTimeFormat('ar', { weekday: 'long', day: 'numeric', month: 'long' })
 
@@ -38,6 +39,17 @@ export function Dashboard() {
           <En>XP</En>
         </span>
       </header>
+
+      {!welcomeSeen() ? (
+        <a className="card welcome-banner" href={href({ name: 'welcome' })}>
+          <span className="welcome-banner-emoji" aria-hidden>🧭</span>
+          <span>
+            <strong>ابدأ بالجولة الترحيبية</strong>
+            <span className="muted small">ايش بنتعلم، وكيف يمشي الكلاس، وايش بتستفيد لمن تخلص</span>
+          </span>
+          <Icon name="chevron" size={20} />
+        </a>
+      ) : null}
 
       <a className="hero" href={href({ name: 'lesson', classId: cls.id, lessonId: lesson.id })}>
         <div className="hero-top">

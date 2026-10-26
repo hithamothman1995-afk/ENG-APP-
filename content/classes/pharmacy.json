@@ -347,7 +347,8 @@
                 "دواء موجود فوق الرف",
                 "دواء تشتريه بدون وصفة طبية"
               ],
-              "answer": 2
+              "answer": 2,
+              "sayEn": "over the counter"
             },
             {
               "tag": "term",
@@ -357,7 +358,8 @@
                 "زكام",
                 "ألم في البطن"
               ],
-              "answer": 0
+              "answer": 0,
+              "sayEn": "headache"
             },
             {
               "tag": "idiom",
@@ -367,7 +369,8 @@
                 "أنا واقف تحت المطر",
                 "أحس إني تعبان شوي"
               ],
-              "answer": 2
+              "answer": 2,
+              "sayEn": "I'm feeling a bit under the weather"
             },
             {
               "tag": "general",
@@ -491,7 +494,8 @@
                 "طوال اليوم",
                 "مرتين في اليوم"
               ],
-              "answer": 2
+              "answer": 2,
+              "sayEn": "twice a day"
             },
             {
               "tag": "term",
@@ -501,7 +505,8 @@
                 "تاريخ شراء الدواء",
                 "موعد الطبيب"
               ],
-              "answer": 0
+              "answer": 0,
+              "sayEn": "expiry date"
             },
             {
               "tag": "idiom",
@@ -511,7 +516,8 @@
                 "بسرعة كبيرة",
                 "احتياطًا، من باب الحذر"
               ],
-              "answer": 2
+              "answer": 2,
+              "sayEn": "just to be on the safe side"
             },
             {
               "tag": "general",
@@ -630,7 +636,8 @@
                 "دواء إضافي مجاني",
                 "أثر جانبي للدواء"
               ],
-              "answer": 2
+              "answer": 2,
+              "sayEn": "side effect"
             },
             {
               "tag": "term",
@@ -640,7 +647,8 @@
                 "جائع",
                 "سعيد"
               ],
-              "answer": 0
+              "answer": 0,
+              "sayEn": "sleepy"
             },
             {
               "tag": "idiom",
@@ -650,7 +658,8 @@
                 "الحذر أفضل من الندم",
                 "آسف لأني تأخرت"
               ],
-              "answer": 1
+              "answer": 1,
+              "sayEn": "Better safe than sorry"
             },
             {
               "tag": "general",
@@ -773,7 +782,8 @@
                 "دواء أرخص بنفس المادة الأساسية",
                 "علبة فارغة"
               ],
-              "answer": 1
+              "answer": 1,
+              "sayEn": "generic"
             },
             {
               "tag": "term",
@@ -783,7 +793,8 @@
                 "تأمين",
                 "خصم"
               ],
-              "answer": 1
+              "answer": 1,
+              "sayEn": "insurance"
             },
             {
               "tag": "idiom",
@@ -793,7 +804,8 @@
                 "ارتح ولا تقلق",
                 "هذا شيء سهل جدًا"
               ],
-              "answer": 1
+              "answer": 1,
+              "sayEn": "take it easy"
             },
             {
               "tag": "general",
@@ -920,7 +932,8 @@
                 "ملء قارورة ماء فقط",
                 "دواء جديد مختلف"
               ],
-              "answer": 0
+              "answer": 0,
+              "sayEn": "refill"
             },
             {
               "tag": "term",
@@ -930,7 +943,8 @@
                 "في يوم ميلاد شخص",
                 "لشخص مسافر"
               ],
-              "answer": 0
+              "answer": 0,
+              "sayEn": "get well soon"
             },
             {
               "tag": "idiom",
@@ -940,7 +954,8 @@
                 "ستمشي إلى البيت بعد أيام",
                 "سترجع لصحتك ونشاطك خلال أيام"
               ],
-              "answer": 2
+              "answer": 2,
+              "sayEn": "You'll be back on your feet in a few days"
             },
             {
               "tag": "general",

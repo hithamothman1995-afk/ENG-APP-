@@ -2,6 +2,8 @@ import { useState } from 'react'
 import type { Exercise } from '../content/types'
 import { ArText } from '../components/ArText'
 import { En } from '../components/En'
+import { playCorrect, playWrong } from '../audio/sfx'
+import { ListenButton } from '../components/Audio'
 import { attemptPoints, isSettled, MAX_ATTEMPTS } from '../logic/attempts'
 import { starsFromAccuracy } from '../logic/rewards'
 import { sameAnswer } from '../logic/text'
@@ -35,6 +37,8 @@ export function ExerciseRunner({
   const ltrOptions = ex.kind === 'fill' || (ex.kind === 'choice' && ex.optionsLtr)
 
   function check(isRight: boolean) {
+    if (isRight) playCorrect()
+    else playWrong()
     if (!isSettled(isRight, attempt)) {
       // خطأ أول: نعلّم الخيار الغلط ونعطي محاولة ثانية
       if (picked !== null) setWrongPicks([...wrongPicks, picked])
@@ -70,7 +74,10 @@ export function ExerciseRunner({
       <StepBar done={index + (result === null ? 0 : 1)} total={exercises.length} />
       <section className="card">
         {ex.kind === 'choice' && ex.labelAr && <span className="tag">{ex.labelAr}</span>}
-        <p className="lead"><ArText text={ex.questionAr} /></p>
+        <div className="question-row">
+          <p className="lead"><ArText text={ex.questionAr} /></p>
+          {ex.kind === 'choice' && ex.sayEn && <ListenButton lines={ex.sayEn} label="اسمع" />}
+        </div>
         {ex.kind === 'fill' && (
           <p className="sentence">
             <En>{ex.sentence.replace('___', '_____')}</En>
