@@ -47,6 +47,8 @@ function lessonText(lesson: Lesson): string {
       return `${lesson.ruleTitleAr}: ${lesson.explanationAr}\n${lesson.points.map((p) => `- ${p.ar}: ${p.en}`).join('\n')}`
     case 'ai-chat':
       return lesson.scenarioAr
+    case 'film':
+      return `${lesson.sourceEn}\n` + lesson.lines.map((l) => `${l.speaker}: ${l.en} (${l.ar})`).join('\n') + '\nكلمات: ' + lesson.keyWords.map((k) => `${k.en} = ${k.ar}`).join('، ')
     case 'scene':
       return lesson.lines.map((l) => `${lesson.characters[l.speaker].nameEn}: ${l.en} (${l.ar})`).join('\n')
     case 'review':

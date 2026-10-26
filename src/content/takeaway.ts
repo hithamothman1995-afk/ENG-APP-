@@ -11,6 +11,8 @@ export function takeawayPool(cls: ClassContent, lesson: Lesson): Bilingual[] {
       return lesson.segments.flatMap((s) => s.newTerms)
     case 'vocab':
       return lesson.words.map((w) => ({ en: w.exampleEn, ar: w.exampleAr }))
+    case 'film':
+      return lesson.keyWords
     case 'scene':
       return lesson.lines.map((l) => ({ en: l.en, ar: l.ar }))
     default: {

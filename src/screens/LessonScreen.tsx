@@ -8,6 +8,7 @@ import { lessonKey, setDifficulty, setLastLesson } from '../storage/progress'
 import { useProgress } from '../storage/ProgressContext'
 import { playComplete } from '../audio/sfx'
 import { AiChatView } from '../lessons/AiChatView'
+import { FilmView } from '../lessons/FilmView'
 import { GrammarView } from '../lessons/GrammarView'
 import { IntroView } from '../lessons/IntroView'
 import { ListenChooseView } from '../lessons/ListenChooseView'
@@ -33,6 +34,8 @@ function LessonBody({ cls, lesson, onFinish }: { cls: ClassContent; lesson: Less
       return <PodcastView lesson={lesson} onFinish={onFinish} />
     case 'vocab':
       return <VocabView lesson={lesson} onFinish={onFinish} />
+    case 'film':
+      return <FilmView lesson={lesson} onFinish={onFinish} />
     case 'scene':
       return <SceneView lesson={lesson} onFinish={onFinish} />
     case 'grammar':

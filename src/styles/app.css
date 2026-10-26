@@ -2013,3 +2013,47 @@ button.button {
 @media (prefers-reduced-motion: reduce) {
   .welcome-card { animation: none; }
 }
+
+/* ===== مشهد من فيلم ===== */
+.film-frame {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
+.film-frame iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: #000;
+}
+
+mark.key {
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.film-words {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.film-words li {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.film-words li:last-child {
+  border-bottom: 0;
+}
+
+.film-words p {
+  margin: 0;
+}

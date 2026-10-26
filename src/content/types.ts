@@ -9,6 +9,7 @@ export type LessonType =
   | 'grammar'
   | 'ai-chat'
   | 'scene'
+  | 'film'
   | 'review'
 
 interface LessonBase {
@@ -145,6 +146,24 @@ export interface SceneLesson extends LessonBase {
   questions: ChoiceQuestion[]
 }
 
+export interface FilmKeyWord extends Bilingual {
+  noteAr: string // شرح قصير: متى ولماذا تُقال
+}
+
+// مشهد حقيقي من فيلم أو مسلسل، يُعرض من يوتيوب (ما ننسخ الفيديو)
+export interface FilmLesson extends LessonBase {
+  type: 'film'
+  titleEn: string
+  sourceEn: string // اسم العمل والحلقة
+  youtubeId?: string // يُضاف لما يوصل الرابط
+  start?: number // بالثواني
+  end?: number
+  introAr: string
+  lines: Line[]
+  keyWords: FilmKeyWord[]
+  questions: ChoiceQuestion[]
+}
+
 export interface GrammarLesson extends LessonBase {
   type: 'grammar'
   ruleTitleAr: string
@@ -178,6 +197,7 @@ export type Lesson =
   | GrammarLesson
   | AiChatLesson
   | SceneLesson
+  | FilmLesson
   | ReviewLesson
 
 export interface ClassContent {

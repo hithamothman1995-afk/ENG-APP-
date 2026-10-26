@@ -35,6 +35,7 @@ export const LESSON_ICONS: Record<string, string> = {
   vocab: '🔤',
   grammar: '🧩',
   'ai-chat': '🤖',
-  scene: '🎬',
+  scene: '🎧',
+  film: '🎬',
   review: '🔁',
 }
