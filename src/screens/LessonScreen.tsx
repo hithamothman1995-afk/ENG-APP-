@@ -16,6 +16,7 @@ import { ReviewView } from '../lessons/ReviewView'
 import { SceneView } from '../lessons/SceneView'
 import { VocabView } from '../lessons/VocabView'
 import { Stars, type Finish } from '../lessons/common'
+import { Thomson } from '../ai/Thomson'
 
 function LessonBody({ cls, lesson, onFinish }: { cls: ClassContent; lesson: Lesson; onFinish: Finish }) {
   switch (lesson.type) {
@@ -119,8 +120,11 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
           />
         </section>
       ) : (
-        <LessonBody key={`${lessonId}-${attempt}`} cls={cls} lesson={lesson} onFinish={finish} />
+        <div className="lesson-body">
+          <LessonBody key={`${lessonId}-${attempt}`} cls={cls} lesson={lesson} onFinish={finish} />
+        </div>
       )}
+      <Thomson cls={cls} lesson={lesson} />
     </main>
   )
 }
