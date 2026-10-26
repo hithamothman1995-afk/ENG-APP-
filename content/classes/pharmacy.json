@@ -998,7 +998,8 @@
           "distractors": [
             "pharmacist",
             "factory"
-          ]
+          ],
+          "image": "art/words/pharmacy.png"
         },
         {
           "id": "pharmacist",
@@ -1011,7 +1012,8 @@
           "distractors": [
             "pharmacy",
             "farmer"
-          ]
+          ],
+          "image": "art/words/pharmacist.png"
         },
         {
           "id": "prescription",
@@ -1024,7 +1026,8 @@
           "distractors": [
             "description",
             "subscription"
-          ]
+          ],
+          "image": "art/words/prescription.png"
         },
         {
           "id": "pill",
@@ -1037,7 +1040,8 @@
           "distractors": [
             "peel",
             "bill"
-          ]
+          ],
+          "image": "art/words/pill.svg"
         },
         {
           "id": "dose",
@@ -1050,7 +1054,8 @@
           "distractors": [
             "does",
             "those"
-          ]
+          ],
+          "image": "art/words/dose.svg"
         },
         {
           "id": "label",
@@ -1063,7 +1068,8 @@
           "distractors": [
             "table",
             "level"
-          ]
+          ],
+          "image": "art/words/label.svg"
         },
         {
           "id": "allergy",
@@ -1076,7 +1082,8 @@
           "distractors": [
             "energy",
             "gallery"
-          ]
+          ],
+          "image": "art/words/allergy.svg"
         },
         {
           "id": "receipt",
@@ -1090,7 +1097,8 @@
           "distractors": [
             "recipe",
             "receive"
-          ]
+          ],
+          "image": "art/words/receipt.svg"
         },
         {
           "id": "cheaper",
@@ -1103,7 +1111,8 @@
           "distractors": [
             "cheap",
             "deeper"
-          ]
+          ],
+          "image": "art/words/cheaper.svg"
         },
         {
           "id": "medicine",
@@ -1117,7 +1126,8 @@
           "distractors": [
             "medical",
             "machine"
-          ]
+          ],
+          "image": "art/words/medicine.svg"
         },
         {
           "id": "side-effect",
@@ -1130,7 +1140,8 @@
           "distractors": [
             "side job",
             "special effect"
-          ]
+          ],
+          "image": "art/words/side-effect.svg"
         },
         {
           "id": "expiry-date",
@@ -1144,7 +1155,8 @@
           "distractors": [
             "delivery date",
             "birth date"
-          ]
+          ],
+          "image": "art/words/expiry-date.svg"
         }
       ]
     },

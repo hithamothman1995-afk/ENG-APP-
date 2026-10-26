@@ -5,6 +5,9 @@ import { Icon } from '../components/Icon'
 import { ASK_ERRORS_AR, getAsker, type AskError, type Asker } from './ask'
 import { buildTurns, cleanAnswer, lessonContext, type ChatTurn } from './thomson'
 
+// صورة تومسن (من كانفا)
+const THOMSON_IMG = `${import.meta.env.BASE_URL}art/thomson.png`
+
 const SUGGESTIONS: Record<string, string[]> = {
   'listen-choose': ['ليش الخيارات متشابهة كذا؟', 'كيف أتدرب على سماع آخر الجملة؟'],
   phrases: ['كيف أنطق حرف p بدون ما يطلع b؟', 'متى أقول under the weather؟'],
@@ -88,7 +91,7 @@ export function Thomson({ cls, lesson }: { cls: ClassContent; lesson: Lesson }) 
   return (
     <>
       <button type="button" className="thomson-fab" onClick={() => setOpen(true)} aria-label="اسأل تومسن">
-        <span aria-hidden>🧑‍🏫</span>
+        <img className="thomson-face" src={THOMSON_IMG} alt="" aria-hidden />
         <span>اسأل تومسن</span>
       </button>
 
@@ -96,7 +99,7 @@ export function Thomson({ cls, lesson }: { cls: ClassContent; lesson: Lesson }) 
         <div className="sheet-backdrop" onClick={() => setOpen(false)}>
           <section className="sheet" role="dialog" aria-modal="true" aria-label="تومسن" onClick={(e) => e.stopPropagation()}>
             <header className="sheet-head">
-              <span className="thomson-avatar" aria-hidden>🧑‍🏫</span>
+              <img className="thomson-avatar" src={THOMSON_IMG} alt="" aria-hidden />
               <div>
                 <h2>تومسن</h2>
                 <p className="muted small">اسألني عن أي شيء ما فهمته في هذا الدرس</p>

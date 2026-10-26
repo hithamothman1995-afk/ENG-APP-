@@ -26,3 +26,14 @@ describe('end-of-lesson takeaway', () => {
     for (const s of course.steps) expect(s.pointsAr.length).toBeGreaterThan(0)
   })
 })
+
+describe('word pictures', () => {
+  it('every vocab word with an image points to a real file', async () => {
+    const { existsSync } = await import('node:fs')
+    const cls = getClass('pharmacy')!
+    for (const l of cls.lessons) {
+      if (l.type !== 'vocab') continue
+      for (const w of l.words) if (w.image) expect(existsSync(`public/${w.image}`), w.image).toBe(true)
+    }
+  })
+})

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { WordPicture } from '../components/WordPicture'
 import type { VocabLesson } from '../content/types'
 import { useSpeech } from '../audio/useSpeech'
 import { ArText } from '../components/ArText'
@@ -48,6 +49,7 @@ export function VocabView({ lesson, onFinish }: { lesson: VocabLesson; onFinish:
         <span className="pill gold">★ {results.filter(Boolean).length}</span>
       </div>
       <section className="card prompt-card">
+        {word.image && <WordPicture key={word.id} src={word.image} say={answered ? word.en : undefined} />}
         <span className="eyebrow">كيف تقولها بالإنجليزي؟</span>
         <p className="word-ar big">{word.ar}</p>
       </section>

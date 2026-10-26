@@ -43,6 +43,7 @@ export interface Word {
   exampleAr: string
   noteAr?: string
   distractors: [string, string] // خياران خاطئان قريبان من الكلمة
+  image?: string // صورة الكلمة داخل public/ (مثل art/words/pill.svg)
 }
 
 export interface Idiom {
