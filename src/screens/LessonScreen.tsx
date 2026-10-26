@@ -36,7 +36,7 @@ function LessonBody({ cls, lesson, onFinish }: { cls: ClassContent; lesson: Less
       return <GrammarView lesson={lesson} onFinish={onFinish} />
     case 'ai-chat': {
       const phrases = cls.lessons.flatMap((l) => (l.type === 'phrases' ? l.phrases : []))
-      return <AiChatView lesson={lesson} phrases={phrases} />
+      return <AiChatView lesson={lesson} phrases={phrases} onFinish={onFinish} />
     }
     case 'review':
       return <ReviewView cls={cls} introAr={lesson.introAr} onFinish={onFinish} />

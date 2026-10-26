@@ -155,9 +155,12 @@ export interface GrammarLesson extends LessonBase {
 export interface AiChatLesson extends LessonBase {
   type: 'ai-chat'
   roleAr: string
+  roleEn: string // وصف الدور للذكاء الاصطناعي
   scenarioAr: string
+  stepsEn: string[] // خطوات الموقف بالترتيب
   targetPhraseIds: string[]
   openingEn: string
+  openingAr: string
 }
 
 export interface ReviewLesson extends LessonBase {

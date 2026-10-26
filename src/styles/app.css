@@ -1717,3 +1717,75 @@ button.button {
   background: var(--gold-soft);
   color: var(--gold);
 }
+
+/* محادثة الدور */
+.phrase-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.goal {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.goal.done {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.role-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 40vh;
+}
+
+.msg.role {
+  position: relative;
+  padding-inline-start: 50px;
+}
+
+.role-avatar {
+  position: absolute;
+  inset-inline-start: 10px;
+  top: 10px;
+  font-size: 1.6rem;
+}
+
+.role-en {
+  font-size: 1.1rem;
+}
+
+.msg-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.msg-actions .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+}
+
+.send-button.mic.listening {
+  background: var(--flame);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.feedback-card {
+  display: grid;
+  gap: 8px;
+}
+
+.feedback-card p {
+  margin: 0;
+}

@@ -1300,14 +1300,23 @@
       "type": "ai-chat",
       "titleAr": "تكلّم مع الصيدلي (ذكاء اصطناعي)",
       "roleAr": "الصيدلي",
-      "scenarioAr": "ستتكلم مع صيدلي (ذكاء اصطناعي) في نفس الموقف: تعطيه الوصفة، وتسأل عن الجرعة، وتذكر الحساسية، ثم تدفع. لن يقاطعك بالتصحيح، وفي النهاية يعطيك ملخصًا بما قلته صحيحًا وأهم 3 أخطاء.",
+      "scenarioAr": "ستتكلم مع صيدلي (ذكاء اصطناعي) في نفس الموقف: تعطيه الوصفة، وتسأل عن الجرعة، وتذكر الحساسية، ثم تدفع. تكلّم بصوتك أو اكتب. لن يقاطعك بالتصحيح، وفي النهاية يعطيك ملخصًا بما قلته صحيحًا وأهم 3 أخطاء.",
       "targetPhraseIds": [
         "have-prescription",
         "how-many-pills",
         "allergic",
         "pay-by-card"
       ],
-      "openingEn": "Hi there. How can I help you today?"
+      "openingEn": "Hi there. How can I help you today?",
+      "roleEn": "a friendly pharmacist at a small pharmacy",
+      "openingAr": "أهلًا. كيف أقدر أساعدك اليوم؟",
+      "stepsEn": [
+        "greet the customer and take the prescription",
+        "tell them how to take the medicine (simple, invented dose)",
+        "ask if they have any allergies",
+        "tell the price and ask how they want to pay",
+        "say goodbye"
+      ]
     },
     {
       "id": "idioms-review",
