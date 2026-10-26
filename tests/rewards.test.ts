@@ -34,15 +34,24 @@ describe('completeLesson', () => {
   })
 
   it('on repeat gives XP only for improved stars and keeps the best', () => {
-    const first = completeLesson(emptyProgress(), 'pharmacy', 'vocab-practice', 1, null, now).progress
-    const better = completeLesson(first, 'pharmacy', 'vocab-practice', 3, null, now)
-    expect(better.xpGained).toBe(10)
-    expect(better.progress.lessons['pharmacy/vocab-practice'].stars).toBe(3)
+    const first = completeLesson(emptyProgress(), 'pharmacy', 'vocab', 2, null, now).progress
+    const better = completeLesson(first, 'pharmacy', 'vocab', 3, null, now)
+    expect(better.xpGained).toBe(5)
+    expect(better.progress.lessons['pharmacy/vocab'].stars).toBe(3)
 
-    const worse = completeLesson(better.progress, 'pharmacy', 'vocab-practice', 1, null, now)
+    const worse = completeLesson(better.progress, 'pharmacy', 'vocab', 2, null, now)
     expect(worse.xpGained).toBe(0)
     expect(worse.improved).toBe(false)
-    expect(worse.progress.lessons['pharmacy/vocab-practice'].stars).toBe(3)
+    expect(worse.progress.lessons['pharmacy/vocab'].stars).toBe(3)
+  })
+
+  it('does not complete a lesson with fewer than two stars', () => {
+    const p = emptyProgress()
+    const r = completeLesson(p, 'pharmacy', 'vocab', 1, 'grammar', now)
+    expect(r.passed).toBe(false)
+    expect(r.xpGained).toBe(0)
+    expect(r.progress).toBe(p)
+    expect(r.progress.lessons['pharmacy/vocab']).toBeUndefined()
   })
 
   it('keeps the current lesson as last when there is no next one', () => {

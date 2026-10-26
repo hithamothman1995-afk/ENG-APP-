@@ -11,7 +11,15 @@ function correctText(e: Exercise): string {
 }
 
 // يعرض التمارين واحدًا تلو الآخر، ويحسب النجوم من نسبة الإجابات الصحيحة
-export function ExerciseRunner({ exercises, onFinish }: { exercises: Exercise[]; onFinish: Finish }) {
+export function ExerciseRunner({
+  exercises,
+  onFinish,
+  onDone,
+}: {
+  exercises: Exercise[]
+  onFinish?: Finish
+  onDone?: (correct: number, total: number) => void // بدل onFinish: لمن يحتاج عدد الإجابات الصحيحة
+}) {
   const [index, setIndex] = useState(0)
   const [correct, setCorrect] = useState(0)
   const [picked, setPicked] = useState<number | null>(null)
@@ -28,7 +36,8 @@ export function ExerciseRunner({ exercises, onFinish }: { exercises: Exercise[];
 
   function next() {
     if (index === exercises.length - 1) {
-      onFinish(starsFromAccuracy(correct, exercises.length))
+      if (onDone) onDone(correct, exercises.length)
+      else onFinish?.(starsFromAccuracy(correct, exercises.length))
       return
     }
     setIndex(index + 1)
@@ -41,6 +50,7 @@ export function ExerciseRunner({ exercises, onFinish }: { exercises: Exercise[];
     <>
       <StepBar done={index + (result === null ? 0 : 1)} total={exercises.length} />
       <section className="card">
+        {ex.kind === 'choice' && ex.labelAr && <span className="tag">{ex.labelAr}</span>}
         <p className="lead"><ArText text={ex.questionAr} /></p>
         {ex.kind === 'fill' && (
           <p className="sentence">
@@ -70,7 +80,7 @@ export function ExerciseRunner({ exercises, onFinish }: { exercises: Exercise[];
               result === null ? (picked === i ? 'picked' : '') : i === ex.answer ? 'right' : picked === i ? 'wrong' : ''
             return (
               <button
-                key={o}
+                key={i}
                 type="button"
                 className={`option ${state}`}
                 disabled={result !== null}
@@ -93,7 +103,7 @@ export function ExerciseRunner({ exercises, onFinish }: { exercises: Exercise[];
       ) : (
         <>
           <p className={`feedback ${result ? 'right' : 'wrong'}`} role="status">
-            {result ? 'إجابة صحيحة!' : <>الإجابة الصحيحة: <En>{correctText(ex)}</En></>}
+            {result ? 'إجابة صحيحة!' : <>الإجابة الصحيحة: {ltrOptions || ex.kind === 'type' ? <En>{correctText(ex)}</En> : correctText(ex)}</>}
           </p>
           <PrimaryButton onClick={next}>{index === exercises.length - 1 ? 'إنهاء' : 'التالي'}</PrimaryButton>
         </>

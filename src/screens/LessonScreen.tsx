@@ -4,16 +4,16 @@ import type { ClassContent, Lesson } from '../content/types'
 import { Icon } from '../components/Icon'
 import { completeLesson, type CompletionResult } from '../logic/rewards'
 import { href } from '../router'
-import { setLastLesson } from '../storage/progress'
+import { lessonKey, setDifficulty, setLastLesson, type Difficulty } from '../storage/progress'
 import { useProgress } from '../storage/ProgressContext'
 import { AiChatView } from '../lessons/AiChatView'
-import { ExerciseRunner } from '../lessons/ExerciseRunner'
 import { GrammarView } from '../lessons/GrammarView'
-import { IdiomView } from '../lessons/IdiomView'
 import { IntroView } from '../lessons/IntroView'
-import { ListeningView } from '../lessons/ListeningView'
+import { ListenChooseView } from '../lessons/ListenChooseView'
 import { PhrasesView } from '../lessons/PhrasesView'
+import { PodcastView } from '../lessons/PodcastView'
 import { ReviewView } from '../lessons/ReviewView'
+import { SceneView } from '../lessons/SceneView'
 import { VocabView } from '../lessons/VocabView'
 import { Stars, type Finish } from '../lessons/common'
 
@@ -21,16 +21,16 @@ function LessonBody({ cls, lesson, onFinish }: { cls: ClassContent; lesson: Less
   switch (lesson.type) {
     case 'intro':
       return <IntroView lesson={lesson} onFinish={onFinish} />
+    case 'listen-choose':
+      return <ListenChooseView lesson={lesson} onFinish={onFinish} />
     case 'phrases':
       return <PhrasesView lesson={lesson} onFinish={onFinish} />
+    case 'podcast':
+      return <PodcastView lesson={lesson} onFinish={onFinish} />
     case 'vocab':
       return <VocabView lesson={lesson} onFinish={onFinish} />
-    case 'vocab-practice':
-      return <ExerciseRunner exercises={lesson.exercises} onFinish={onFinish} />
-    case 'idiom':
-      return <IdiomView lesson={lesson} onFinish={onFinish} />
-    case 'listening':
-      return <ListeningView lesson={lesson} onFinish={onFinish} />
+    case 'scene':
+      return <SceneView lesson={lesson} onFinish={onFinish} />
     case 'grammar':
       return <GrammarView lesson={lesson} onFinish={onFinish} />
     case 'ai-chat': {
@@ -87,22 +87,23 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
       </header>
 
       {result ? (
-        <section className="card done-card" role="status">
+        <section className={`card done-card ${result.passed ? 'passed' : ''}`} role="status">
           <Stars count={result.stars} size={40} />
-          <h2>{result.stars >= 2 ? 'أحسنت!' : 'انتهى الدرس'}</h2>
-          <p className="xp-gain">
-            {result.xpGained > 0 ? `+${result.xpGained} نقطة` : 'لا نقاط جديدة هذه المرة'}
-          </p>
-          {result.stars < 2 && <p className="muted">أعد الدرس لتحصل على نجوم أكثر.</p>}
+          <h2>{result.passed ? (result.stars === 3 ? 'ممتاز! 🎉' : 'أحسنت!') : 'قربت!'}</h2>
+          {result.passed ? (
+            <p className="xp-gain">{result.xpGained > 0 ? `+${result.xpGained} نقطة` : 'لا نقاط جديدة هذه المرة'}</p>
+          ) : (
+            <p className="muted">قاعدة اللعبة: تحتاج نجمتين على الأقل حتى يكتمل الدرس. أعده، المرة الثانية دائمًا أسهل.</p>
+          )}
           <div className="done-actions">
-            {next && (
+            {result.passed && next && (
               <a className="primary-button" href={href({ name: 'lesson', classId, lessonId: next.id })}>
                 الدرس التالي: {next.titleAr}
               </a>
             )}
             <button
               type="button"
-              className="button"
+              className={result.passed ? 'button' : 'primary-button'}
               onClick={() => {
                 setResult(null)
                 setAttempt(attempt + 1)
@@ -112,10 +113,35 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
             </button>
             <a className="button" href={href({ name: 'class', classId })}>رجوع للكلاس</a>
           </div>
+          <DifficultyPicker
+            value={progress.difficulty?.[lessonKey(classId, lessonId)]}
+            onPick={(d) => update((p) => setDifficulty(p, classId, lessonId, d))}
+          />
         </section>
       ) : (
         <LessonBody key={`${lessonId}-${attempt}`} cls={cls} lesson={lesson} onFinish={finish} />
       )}
     </main>
+  )
+}
+
+const DIFFICULTIES: { value: Difficulty; label: string }[] = [
+  { value: 'easy', label: 'سهل جدًا' },
+  { value: 'ok', label: 'مناسب' },
+  { value: 'hard', label: 'صعب جدًا' },
+]
+
+function DifficultyPicker({ value, onPick }: { value?: Difficulty; onPick: (d: Difficulty) => void }) {
+  return (
+    <div className="difficulty">
+      <span className="muted small">ما مدى صعوبة هذا الدرس؟</span>
+      <div className="segmented" role="group" aria-label="صعوبة الدرس">
+        {DIFFICULTIES.map((d) => (
+          <button key={d.value} type="button" className={value === d.value ? 'on' : ''} aria-pressed={value === d.value} onClick={() => onPick(d.value)}>
+            {d.label}
+          </button>
+        ))}
+      </div>
+    </div>
   )
 }

@@ -2,13 +2,13 @@
 
 export type LessonType =
   | 'intro'
+  | 'listen-choose'
   | 'phrases'
+  | 'podcast'
   | 'vocab'
-  | 'vocab-practice'
-  | 'idiom'
-  | 'listening'
   | 'grammar'
   | 'ai-chat'
+  | 'scene'
   | 'review'
 
 interface LessonBase {
@@ -41,10 +41,20 @@ export interface Word {
   exampleEn: string
   exampleAr: string
   noteAr?: string
+  distractors: [string, string] // خياران خاطئان قريبان من الكلمة
+}
+
+export interface Idiom {
+  id: string
+  en: string
+  meaningAr: string
+  literalAr: string // الترجمة الحرفية، لنفهم لماذا لا نترجمه كلمة بكلمة
+  exampleEn: string
+  exampleAr: string
 }
 
 export type Exercise =
-  | { kind: 'choice'; questionAr: string; options: string[]; answer: number; optionsLtr?: boolean }
+  | { kind: 'choice'; questionAr: string; options: string[]; answer: number; optionsLtr?: boolean; labelAr?: string }
   | { kind: 'fill'; questionAr: string; sentence: string; options: string[]; answer: number }
   | { kind: 'type'; questionAr: string; answer: string }
 
@@ -61,9 +71,25 @@ export interface IntroLesson extends LessonBase {
   noteAr?: string
 }
 
+export interface ListenChooseItem {
+  audioEn: string // الجملة التي تُنطق
+  ar?: string // ترجمتها، تظهر بعد الإجابة
+  options: string[]
+  answer: number
+  noteAr?: string
+}
+
+export interface ListenChooseLesson extends LessonBase {
+  type: 'listen-choose'
+  introAr: string
+  mode: 'sentence' | 'meaning' // اختر الجملة التي سمعتها، أو اختر معناها بالعربي
+  items: ListenChooseItem[]
+}
+
 export interface PhrasesLesson extends LessonBase {
   type: 'phrases'
   phrases: Phrase[]
+  idioms: Idiom[]
 }
 
 export interface VocabLesson extends LessonBase {
@@ -71,26 +97,51 @@ export interface VocabLesson extends LessonBase {
   words: Word[]
 }
 
-export interface VocabPracticeLesson extends LessonBase {
-  type: 'vocab-practice'
-  exercises: Exercise[]
+export interface ChoiceQuestion {
+  questionAr: string
+  options: string[]
+  answer: number
+  optionsLtr?: boolean
 }
 
-export interface IdiomLesson extends LessonBase {
-  type: 'idiom'
-  en: string
-  ar: string
-  literalAr: string
-  meaningAr: string
-  examples: Bilingual[]
+export interface Line extends Bilingual {
+  speaker: string
 }
 
-export interface ListeningLesson extends LessonBase {
-  type: 'listening'
+export interface Character {
+  nameAr: string
+  nameEn: string
+  voice: number // رقم الصوت، لكل شخصية صوت مختلف
+  emoji: string
+}
+
+export interface PodcastQuestion extends ChoiceQuestion {
+  tag: 'term' | 'idiom' | 'general'
+}
+
+export interface PodcastSegment {
+  titleAr: string
+  lines: { speaker: string; en: string }[]
+  newTerms: Bilingual[] // المصطلحات الجديدة في هذا الجزء
+  questions: PodcastQuestion[]
+}
+
+export interface PodcastLesson extends LessonBase {
+  type: 'podcast'
+  titleEn: string
   introAr: string
-  dialogue: (Bilingual & { speaker: string })[]
-  speakers: Record<string, string>
-  questions: { questionAr: string; options: string[]; answer: number }[]
+  characters: Record<string, Character>
+  segments: PodcastSegment[]
+}
+
+export interface SceneLesson extends LessonBase {
+  type: 'scene'
+  titleEn: string
+  introAr: string
+  characters: Record<string, Character>
+  lines: Line[]
+  keyWords: Bilingual[]
+  questions: ChoiceQuestion[]
 }
 
 export interface GrammarLesson extends LessonBase {
@@ -116,13 +167,13 @@ export interface ReviewLesson extends LessonBase {
 
 export type Lesson =
   | IntroLesson
+  | ListenChooseLesson
   | PhrasesLesson
+  | PodcastLesson
   | VocabLesson
-  | VocabPracticeLesson
-  | IdiomLesson
-  | ListeningLesson
   | GrammarLesson
   | AiChatLesson
+  | SceneLesson
   | ReviewLesson
 
 export interface ClassContent {

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { ClassContent } from '../content/types'
 import { ArText } from '../components/ArText'
+import { ListenButton } from '../components/Audio'
 import { En } from '../components/En'
 import { starsFromAccuracy } from '../logic/rewards'
 import { Notice, PrimaryButton, StepBar, type Finish } from './common'
@@ -15,7 +16,10 @@ export function ReviewView({ cls, introAr, onFinish }: { cls: ClassContent; intr
   const cards = useMemo(() => {
     const list: Card[] = []
     for (const l of cls.lessons) {
-      if (l.type === 'phrases') l.phrases.forEach((p) => list.push({ ar: p.ar, en: p.en }))
+      if (l.type === 'phrases') {
+        l.phrases.forEach((p) => list.push({ ar: p.ar, en: p.en }))
+        l.idioms.forEach((i) => list.push({ ar: i.meaningAr, en: i.en }))
+      }
       if (l.type === 'vocab') l.words.forEach((w) => list.push({ ar: w.ar, en: w.en }))
     }
     return list
@@ -45,9 +49,12 @@ export function ReviewView({ cls, introAr, onFinish }: { cls: ClassContent; intr
         <span className="eyebrow">كيف تقول بالإنجليزية؟</span>
         <p className="word-ar">{card.ar}</p>
         {revealed && (
-          <p className="phrase-en">
-            <En>{card.en}</En>
-          </p>
+          <div className="phrase-row">
+            <p className="phrase-en">
+              <En>{card.en}</En>
+            </p>
+            <ListenButton lines={card.en} />
+          </div>
         )}
       </section>
       {!revealed ? (
