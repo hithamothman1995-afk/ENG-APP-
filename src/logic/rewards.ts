@@ -5,6 +5,7 @@ import { dayKey } from './dates'
 export const XP_PER_LESSON = 10
 export const XP_PER_STAR = 5
 export const MIN_PHRASE_STARS = 2 // لا يكتمل درس العبارات إلا بنجمتين على الأقل لكل عبارة
+export const MIN_STARS_TO_PASS = 2 // قاعدة اللعبة: نجمتان على الأقل حتى يكتمل أي درس
 
 // نسبة الإجابات الصحيحة ← نجوم من 0 إلى 3
 export function starsFromAccuracy(correct: number, total: number): number {
@@ -27,9 +28,11 @@ export interface CompletionResult {
   xpGained: number
   stars: number
   improved: boolean
+  passed: boolean
 }
 
-// تسجيل إكمال درس: أول مرة يعطي كل النقاط، والإعادة تعطي نقاطًا فقط إذا تحسنت النجوم
+// تسجيل إكمال درس: أول مرة يعطي كل النقاط، والإعادة تعطي نقاطًا فقط إذا تحسنت النجوم.
+// أقل من نجمتين: الدرس لا يُحسب مكتملًا ولا يتغير شيء.
 export function completeLesson(
   p: Progress,
   classId: string,
@@ -38,6 +41,7 @@ export function completeLesson(
   nextLessonId: string | null,
   now = new Date(),
 ): CompletionResult {
+  if (stars < MIN_STARS_TO_PASS) return { progress: p, xpGained: 0, stars, improved: false, passed: false }
   const key = lessonKey(classId, lessonId)
   const previous = p.lessons[key]
   const best = Math.max(stars, previous?.stars ?? 0)
@@ -52,6 +56,7 @@ export function completeLesson(
     stars,
     xpGained,
     improved: !previous || stars > previous.stars,
+    passed: true,
     progress: {
       ...p,
       xp: p.xp + xpGained,

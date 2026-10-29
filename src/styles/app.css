@@ -14,6 +14,8 @@
   --accent-ink: #062520;
   --gold: #f0b95a;
   --flame: #f2895c;
+  --flame-soft: rgba(242, 137, 92, 0.14);
+  --gold-soft: rgba(240, 185, 90, 0.12);
   --radius: 20px;
   --radius-sm: 14px;
   --tap: 56px;
@@ -1006,4 +1008,1128 @@ button.button {
   color: var(--gold);
   font-weight: 700;
   font-size: 1.1rem;
+}
+
+/* ===== الصوت والدروس التفاعلية ===== */
+
+.center {
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.pill.gold {
+  color: var(--gold);
+}
+
+.quiz-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--surface-3);
+}
+
+.dots i.right {
+  background: var(--accent);
+}
+
+.dots i.wrong {
+  background: var(--flame);
+}
+
+.intro-card {
+  display: grid;
+  gap: 8px;
+  text-align: center;
+  justify-items: center;
+}
+
+.big-emoji {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.listen-card {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.listen-card .lead {
+  justify-self: stretch;
+  text-align: start;
+}
+
+.listen-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid transparent;
+}
+
+.listen-button:has(.listen-label) {
+  width: auto;
+  padding: 0 16px;
+  border-radius: 999px;
+}
+
+.listen-button.big {
+  width: 104px;
+  height: 104px;
+  margin: 6px auto;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 0 0 10px var(--accent-soft);
+  transition: transform 0.15s ease;
+}
+
+.listen-button.big:active {
+  transform: scale(0.96);
+}
+
+.listen-button.speaking {
+  border-color: var(--accent);
+}
+
+.listen-button.big.speaking {
+  animation: halo 1.6s ease-in-out infinite;
+}
+
+@keyframes halo {
+  50% {
+    box-shadow: 0 0 0 18px rgba(69, 196, 176, 0.06);
+  }
+}
+
+.listen-icon {
+  display: inline-flex;
+}
+
+.wave {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 26px;
+}
+
+.wave i {
+  width: 4px;
+  height: 100%;
+  border-radius: 2px;
+  background: currentColor;
+  animation: wave 0.9s ease-in-out infinite;
+}
+
+.wave i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.wave i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.wave i:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave i,
+  .listen-button.big.speaking {
+    animation: none;
+  }
+}
+
+.speed-toggle,
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  align-self: center;
+}
+
+.speed-toggle button,
+.segmented button {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.speed-toggle button.on,
+.segmented button.on {
+  background: var(--surface-3);
+  color: var(--text);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.option.dim {
+  opacity: 0.5;
+}
+
+.answer-card {
+  display: grid;
+  gap: 6px;
+  border-width: 2px;
+}
+
+.answer-card.good {
+  border-color: var(--accent);
+}
+
+.answer-card.retry {
+  border-color: var(--flame);
+}
+
+.feedback-title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.phrase-en.small-phrase {
+  font-size: 1.15rem;
+}
+
+.phrase-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.phrase-row > p {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.idiom-card {
+  display: grid;
+  gap: 8px;
+  border-color: rgba(240, 185, 90, 0.35);
+}
+
+.idiom-meaning {
+  margin: 0;
+  color: var(--gold);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.speak-check {
+  display: grid;
+  gap: 12px;
+}
+
+.mic-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 72px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  border: 2px dashed var(--accent);
+  color: var(--accent);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.mic-button.on {
+  border-style: solid;
+  background: var(--accent-soft);
+}
+
+.heard-card {
+  display: grid;
+  gap: 8px;
+  border-width: 2px;
+}
+
+.heard-card.good {
+  border-color: var(--accent);
+}
+
+.heard-card.retry {
+  border-color: var(--flame);
+}
+
+.heard-words {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.hw.ok {
+  color: var(--accent);
+}
+
+.hw.wrong {
+  color: var(--flame);
+  text-decoration: underline wavy;
+  text-underline-offset: 4px;
+}
+
+.hw.missing {
+  color: var(--muted);
+}
+
+.heard-stars {
+  margin: 0;
+  color: var(--gold);
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+}
+
+.tip {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--flame-soft);
+  font-size: 0.95rem;
+}
+
+.player-card {
+  display: grid;
+  gap: 12px;
+  text-align: center;
+}
+
+.player-card h2 {
+  margin: 0;
+}
+
+.player-head,
+.player-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.speakers {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.speaker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-3);
+  color: var(--text);
+  font-size: 1.2rem;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.speaker.talking {
+  color: var(--text);
+}
+
+.speaker.talking .avatar {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.chip.on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.transcript .bubble {
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.transcript .bubble.now {
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.progress-dots i {
+  width: 28px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface-3);
+}
+
+.progress-dots i.on {
+  background: var(--accent);
+}
+
+.term-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.term-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.term-list .en {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.rounds {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.round {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+.round.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.round.done {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.prompt-card {
+  text-align: center;
+}
+
+.word-ar.big {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 6px 0 0;
+}
+
+.done-card.passed {
+  border-color: rgba(69, 196, 176, 0.45);
+}
+
+.difficulty {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== تومسن: مساعد الأسئلة ===== */
+
+.lesson-body {
+  display: contents;
+}
+
+.screen:has(.thomson-fab) {
+  padding-bottom: 96px;
+}
+
+.thomson-fab {
+  position: fixed;
+  inset-inline-end: max(16px, calc((100vw - 560px) / 2 + 16px));
+  bottom: calc(92px + env(safe-area-inset-bottom));
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 18px 0 14px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  border: 1px solid var(--accent);
+  color: var(--text);
+  font-family: var(--font-head);
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.thomson-face {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-inline-start: -6px;
+}
+
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 560px;
+  height: min(82vh, 720px);
+  padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+  border-radius: 24px 24px 0 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-bottom: 0;
+}
+
+.sheet-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sheet-head > div {
+  flex: 1;
+}
+
+.sheet-head h2 {
+  margin: 0;
+}
+
+.thomson-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.icon-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.chat {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 2px;
+}
+
+.chat-empty {
+  display: grid;
+  gap: 10px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.msg {
+  max-width: 90%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.msg p {
+  margin: 0;
+}
+
+.msg.user {
+  align-self: flex-start;
+  background: var(--accent-soft);
+  border: 1px solid rgba(69, 196, 176, 0.35);
+}
+
+.msg.assistant {
+  align-self: flex-end;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.typing {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input .text-input {
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
+  text-align: start;
+}
+
+.send-button {
+  flex-shrink: 0;
+  width: var(--tap);
+  height: var(--tap);
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 0;
+  display: grid;
+  place-items: center;
+}
+
+.send-button:disabled {
+  opacity: 0.45;
+}
+
+.send-button .icon {
+  transform: scaleX(-1);
+}
+
+.feedback.retry {
+  background: var(--gold-soft);
+  color: var(--gold);
+}
+
+/* محادثة الدور */
+.phrase-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.goal {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.goal.done {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.role-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 40vh;
+}
+
+.msg.role {
+  position: relative;
+  padding-inline-start: 50px;
+}
+
+.role-avatar {
+  position: absolute;
+  inset-inline-start: 10px;
+  top: 10px;
+  font-size: 1.6rem;
+}
+
+.role-en {
+  font-size: 1.1rem;
+}
+
+.msg-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.msg-actions .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+}
+
+.send-button.mic.listening {
+  background: var(--flame);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.feedback-card {
+  display: grid;
+  gap: 8px;
+}
+
+.feedback-card p {
+  margin: 0;
+}
+
+/* ===== أصوات وتفاعل الصح والغلط ===== */
+.question-row {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.question-row .lead {
+  margin: 0;
+}
+
+.option.wrong {
+  animation: shake 0.38s ease-in-out;
+}
+
+.option.right {
+  animation: pop 0.32s ease-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(3px); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.035); }
+  100% { transform: scale(1); }
+}
+
+.lesson-header .sound-toggle {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+/* ===== بطاقة نهاية الدرس ===== */
+.done-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.done-stars {
+  animation: pop 0.5s ease-out 0.1s both;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti i {
+  position: absolute;
+  top: -12px;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  opacity: 0;
+  animation-name: fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+  0% { opacity: 1; translate: 0 0; }
+  100% { opacity: 0; translate: 0 420px; rotate: 540deg; }
+}
+
+.takeaway {
+  width: 100%;
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  text-align: start;
+}
+
+.takeaway p {
+  margin: 0;
+}
+
+.feelings {
+  display: flex;
+  gap: 8px;
+}
+
+.feelings button {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 76px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.feelings button.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.feeling-emoji {
+  font-size: 1.6rem;
+  transition: transform 0.2s;
+}
+
+.feelings button.on .feeling-emoji {
+  transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option.wrong, .option.right, .done-stars, .confetti { animation: none; display: revert; }
+  .confetti { display: none; }
+}
+
+/* ===== الجولة الترحيبية ===== */
+.welcome-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-color: rgba(240, 185, 90, 0.45);
+  background: linear-gradient(135deg, var(--gold-soft), transparent 70%), var(--surface);
+}
+
+.welcome-banner > span:nth-child(2) {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+}
+
+.welcome-banner-emoji {
+  font-size: 1.8rem;
+}
+
+.welcome-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.welcome-dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 999px;
+  border: 0;
+  background: var(--border);
+  cursor: pointer;
+  transition: width 0.25s, background 0.25s;
+}
+
+.welcome-dots button.done {
+  background: rgba(69, 196, 176, 0.5);
+}
+
+.welcome-dots button.on {
+  width: 26px;
+  background: var(--accent);
+}
+
+.welcome-card {
+  display: grid;
+  gap: 12px;
+  animation: slide-in 0.3s ease-out;
+}
+
+.welcome-card h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.welcome-card .lead {
+  margin: 0;
+}
+
+.welcome-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.welcome-points li {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.link-button.center {
+  align-self: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-card { animation: none; }
+}
+
+/* ===== مشهد من فيلم ===== */
+.film-frame {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
+.film-frame iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: #000;
+}
+
+mark.key {
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.film-words {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.film-words li {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.film-words li:last-child {
+  border-bottom: 0;
+}
+
+.film-words p {
+  margin: 0;
+}
+
+/* ===== صور الكلمات ===== */
+.word-picture-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.word-picture {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+  background: #111c2b;
+  cursor: pointer;
+  animation: picture-in 0.4s ease-out;
+}
+
+.word-picture img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.word-picture img.boing {
+  animation: boing 0.45s ease-out;
+}
+
+.word-picture.can-say {
+  border-color: rgba(69, 196, 176, 0.6);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.word-picture-badge {
+  position: absolute;
+  bottom: 6px;
+  inset-inline-start: 6px;
+  font-size: 0.9rem;
+  background: rgba(13, 20, 23, 0.75);
+  border-radius: 999px;
+  padding: 2px 6px;
+}
+
+@keyframes picture-in {
+  from { opacity: 0; transform: scale(0.85) rotate(-4deg); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes boing {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.88); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word-picture, .word-picture img.boing { animation: none; }
+}
+
+/* ===== أغلفة: كل صور الأقسام بنفس المقاس داخل البطاقة ===== */
+.hero-art {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  margin-bottom: 12px;
+}
+
+.hero-art.placeholder {
+  display: grid;
+  place-items: center;
+  font-size: 3.5rem;
+  background: radial-gradient(circle at 50% 45%, var(--accent-soft), transparent 70%), var(--surface-2);
 }

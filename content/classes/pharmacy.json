@@ -3,25 +3,88 @@
   "levelId": "intro",
   "titleAr": "الصيدلية",
   "titleEn": "At the Pharmacy",
+  "cover": "art/covers/pharmacy.webp",
   "lessons": [
     {
       "id": "intro",
       "type": "intro",
-      "titleAr": "مقدمة الموقف",
+      "titleAr": "مقدمة الكلاس",
       "situationAr": "أنت في صيدلية ومعك وصفة من طبيبك. تريد أن تستلم الدواء، وتفهم الجرعة المكتوبة على العلبة، وتخبر الصيدلي أن عندك حساسية من دواء معيّن، ثم تدفع وتشكره.",
       "goalsAr": [
-        "تقول إن معك وصفة من الطبيب",
-        "تسأل عن عدد الحبات المكتوب على الملصق",
-        "تخبر الصيدلي عن الحساسية",
-        "تسأل عن بديل أرخص وتدفع بالبطاقة"
+        "تقول إن معك وصفة من الطبيب وتستلم دواءك",
+        "تسأل عن الجرعة وتفهم ما هو مكتوب على الملصق",
+        "تخبر الصيدلي عن الحساسية بوضوح",
+        "تسأل عن بديل أرخص وتدفع وتأخذ الإيصال",
+        "تفهم 5 تعابير يقولها أهل اللغة في هذا الموقف"
       ],
       "soundsAr": "في هذا الكلاس نركّز على الأصوات التي تقول الأبحاث إنها الأصعب على المتحدث بالعربية: صوت p (وليس b)، وصوت v (وليس f)، والفرق بين i القصيرة في pill والطويلة في please، وصوت ng في evening، وحرف o في dose، وحرف a في take.",
       "noteAr": "هذا الكلاس لتعلّم التواصل فقط، وليس نصيحة طبية. اتبع دائمًا تعليمات طبيبك والصيدلي."
     },
     {
+      "id": "listen-first",
+      "type": "listen-choose",
+      "titleAr": "اسمع واختر",
+      "mode": "sentence",
+      "introAr": "قبل أن نتعلم عبارات الصيدلية، اسمعها أولًا واختر الجملة التي سمعتها. لا تقلق إن أخطأت: التخمين قبل التعلم يساعدك تحفظ أكثر.",
+      "items": [
+        {
+          "audioEn": "Hi, I have a prescription from my doctor.",
+          "ar": "مرحبًا، معي وصفة من طبيبي.",
+          "options": [
+            "Hi, I have a prescription for my daughter.",
+            "Hi, I have a prescription from my doctor.",
+            "Hi, I have a question for my doctor."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "How many pills do I take each day?",
+          "ar": "كم حبة آخذ كل يوم؟",
+          "options": [
+            "How many pills do I take each night?",
+            "How many pills do I take each day?",
+            "How many bills do I pay each day?"
+          ],
+          "answer": 1,
+          "noteAr": "pills وbills تختلفان في حرف واحد: حرف p نفخة هواء بدون صوت من الحنجرة، وحرف b بصوت من الحنجرة."
+        },
+        {
+          "audioEn": "Can I pay by card?",
+          "ar": "هل أستطيع الدفع بالبطاقة؟",
+          "options": [
+            "Can I pay in cash?",
+            "Can I park my car?",
+            "Can I pay by card?"
+          ],
+          "answer": 2
+        },
+        {
+          "audioEn": "I'm allergic to penicillin.",
+          "ar": "عندي حساسية من البنسلين.",
+          "options": [
+            "I'm allergic to peanuts.",
+            "I'm allergic to penicillin.",
+            "I'm not allergic to penicillin."
+          ],
+          "answer": 1,
+          "noteAr": "انتبه لكلمة not الصغيرة: تقلب المعنى كله."
+        },
+        {
+          "audioEn": "Is there a cheaper version?",
+          "ar": "هل يوجد نوع أرخص؟",
+          "options": [
+            "Is there a cheaper pharmacy?",
+            "Is there a cheaper version?",
+            "Is there a bigger version?"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
       "id": "phrases",
       "type": "phrases",
-      "titleAr": "تكرار العبارات",
+      "titleAr": "العبارات وأشهر 5 تعابير",
       "phrases": [
         {
           "id": "have-prescription",
@@ -125,12 +188,807 @@
             "tipAr": "صوت ng في آخر evening صوت واحد من الأنف، بدون أن تنطق g واضحة في النهاية. وانتبه: حرف v في evening مع صوت، وليست f."
           }
         }
+      ],
+      "idioms": [
+        {
+          "id": "under-the-weather",
+          "en": "under the weather",
+          "meaningAr": "تعبان شوي، مريض قليلًا",
+          "literalAr": "تحت الطقس",
+          "exampleEn": "I'm feeling a bit under the weather today.",
+          "exampleAr": "أحس إني تعبان شوي اليوم."
+        },
+        {
+          "id": "safe-side",
+          "en": "to be on the safe side",
+          "meaningAr": "احتياطًا، من باب الحذر",
+          "literalAr": "أن تكون على الجانب الآمن",
+          "exampleEn": "Just to be on the safe side, read the label again.",
+          "exampleAr": "احتياطًا، اقرأ الملصق مرة ثانية."
+        },
+        {
+          "id": "better-safe",
+          "en": "Better safe than sorry.",
+          "meaningAr": "الحذر أفضل من الندم",
+          "literalAr": "آمن أفضل من آسف",
+          "exampleEn": "Ask the pharmacist if you're not sure. Better safe than sorry.",
+          "exampleAr": "اسأل الصيدلي إذا لم تكن متأكدًا. الحذر أفضل من الندم."
+        },
+        {
+          "id": "take-it-easy",
+          "en": "Take it easy.",
+          "meaningAr": "ارتح ولا تُجهد نفسك",
+          "literalAr": "خذها بسهولة",
+          "exampleEn": "You have a cold? Take it easy this weekend.",
+          "exampleAr": "عندك زكام؟ ارتح في عطلة نهاية الأسبوع."
+        },
+        {
+          "id": "back-on-your-feet",
+          "en": "back on your feet",
+          "meaningAr": "رجعت لصحتك ونشاطك بعد المرض",
+          "literalAr": "رجعت على قدميك",
+          "exampleEn": "Get some rest. You'll be back on your feet soon.",
+          "exampleAr": "خذ قسطًا من الراحة. سترجع لصحتك قريبًا."
+        }
+      ]
+    },
+    {
+      "id": "podcast",
+      "type": "podcast",
+      "titleAr": "بودكاست: ركن الصيدلية",
+      "titleEn": "The Pharmacy Corner",
+      "introAr": "بودكاست قصير وسهل بين مايا وسام الصيدلي. مقسّم إلى 5 أجزاء: بعد كل جزء (حوالي دقيقتين) تجيب 5 أسئلة عن مصطلح جديد، وتعبير اصطلاحي، والفهم العام. لا تحتاج تفهم كل كلمة.",
+      "characters": {
+        "maya": {
+          "nameAr": "مايا",
+          "nameEn": "Maya",
+          "voice": 0,
+          "emoji": "🎙️",
+          "gender": "female"
+        },
+        "sam": {
+          "nameAr": "سام",
+          "nameEn": "Sam",
+          "voice": 1,
+          "emoji": "🧑‍⚕️",
+          "gender": "male"
+        }
+      },
+      "segments": [
+        {
+          "titleAr": "ماذا يفعل الصيدلي؟",
+          "lines": [
+            {
+              "speaker": "maya",
+              "en": "Hello and welcome to The Pharmacy Corner. I'm Maya. This is a short and easy podcast for English learners."
+            },
+            {
+              "speaker": "maya",
+              "en": "Today we are talking about a place we all visit: the pharmacy. And I have a special guest with me. Hi, Sam!"
+            },
+            {
+              "speaker": "sam",
+              "en": "Hi, Maya. Thanks for having me."
+            },
+            {
+              "speaker": "maya",
+              "en": "Sam, you are a pharmacist. What do you do every day?"
+            },
+            {
+              "speaker": "sam",
+              "en": "I help people with their medicine. Some people come with a prescription from their doctor. I read it, I get the medicine ready, and I explain the dose."
+            },
+            {
+              "speaker": "maya",
+              "en": "And some people come without a prescription, right?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Yes. Some medicine is over the counter. That means you can buy it without a prescription. For example, medicine for a small headache."
+            },
+            {
+              "speaker": "maya",
+              "en": "Over the counter. I like that. So what do people usually say when they come in?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Many people say, I'm feeling a bit under the weather."
+            },
+            {
+              "speaker": "maya",
+              "en": "Under the weather? What does that mean?"
+            },
+            {
+              "speaker": "sam",
+              "en": "It means you feel a little sick. Not very sick. Maybe you have a cold, or you feel tired."
+            },
+            {
+              "speaker": "maya",
+              "en": "So the weather is not the problem!"
+            },
+            {
+              "speaker": "sam",
+              "en": "No, the weather is fine. The person is not fine."
+            },
+            {
+              "speaker": "maya",
+              "en": "That's funny. So, Sam, what is the first thing you ask a customer?"
+            },
+            {
+              "speaker": "sam",
+              "en": "I usually ask, how can I help you today? Then I listen. Listening is a big part of my job."
+            },
+            {
+              "speaker": "maya",
+              "en": "Listening is a big part of learning English too! Okay, let's take a short break. After the break, Sam will tell us about the label on the box."
+            }
+          ],
+          "newTerms": [
+            {
+              "en": "over the counter",
+              "ar": "دواء يُباع بدون وصفة طبية"
+            },
+            {
+              "en": "a headache",
+              "ar": "صداع"
+            },
+            {
+              "en": "a cold",
+              "ar": "زكام"
+            },
+            {
+              "en": "under the weather",
+              "ar": "تعبان شوي"
+            }
+          ],
+          "questions": [
+            {
+              "tag": "term",
+              "questionAr": "ماذا يعني over the counter؟",
+              "options": [
+                "دواء غالي جدًا",
+                "دواء موجود فوق الرف",
+                "دواء تشتريه بدون وصفة طبية"
+              ],
+              "answer": 2,
+              "sayEn": "over the counter"
+            },
+            {
+              "tag": "term",
+              "questionAr": "ما معنى headache؟",
+              "options": [
+                "صداع",
+                "زكام",
+                "ألم في البطن"
+              ],
+              "answer": 0,
+              "sayEn": "headache"
+            },
+            {
+              "tag": "idiom",
+              "questionAr": "إذا قال شخص I'm feeling a bit under the weather، ماذا يقصد؟",
+              "options": [
+                "الجو بارد اليوم",
+                "أنا واقف تحت المطر",
+                "أحس إني تعبان شوي"
+              ],
+              "answer": 2,
+              "sayEn": "I'm feeling a bit under the weather"
+            },
+            {
+              "tag": "general",
+              "questionAr": "ما اسم البودكاست؟",
+              "options": [
+                "The Medicine Box",
+                "The Doctor Show",
+                "The Pharmacy Corner"
+              ],
+              "answer": 2,
+              "optionsLtr": true
+            },
+            {
+              "tag": "general",
+              "questionAr": "حسب سام، ما الجزء الكبير من عمله؟",
+              "options": [
+                "كتابة الوصفات",
+                "بيع الحلويات",
+                "الاستماع للناس"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "titleAr": "اقرأ الملصق",
+          "lines": [
+            {
+              "speaker": "maya",
+              "en": "Welcome back to The Pharmacy Corner. Sam, let's talk about the label. What is a label?"
+            },
+            {
+              "speaker": "sam",
+              "en": "The label is the small paper on the box. It tells you how to take the medicine."
+            },
+            {
+              "speaker": "maya",
+              "en": "What information is on the label?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Your name, the name of the medicine, and the dose. The dose is how much you take, and how often."
+            },
+            {
+              "speaker": "maya",
+              "en": "Can you give me an example?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Sure. Take one pill twice a day. Twice a day means two times a day. One in the morning, and one in the evening."
+            },
+            {
+              "speaker": "maya",
+              "en": "Twice a day. Got it. What else?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Some labels say, take with food. So you take it with your meal."
+            },
+            {
+              "speaker": "maya",
+              "en": "And what about the date on the box?"
+            },
+            {
+              "speaker": "sam",
+              "en": "That's the expiry date. After that date, you should not use the medicine."
+            },
+            {
+              "speaker": "maya",
+              "en": "The expiry date. That's important."
+            },
+            {
+              "speaker": "sam",
+              "en": "Very important. And here is my advice. If you can't read the label, ask the pharmacist. Just to be on the safe side."
+            },
+            {
+              "speaker": "maya",
+              "en": "Just to be on the safe side. What does that mean, Sam?"
+            },
+            {
+              "speaker": "sam",
+              "en": "It means you do something extra, because you want to stop a problem before it happens. For example, I check every label two times, just to be on the safe side."
+            },
+            {
+              "speaker": "maya",
+              "en": "I do that with my keys! I check my bag two times before I leave the house."
+            },
+            {
+              "speaker": "sam",
+              "en": "Exactly. That's being on the safe side."
+            },
+            {
+              "speaker": "maya",
+              "en": "Great. Next, we are going to talk about allergies."
+            }
+          ],
+          "newTerms": [
+            {
+              "en": "twice a day",
+              "ar": "مرتين في اليوم"
+            },
+            {
+              "en": "take with food",
+              "ar": "يؤخذ مع الأكل"
+            },
+            {
+              "en": "expiry date",
+              "ar": "تاريخ انتهاء الصلاحية"
+            },
+            {
+              "en": "to be on the safe side",
+              "ar": "احتياطًا"
+            }
+          ],
+          "questions": [
+            {
+              "tag": "term",
+              "questionAr": "ما معنى twice a day؟",
+              "options": [
+                "مرة كل يومين",
+                "طوال اليوم",
+                "مرتين في اليوم"
+              ],
+              "answer": 2,
+              "sayEn": "twice a day"
+            },
+            {
+              "tag": "term",
+              "questionAr": "ما معنى expiry date؟",
+              "options": [
+                "تاريخ انتهاء الصلاحية",
+                "تاريخ شراء الدواء",
+                "موعد الطبيب"
+              ],
+              "answer": 0,
+              "sayEn": "expiry date"
+            },
+            {
+              "tag": "idiom",
+              "questionAr": "سام يقرأ الملصق مرتين just to be on the safe side. ماذا تعني؟",
+              "options": [
+                "على الجانب الأيمن",
+                "بسرعة كبيرة",
+                "احتياطًا، من باب الحذر"
+              ],
+              "answer": 2,
+              "sayEn": "just to be on the safe side"
+            },
+            {
+              "tag": "general",
+              "questionAr": "حسب سام، ماذا تفعل إذا لم تستطع قراءة الملصق؟",
+              "options": [
+                "تأخذ حبتين بدل حبة",
+                "ترمي العلبة",
+                "تسأل الصيدلي"
+              ],
+              "answer": 2
+            },
+            {
+              "tag": "general",
+              "questionAr": "ماذا تفعل مايا مرتين قبل أن تخرج من البيت؟",
+              "options": [
+                "تتأكد من مفاتيحها في الحقيبة",
+                "تتصل بسام",
+                "تقرأ ملصق الدواء"
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "titleAr": "الحساسية والآثار الجانبية",
+          "lines": [
+            {
+              "speaker": "maya",
+              "en": "Sam, many people have allergies. Why is this important at the pharmacy?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Because some people are allergic to some medicine. For example, some people are allergic to penicillin."
+            },
+            {
+              "speaker": "maya",
+              "en": "So what should I say?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Say it clearly. I'm allergic to penicillin. Say it at the start, before I give you anything."
+            },
+            {
+              "speaker": "maya",
+              "en": "Is it okay to say it two times?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Of course! You can say it ten times. I am happy to hear it."
+            },
+            {
+              "speaker": "maya",
+              "en": "What about side effects? I hear this word a lot."
+            },
+            {
+              "speaker": "sam",
+              "en": "A side effect is something extra that the medicine does. It is not the main job. For example, some medicine makes you sleepy. Sleepy is the side effect."
+            },
+            {
+              "speaker": "maya",
+              "en": "Sleepy. Like me on Monday morning!"
+            },
+            {
+              "speaker": "sam",
+              "en": "Ha! Maybe. So if you feel something strange after you take medicine, call your pharmacist or your doctor."
+            },
+            {
+              "speaker": "maya",
+              "en": "And don't wait, right?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Right. My favorite sentence is, better safe than sorry."
+            },
+            {
+              "speaker": "maya",
+              "en": "Better safe than sorry. Can you explain it?"
+            },
+            {
+              "speaker": "sam",
+              "en": "It means it is better to be careful now than to be sad later. Ask your question today. Don't be sorry tomorrow."
+            },
+            {
+              "speaker": "maya",
+              "en": "I love that. So, listeners, write it down. Better safe than sorry."
+            },
+            {
+              "speaker": "sam",
+              "en": "And always tell us about your allergies. Every time."
+            },
+            {
+              "speaker": "maya",
+              "en": "Every time. Okay, after this, we're going to talk about money. Yes, money!"
+            }
+          ],
+          "newTerms": [
+            {
+              "en": "a side effect",
+              "ar": "أثر جانبي"
+            },
+            {
+              "en": "sleepy",
+              "ar": "نعسان"
+            },
+            {
+              "en": "better safe than sorry",
+              "ar": "الحذر أفضل من الندم"
+            }
+          ],
+          "questions": [
+            {
+              "tag": "term",
+              "questionAr": "ما معنى side effect؟",
+              "options": [
+                "الجانب الأيمن من العلبة",
+                "دواء إضافي مجاني",
+                "أثر جانبي للدواء"
+              ],
+              "answer": 2,
+              "sayEn": "side effect"
+            },
+            {
+              "tag": "term",
+              "questionAr": "sleepy تعني:",
+              "options": [
+                "نعسان",
+                "جائع",
+                "سعيد"
+              ],
+              "answer": 0,
+              "sayEn": "sleepy"
+            },
+            {
+              "tag": "idiom",
+              "questionAr": "Better safe than sorry تعني:",
+              "options": [
+                "الأمان أغلى من المال",
+                "الحذر أفضل من الندم",
+                "آسف لأني تأخرت"
+              ],
+              "answer": 1,
+              "sayEn": "Better safe than sorry"
+            },
+            {
+              "tag": "general",
+              "questionAr": "متى تذكر الحساسية حسب سام؟",
+              "options": [
+                "بعد أن تدفع",
+                "فقط إذا سألك",
+                "في البداية، قبل أن يعطيك أي شيء"
+              ],
+              "answer": 2
+            },
+            {
+              "tag": "general",
+              "questionAr": "متى تقول مايا إنها نعسانة؟",
+              "options": [
+                "بعد الغداء",
+                "صباح يوم الاثنين",
+                "ليلة الجمعة"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "titleAr": "الدفع والبديل الأرخص",
+          "lines": [
+            {
+              "speaker": "maya",
+              "en": "Sam, medicine can be expensive. What can people do?"
+            },
+            {
+              "speaker": "sam",
+              "en": "You can ask, is there a cheaper version? Sometimes there is a generic."
+            },
+            {
+              "speaker": "maya",
+              "en": "A generic? What is that?"
+            },
+            {
+              "speaker": "sam",
+              "en": "A generic is a cheaper medicine with the same main ingredient. It works the same way, but it has a different name and a different box."
+            },
+            {
+              "speaker": "maya",
+              "en": "Same inside, different box. Okay!"
+            },
+            {
+              "speaker": "sam",
+              "en": "Exactly. But always ask the pharmacist first. Don't change your medicine alone."
+            },
+            {
+              "speaker": "maya",
+              "en": "And how do people pay?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Most people ask, can I pay by card? And some people have insurance."
+            },
+            {
+              "speaker": "maya",
+              "en": "Insurance. That's when a company pays part of the money, right?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Yes. The insurance pays some of the price, and you pay the rest."
+            },
+            {
+              "speaker": "maya",
+              "en": "And after you pay, you get a receipt."
+            },
+            {
+              "speaker": "sam",
+              "en": "Yes, and keep your receipt. Sometimes you need it later."
+            },
+            {
+              "speaker": "maya",
+              "en": "Sam, sometimes people are stressed at the pharmacy. They're sick, they're in a hurry."
+            },
+            {
+              "speaker": "sam",
+              "en": "That's true. When someone is stressed, I smile and I say, take it easy, we have time."
+            },
+            {
+              "speaker": "maya",
+              "en": "Take it easy. That's nice."
+            },
+            {
+              "speaker": "sam",
+              "en": "It means relax, don't worry, and don't work too hard. When you are sick, you need to take it easy."
+            },
+            {
+              "speaker": "maya",
+              "en": "Good advice for everyone. Okay, one more part. Let's talk about the end of the visit."
+            }
+          ],
+          "newTerms": [
+            {
+              "en": "a generic",
+              "ar": "دواء بديل أرخص بنفس المادة"
+            },
+            {
+              "en": "insurance",
+              "ar": "تأمين"
+            },
+            {
+              "en": "in a hurry",
+              "ar": "مستعجل"
+            },
+            {
+              "en": "take it easy",
+              "ar": "ارتح ولا تُجهد نفسك"
+            }
+          ],
+          "questions": [
+            {
+              "tag": "term",
+              "questionAr": "ما هو generic؟",
+              "options": [
+                "دواء جديد وغالي",
+                "دواء أرخص بنفس المادة الأساسية",
+                "علبة فارغة"
+              ],
+              "answer": 1,
+              "sayEn": "generic"
+            },
+            {
+              "tag": "term",
+              "questionAr": "insurance تعني:",
+              "options": [
+                "إيصال",
+                "تأمين",
+                "خصم"
+              ],
+              "answer": 1,
+              "sayEn": "insurance"
+            },
+            {
+              "tag": "idiom",
+              "questionAr": "عندما يقول سام take it easy لشخص متوتر، ماذا يقصد؟",
+              "options": [
+                "خذ الدواء بسرعة",
+                "ارتح ولا تقلق",
+                "هذا شيء سهل جدًا"
+              ],
+              "answer": 1,
+              "sayEn": "take it easy"
+            },
+            {
+              "tag": "general",
+              "questionAr": "حسب سام، هل تغيّر دواءك وحدك إذا وجدت نوعًا أرخص؟",
+              "options": [
+                "لا، تسأل الصيدلي أولًا",
+                "نعم، دائمًا",
+                "نعم، إذا كان أرخص"
+              ],
+              "answer": 0
+            },
+            {
+              "tag": "general",
+              "questionAr": "لماذا تحتفظ بالإيصال؟",
+              "options": [
+                "لأنك قد تحتاجه لاحقًا",
+                "لتكتب عليه الجرعة",
+                "لأن عليه صورة الدواء"
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "titleAr": "نهاية الزيارة ومراجعة سريعة",
+          "lines": [
+            {
+              "speaker": "maya",
+              "en": "Sam, the visit is almost over. The customer has the medicine and the receipt. What's next?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Before they leave, I ask, do you have any questions? This is your last chance to ask."
+            },
+            {
+              "speaker": "maya",
+              "en": "What questions do people usually ask?"
+            },
+            {
+              "speaker": "sam",
+              "en": "When do I need a refill? A refill is when you get more of the same medicine, from the same prescription."
+            },
+            {
+              "speaker": "maya",
+              "en": "A refill. Like refilling a bottle of water."
+            },
+            {
+              "speaker": "sam",
+              "en": "Yes, same idea. More of the same thing."
+            },
+            {
+              "speaker": "maya",
+              "en": "And then?"
+            },
+            {
+              "speaker": "sam",
+              "en": "Then I say, get well soon! And I really mean it."
+            },
+            {
+              "speaker": "maya",
+              "en": "Get well soon. People say that when you're sick. It means, I hope you feel better quickly."
+            },
+            {
+              "speaker": "sam",
+              "en": "Exactly. And sometimes I say, rest, and you'll be back on your feet in a few days."
+            },
+            {
+              "speaker": "maya",
+              "en": "Back on your feet! I know this one. It means healthy and active again."
+            },
+            {
+              "speaker": "sam",
+              "en": "That's right. You are not in bed. You are up, going to work, and living your life."
+            },
+            {
+              "speaker": "maya",
+              "en": "Okay, Sam, let's review today's words quickly. Over the counter."
+            },
+            {
+              "speaker": "sam",
+              "en": "Without a prescription."
+            },
+            {
+              "speaker": "maya",
+              "en": "Twice a day."
+            },
+            {
+              "speaker": "sam",
+              "en": "Two times a day."
+            },
+            {
+              "speaker": "maya",
+              "en": "And our idioms. Under the weather, on the safe side, better safe than sorry, take it easy, and back on your feet."
+            },
+            {
+              "speaker": "sam",
+              "en": "Five idioms in ten minutes. Not bad!"
+            },
+            {
+              "speaker": "maya",
+              "en": "Not bad at all. Thank you, Sam, and thank you, listeners. Take it easy, and see you next time on The Pharmacy Corner!"
+            }
+          ],
+          "newTerms": [
+            {
+              "en": "a refill",
+              "ar": "صرف كمية جديدة من نفس الدواء"
+            },
+            {
+              "en": "get well soon",
+              "ar": "أتمنى لك الشفاء العاجل"
+            },
+            {
+              "en": "back on your feet",
+              "ar": "رجعت لصحتك ونشاطك"
+            }
+          ],
+          "questions": [
+            {
+              "tag": "term",
+              "questionAr": "ما معنى refill؟",
+              "options": [
+                "صرف كمية جديدة من نفس الدواء",
+                "ملء قارورة ماء فقط",
+                "دواء جديد مختلف"
+              ],
+              "answer": 0,
+              "sayEn": "refill"
+            },
+            {
+              "tag": "term",
+              "questionAr": "متى نقول get well soon؟",
+              "options": [
+                "لشخص مريض: أتمنى لك الشفاء العاجل",
+                "في يوم ميلاد شخص",
+                "لشخص مسافر"
+              ],
+              "answer": 0,
+              "sayEn": "get well soon"
+            },
+            {
+              "tag": "idiom",
+              "questionAr": "You'll be back on your feet in a few days تعني:",
+              "options": [
+                "ستقف على قدميك الآن",
+                "ستمشي إلى البيت بعد أيام",
+                "سترجع لصحتك ونشاطك خلال أيام"
+              ],
+              "answer": 2,
+              "sayEn": "You'll be back on your feet in a few days"
+            },
+            {
+              "tag": "general",
+              "questionAr": "ما آخر سؤال يسأله سام قبل أن يغادر الزبون؟",
+              "options": [
+                "Can I pay by card?",
+                "Do you have any questions?",
+                "What's your name?"
+              ],
+              "answer": 1,
+              "optionsLtr": true
+            },
+            {
+              "tag": "general",
+              "questionAr": "كم تعبيرًا اصطلاحيًا تعلمنا في هذا البودكاست؟",
+              "options": [
+                "عشرة",
+                "ثلاثة",
+                "خمسة"
+              ],
+              "answer": 2
+            }
+          ]
+        }
       ]
     },
     {
       "id": "vocab",
       "type": "vocab",
-      "titleAr": "أهم الكلمات",
+      "titleAr": "مفردات الصيدلية",
       "words": [
         {
           "id": "pharmacy",
@@ -139,7 +997,12 @@
           "ipa": "/ˈfɑːrməsi/",
           "stress": "PHAR-ma-cy",
           "exampleEn": "The pharmacy is next to the bank.",
-          "exampleAr": "الصيدلية بجانب البنك."
+          "exampleAr": "الصيدلية بجانب البنك.",
+          "distractors": [
+            "pharmacist",
+            "factory"
+          ],
+          "image": "art/words/pharmacy.png"
         },
         {
           "id": "pharmacist",
@@ -148,7 +1011,12 @@
           "ipa": "/ˈfɑːrməsɪst/",
           "stress": "PHAR-ma-cist",
           "exampleEn": "The pharmacist is very helpful.",
-          "exampleAr": "الصيدلي متعاون جدًا."
+          "exampleAr": "الصيدلي متعاون جدًا.",
+          "distractors": [
+            "pharmacy",
+            "farmer"
+          ],
+          "image": "art/words/pharmacist.png"
         },
         {
           "id": "prescription",
@@ -157,7 +1025,12 @@
           "ipa": "/prɪˈskrɪpʃən/",
           "stress": "pre-SCRIP-tion",
           "exampleEn": "I have a prescription from my doctor.",
-          "exampleAr": "معي وصفة من طبيبي."
+          "exampleAr": "معي وصفة من طبيبي.",
+          "distractors": [
+            "description",
+            "subscription"
+          ],
+          "image": "art/words/prescription.png"
         },
         {
           "id": "pill",
@@ -166,7 +1039,12 @@
           "ipa": "/pɪl/",
           "stress": "PILL",
           "exampleEn": "Take one pill in the morning.",
-          "exampleAr": "خذ حبة واحدة في الصباح."
+          "exampleAr": "خذ حبة واحدة في الصباح.",
+          "distractors": [
+            "peel",
+            "bill"
+          ],
+          "image": "art/words/pill.svg"
         },
         {
           "id": "dose",
@@ -175,7 +1053,12 @@
           "ipa": "/doʊs/",
           "stress": "DOSE",
           "exampleEn": "The dose is on the label.",
-          "exampleAr": "الجرعة مكتوبة على الملصق."
+          "exampleAr": "الجرعة مكتوبة على الملصق.",
+          "distractors": [
+            "does",
+            "those"
+          ],
+          "image": "art/words/dose.svg"
         },
         {
           "id": "label",
@@ -184,7 +1067,12 @@
           "ipa": "/ˈleɪbəl/",
           "stress": "LA-bel",
           "exampleEn": "Please read the label.",
-          "exampleAr": "من فضلك اقرأ الملصق."
+          "exampleAr": "من فضلك اقرأ الملصق.",
+          "distractors": [
+            "table",
+            "level"
+          ],
+          "image": "art/words/label.svg"
         },
         {
           "id": "allergy",
@@ -193,7 +1081,12 @@
           "ipa": "/ˈælərdʒi/",
           "stress": "AL-ler-gy",
           "exampleEn": "Do you have any allergies?",
-          "exampleAr": "هل عندك أي حساسية؟"
+          "exampleAr": "هل عندك أي حساسية؟",
+          "distractors": [
+            "energy",
+            "gallery"
+          ],
+          "image": "art/words/allergy.svg"
         },
         {
           "id": "receipt",
@@ -203,7 +1096,12 @@
           "stress": "re-CEIPT",
           "exampleEn": "Can I have a receipt, please?",
           "exampleAr": "هل يمكنني الحصول على إيصال من فضلك؟",
-          "noteAr": "حرف p في receipt لا يُنطق."
+          "noteAr": "حرف p في receipt لا يُنطق.",
+          "distractors": [
+            "recipe",
+            "receive"
+          ],
+          "image": "art/words/receipt.svg"
         },
         {
           "id": "cheaper",
@@ -212,239 +1110,63 @@
           "ipa": "/ˈtʃiːpər/",
           "stress": "CHEAP-er",
           "exampleEn": "This box is cheaper.",
-          "exampleAr": "هذه العلبة أرخص."
-        }
-      ]
-    },
-    {
-      "id": "vocab-practice",
-      "type": "vocab-practice",
-      "titleAr": "ممارسة الكلمات",
-      "exercises": [
-        {
-          "kind": "choice",
-          "questionAr": "ما معنى prescription؟",
-          "options": [
-            "وصفة طبية",
-            "صيدلية",
-            "إيصال"
+          "exampleAr": "هذه العلبة أرخص.",
+          "distractors": [
+            "cheap",
+            "deeper"
           ],
-          "answer": 0
+          "image": "art/words/cheaper.svg"
         },
         {
-          "kind": "choice",
-          "questionAr": "اختر الكلمة الإنجليزية لـ «جرعة»",
-          "options": [
-            "label",
-            "dose",
-            "pill"
+          "id": "medicine",
+          "en": "medicine",
+          "ar": "دواء",
+          "ipa": "/ˈmɛdəsən/",
+          "stress": "MED-i-cine",
+          "exampleEn": "Keep your medicine in a cool, dry place.",
+          "exampleAr": "احفظ دواءك في مكان بارد وجاف.",
+          "noteAr": "النبرة على أول مقطع: MED-i-cine. في البريطاني أحيانًا تُنطق مقطعين: MED-sin.",
+          "distractors": [
+            "medical",
+            "machine"
           ],
-          "answer": 1,
-          "optionsLtr": true
+          "image": "art/words/medicine.svg"
         },
         {
-          "kind": "fill",
-          "questionAr": "أكمل الجملة: «الجرعة مكتوبة على الملصق»",
-          "sentence": "The dose is on the ___.",
-          "options": [
-            "receipt",
-            "label",
-            "pharmacy"
+          "id": "side-effect",
+          "en": "side effect",
+          "ar": "أثر جانبي",
+          "ipa": "/ˈsaɪd ɪˌfɛkt/",
+          "stress": "SIDE ef-fect",
+          "exampleEn": "Does this medicine have any side effects?",
+          "exampleAr": "هل لهذا الدواء أي آثار جانبية؟",
+          "distractors": [
+            "side job",
+            "special effect"
           ],
-          "answer": 1
+          "image": "art/words/side-effect.svg"
         },
         {
-          "kind": "fill",
-          "questionAr": "أكمل الجملة: «عندي حساسية من البنسلين»",
-          "sentence": "I'm ___ to penicillin.",
-          "options": [
-            "allergic",
-            "allergy",
-            "cheaper"
+          "id": "expiry-date",
+          "en": "expiry date",
+          "ar": "تاريخ انتهاء الصلاحية",
+          "ipa": "/ɪkˈspaɪəri deɪt/",
+          "stress": "ex-PI-ry date",
+          "exampleEn": "Check the expiry date on the box.",
+          "exampleAr": "تأكد من تاريخ انتهاء الصلاحية على العلبة.",
+          "noteAr": "في أمريكا يقولون غالبًا expiration date، والمعنى نفسه.",
+          "distractors": [
+            "delivery date",
+            "birth date"
           ],
-          "answer": 0
-        },
-        {
-          "kind": "choice",
-          "questionAr": "من الشخص الذي يعطيك الدواء في الصيدلية؟",
-          "options": [
-            "pharmacy",
-            "pharmacist",
-            "prescription"
-          ],
-          "answer": 1,
-          "optionsLtr": true
-        },
-        {
-          "kind": "type",
-          "questionAr": "اكتب بالإنجليزية: «حبة دواء»",
-          "answer": "pill"
-        },
-        {
-          "kind": "fill",
-          "questionAr": "أكمل الجملة: «هل يوجد نوع أرخص؟»",
-          "sentence": "Is there a ___ version?",
-          "options": [
-            "cheaper",
-            "dose",
-            "label"
-          ],
-          "answer": 0
-        },
-        {
-          "kind": "type",
-          "questionAr": "اكتب بالإنجليزية: «إيصال» (انتبه: فيها حرف لا يُنطق)",
-          "answer": "receipt"
-        }
-      ]
-    },
-    {
-      "id": "idiom",
-      "type": "idiom",
-      "titleAr": "تعبير اصطلاحي",
-      "en": "Better safe than sorry.",
-      "ar": "الوقاية خير من الندم.",
-      "literalAr": "حرفيًا: «آمن أفضل من آسف».",
-      "meaningAr": "نقولها عندما نختار الحذر حتى لو بدا الأمر غير ضروري. مثلًا: تخبر الصيدلي عن الحساسية دائمًا، حتى لو كنت متأكدًا أن الدواء مناسب.",
-      "examples": [
-        {
-          "en": "I always tell the pharmacist about my allergy. Better safe than sorry.",
-          "ar": "دائمًا أخبر الصيدلي عن حساسيتي. الوقاية خير من الندم."
-        },
-        {
-          "en": "Let's ask the pharmacist again. Better safe than sorry.",
-          "ar": "لنسأل الصيدلي مرة أخرى. الحذر أفضل."
-        }
-      ]
-    },
-    {
-      "id": "listening",
-      "type": "listening",
-      "titleAr": "استماع",
-      "introAr": "حوار بين زبون وصيدلية. اقرأه (وفي المرحلة القادمة ستسمعه)، ثم أجب عن الأسئلة.",
-      "dialogue": [
-        {
-          "speaker": "pharmacist",
-          "en": "Hi there. How can I help you?",
-          "ar": "أهلًا. كيف أستطيع مساعدتك؟"
-        },
-        {
-          "speaker": "customer",
-          "en": "Hi, I have a prescription from my doctor.",
-          "ar": "مرحبًا، معي وصفة من طبيبي."
-        },
-        {
-          "speaker": "pharmacist",
-          "en": "Sure, let me take a look. Do you have any allergies?",
-          "ar": "بالتأكيد، دعني أرى. هل عندك أي حساسية؟"
-        },
-        {
-          "speaker": "customer",
-          "en": "Yes, I'm allergic to penicillin.",
-          "ar": "نعم، عندي حساسية من البنسلين."
-        },
-        {
-          "speaker": "pharmacist",
-          "en": "Thanks for telling me. I'll add that to your file.",
-          "ar": "شكرًا لأنك أخبرتني. سأضيف ذلك إلى ملفك."
-        },
-        {
-          "speaker": "customer",
-          "en": "Better safe than sorry. How many pills do I take each day?",
-          "ar": "الوقاية خير من الندم. كم حبة آخذ كل يوم؟"
-        },
-        {
-          "speaker": "pharmacist",
-          "en": "The label says two pills a day: one in the morning and one in the evening.",
-          "ar": "الملصق يقول حبتين في اليوم: واحدة في الصباح وواحدة في المساء."
-        },
-        {
-          "speaker": "customer",
-          "en": "Does it say to take it with food?",
-          "ar": "هل مكتوب أن آخذه مع الأكل؟"
-        },
-        {
-          "speaker": "pharmacist",
-          "en": "Yes, with food. It's all on the label.",
-          "ar": "نعم، مع الأكل. كل شيء مكتوب على الملصق."
-        },
-        {
-          "speaker": "customer",
-          "en": "Great. Can I pay by card?",
-          "ar": "ممتاز. هل أستطيع الدفع بالبطاقة؟"
-        },
-        {
-          "speaker": "pharmacist",
-          "en": "Of course. That's twelve dollars.",
-          "ar": "بالتأكيد. المبلغ اثنا عشر دولارًا."
-        },
-        {
-          "speaker": "customer",
-          "en": "Thank you, have a nice evening.",
-          "ar": "شكرًا لك، أتمنى لك مساءً لطيفًا."
-        },
-        {
-          "speaker": "pharmacist",
-          "en": "You too!",
-          "ar": "وأنت أيضًا!"
-        }
-      ],
-      "speakers": {
-        "pharmacist": "الصيدلانية",
-        "customer": "الزبون"
-      },
-      "questions": [
-        {
-          "questionAr": "ماذا أخبر الزبون الصيدلانية عن نفسه؟",
-          "options": [
-            "عنده حساسية من البنسلين",
-            "عنده موعد مع الطبيب",
-            "يريد دواءً بدون وصفة"
-          ],
-          "answer": 0
-        },
-        {
-          "questionAr": "كم حبة يأخذ في اليوم حسب الملصق؟",
-          "options": [
-            "حبة واحدة",
-            "حبتين",
-            "ثلاث حبات"
-          ],
-          "answer": 1
-        },
-        {
-          "questionAr": "متى يأخذ الحبات؟",
-          "options": [
-            "قبل النوم فقط",
-            "في الصباح والمساء",
-            "كل ساعتين"
-          ],
-          "answer": 1
-        },
-        {
-          "questionAr": "كيف سيدفع الزبون؟",
-          "options": [
-            "نقدًا",
-            "بالبطاقة",
-            "سيدفع غدًا"
-          ],
-          "answer": 1
-        },
-        {
-          "questionAr": "كم السعر؟",
-          "options": [
-            "12 دولارًا",
-            "20 دولارًا",
-            "2 دولار"
-          ],
-          "answer": 0
+          "image": "art/words/expiry-date.svg"
         }
       ]
     },
     {
       "id": "grammar",
       "type": "grammar",
-      "titleAr": "قاعدة اليوم",
+      "titleAr": "جرامر: السؤال بـ do وdoes",
       "ruleTitleAr": "السؤال بـ do وdoes",
       "explanationAr": "في المضارع البسيط، لنسأل سؤالًا نضع do أو does قبل الفاعل، ويبقى الفعل بدون تغيير.",
       "points": [
@@ -505,24 +1227,357 @@
       ]
     },
     {
+      "id": "listen-close",
+      "type": "listen-choose",
+      "titleAr": "اسمع بدقة: جمل متقاربة",
+      "mode": "sentence",
+      "introAr": "تحدٍّ أصعب: الخيارات الثلاثة تبدأ بنفس الكلمات وتختلف في النهاية. اسمع الجملة كاملة حتى آخر كلمة.",
+      "items": [
+        {
+          "audioEn": "Take one pill twice a day.",
+          "ar": "خذ حبة واحدة مرتين في اليوم.",
+          "options": [
+            "Take one pill twice a day.",
+            "Take one pill.",
+            "Take one pill twice a day with food."
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "Read the label before you take it.",
+          "ar": "اقرأ الملصق قبل أن تأخذه.",
+          "options": [
+            "Read the label before you take it.",
+            "Read the label first.",
+            "Read the label."
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "Do you have a smaller box?",
+          "ar": "هل عندك علبة أصغر؟",
+          "options": [
+            "Do you have a smaller box of this?",
+            "Do you have a smaller box?",
+            "Do you have a box?"
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "I'm allergic to penicillin and aspirin.",
+          "ar": "عندي حساسية من البنسلين والأسبرين.",
+          "options": [
+            "I'm allergic.",
+            "I'm allergic to penicillin.",
+            "I'm allergic to penicillin and aspirin."
+          ],
+          "answer": 2
+        },
+        {
+          "audioEn": "Can I pay by card, please?",
+          "ar": "هل أستطيع الدفع بالبطاقة من فضلك؟",
+          "options": [
+            "Can I pay?",
+            "Can I pay by card?",
+            "Can I pay by card, please?"
+          ],
+          "answer": 2
+        },
+        {
+          "audioEn": "Is there a cheaper version of this medicine?",
+          "ar": "هل يوجد نوع أرخص من هذا الدواء؟",
+          "options": [
+            "Is there a cheaper one?",
+            "Is there a cheaper version?",
+            "Is there a cheaper version of this medicine?"
+          ],
+          "answer": 2
+        },
+        {
+          "audioEn": "Check the expiry date on the box.",
+          "ar": "تأكد من تاريخ الانتهاء على العلبة.",
+          "options": [
+            "Check the date.",
+            "Check the expiry date on the box.",
+            "Check the expiry date."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "Just to be on the safe side.",
+          "ar": "احتياطًا.",
+          "options": [
+            "Just to be safe.",
+            "Just to be on the safe side.",
+            "Just to be on the right side."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "Get well soon, and take it easy.",
+          "ar": "أتمنى لك الشفاء العاجل، وارتح.",
+          "options": [
+            "Get well soon, and take it easy.",
+            "Get well soon.",
+            "Get well soon, and take care."
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
       "id": "ai-chat",
       "type": "ai-chat",
-      "titleAr": "محادثة مع الصيدلي",
+      "titleAr": "تكلّم مع الصيدلي (ذكاء اصطناعي)",
       "roleAr": "الصيدلي",
-      "scenarioAr": "ستتكلم مع صيدلي (ذكاء اصطناعي) في نفس الموقف: تعطيه الوصفة، وتسأل عن الجرعة، وتذكر الحساسية، ثم تدفع. لن يقاطعك بالتصحيح، وفي النهاية يعطيك ملخصًا بما قلته صحيحًا وأهم 3 أخطاء.",
+      "scenarioAr": "ستتكلم مع صيدلي (ذكاء اصطناعي) في نفس الموقف: تعطيه الوصفة، وتسأل عن الجرعة، وتذكر الحساسية، ثم تدفع. تكلّم بصوتك أو اكتب. لن يقاطعك بالتصحيح، وفي النهاية يعطيك ملخصًا بما قلته صحيحًا وأهم 3 أخطاء.",
       "targetPhraseIds": [
         "have-prescription",
         "how-many-pills",
         "allergic",
         "pay-by-card"
       ],
-      "openingEn": "Hi there. How can I help you today?"
+      "openingEn": "Hi there. How can I help you today?",
+      "roleEn": "a friendly pharmacist at a small pharmacy",
+      "openingAr": "أهلًا. كيف أقدر أساعدك اليوم؟",
+      "stepsEn": [
+        "greet the customer and take the prescription",
+        "tell them how to take the medicine (simple, invented dose)",
+        "ask if they have any allergies",
+        "tell the price and ask how they want to pay",
+        "say goodbye"
+      ]
+    },
+    {
+      "id": "idioms-review",
+      "type": "listen-choose",
+      "titleAr": "مراجعة التعابير: اسمع وافهم المعنى",
+      "mode": "meaning",
+      "introAr": "اسمع جملة فيها تعبير من التعابير الخمسة، واختر معناها الصحيح بالعربي. الجمل جديدة، والتعابير نفسها.",
+      "items": [
+        {
+          "audioEn": "My brother is a bit under the weather, so he's staying home today.",
+          "options": [
+            "أخي تعبان شوي، لذلك سيبقى في البيت اليوم",
+            "أخي مسافر، والجو اليوم سيئ",
+            "أخي يحب الجو الممطر، لذلك سيبقى في البيت"
+          ],
+          "answer": 0,
+          "noteAr": "under the weather = تعبان شوي. لا علاقة له بالطقس."
+        },
+        {
+          "audioEn": "I took an umbrella, just to be on the safe side.",
+          "options": [
+            "أخذت مظلة احتياطًا",
+            "أخذت مظلة لأنها آمنة",
+            "أخذت مظلة من الجانب الآخر"
+          ],
+          "answer": 0,
+          "noteAr": "to be on the safe side = احتياطًا، حتى لو لم يحدث شيء."
+        },
+        {
+          "audioEn": "Call the pharmacy and ask them. Better safe than sorry.",
+          "options": [
+            "اتصل بالصيدلية واسألهم، الحذر أفضل من الندم",
+            "اتصل بالصيدلية واعتذر لهم",
+            "اتصل بالصيدلية، فهي مكان آمن"
+          ],
+          "answer": 0,
+          "noteAr": "better safe than sorry = الأفضل أن تحتاط الآن بدل أن تندم بعدين."
+        },
+        {
+          "audioEn": "You worked all week. Take it easy this weekend.",
+          "options": [
+            "اشتغلت طوال الأسبوع، خذ أغراضك وارجع",
+            "اشتغلت طوال الأسبوع، والعمل سهل",
+            "اشتغلت طوال الأسبوع، ارتح في عطلة نهاية الأسبوع"
+          ],
+          "answer": 2,
+          "noteAr": "take it easy = ارتح ولا تُجهد نفسك."
+        },
+        {
+          "audioEn": "After two days in bed, she's back on her feet.",
+          "options": [
+            "بعد يومين في السرير، رجعت لصحتها ونشاطها",
+            "بعد يومين في السرير، وقفت فوق السرير",
+            "بعد يومين في السرير، قدماها تؤلمانها"
+          ],
+          "answer": 0,
+          "noteAr": "back on your feet = رجعت لصحتك ونشاطك بعد المرض."
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "type": "scene",
+      "titleAr": "مشهد: الكيس الغلط",
+      "titleEn": "The Wrong Bag",
+      "introAr": "مشهد قصير مضحك في صيدلية، تسمعه 3 مرات: مرة بالنص الإنجليزي، ومرة مع الترجمة وشرح الكلمات، ومرة بدون أي نص.",
+      "characters": {
+        "green": {
+          "nameAr": "الصيدلانية",
+          "nameEn": "Ms. Green",
+          "voice": 1,
+          "emoji": "👩‍⚕️",
+          "gender": "female"
+        },
+        "ali": {
+          "nameAr": "علي حسن",
+          "nameEn": "Ali Hassan",
+          "voice": 0,
+          "emoji": "🧔",
+          "gender": "male"
+        },
+        "hassani": {
+          "nameAr": "علي حساني",
+          "nameEn": "Ali Hassani",
+          "voice": 2,
+          "emoji": "👴",
+          "gender": "male"
+        }
+      },
+      "lines": [
+        {
+          "speaker": "green",
+          "en": "Next, please! Hi, how can I help you?",
+          "ar": "التالي من فضلك! أهلًا، كيف أقدر أساعدك؟"
+        },
+        {
+          "speaker": "ali",
+          "en": "Hi. I'm here to pick up my medicine. My name is Ali Hassan.",
+          "ar": "أهلًا. جيت أستلم دوائي. اسمي علي حسن."
+        },
+        {
+          "speaker": "green",
+          "en": "Let me check. Here you go. One bag for Ali Hassan.",
+          "ar": "خلّني أتأكد. تفضل. كيس واحد لعلي حسن."
+        },
+        {
+          "speaker": "ali",
+          "en": "Thank you. Can I pay by card?",
+          "ar": "شكرًا. أقدر أدفع بالبطاقة؟"
+        },
+        {
+          "speaker": "green",
+          "en": "Of course. Here's your receipt.",
+          "ar": "أكيد. هذا إيصالك."
+        },
+        {
+          "speaker": "ali",
+          "en": "Wait a second. I always read the label, just to be on the safe side.",
+          "ar": "لحظة. أنا دائمًا أقرأ الملصق، احتياطًا."
+        },
+        {
+          "speaker": "ali",
+          "en": "This label says Ali Hassani, not Ali Hassan. And it says, give one tablet to Max. Who is Max?",
+          "ar": "هذا الملصق مكتوب عليه علي حساني، مو علي حسن. ومكتوب: أعطِ ماكس حبة واحدة. مين ماكس؟"
+        },
+        {
+          "speaker": "green",
+          "en": "Oh no! Let me see that.",
+          "ar": "لا! خلّني أشوفه."
+        },
+        {
+          "speaker": "hassani",
+          "en": "Excuse me. I think that's my bag. I'm Ali Hassani, and Max is my dog.",
+          "ar": "لو سمحت. أظن هذا كيسي. أنا علي حساني، وماكس كلبي."
+        },
+        {
+          "speaker": "ali",
+          "en": "Your name is Ali Hassani? And mine is Ali Hassan! That's almost the same.",
+          "ar": "اسمك علي حساني؟ واسمي علي حسن! تقريبًا نفس الاسم."
+        },
+        {
+          "speaker": "green",
+          "en": "I'm so sorry! Here's your bag, Mr. Hassan. And this one is for Mr. Hassani.",
+          "ar": "آسفة جدًا! هذا كيسك يا أستاذ حسن. وهذا لأستاذ حساني."
+        },
+        {
+          "speaker": "ali",
+          "en": "No problem. Better safe than sorry, right?",
+          "ar": "ولا يهمك. الحذر أفضل من الندم، صح؟"
+        },
+        {
+          "speaker": "hassani",
+          "en": "Right! And Max says thank you too.",
+          "ar": "صح! وماكس يقول لك شكرًا كمان."
+        },
+        {
+          "speaker": "green",
+          "en": "From now on, I'm going to read every label two times!",
+          "ar": "من الآن، راح أقرأ كل ملصق مرتين!"
+        }
+      ],
+      "keyWords": [
+        {
+          "en": "pick up",
+          "ar": "يستلم"
+        },
+        {
+          "en": "Here you go.",
+          "ar": "تفضل"
+        },
+        {
+          "en": "Wait a second.",
+          "ar": "لحظة"
+        },
+        {
+          "en": "a tablet",
+          "ar": "حبة دواء (مثل pill)"
+        },
+        {
+          "en": "almost the same",
+          "ar": "تقريبًا نفس الشيء"
+        },
+        {
+          "en": "from now on",
+          "ar": "من الآن فصاعدًا"
+        }
+      ],
+      "questions": [
+        {
+          "questionAr": "لماذا قرأ علي الملصق؟",
+          "options": [
+            "لأن الصيدلانية طلبت منه",
+            "احتياطًا، هو دائمًا يقرأ الملصق",
+            "لأنه نسي اسمه"
+          ],
+          "answer": 1
+        },
+        {
+          "questionAr": "ماذا وجد علي على الملصق؟",
+          "options": [
+            "تاريخ انتهاء قديمًا",
+            "سعرًا غاليًا جدًا",
+            "اسمًا قريبًا من اسمه واسم كلب"
+          ],
+          "answer": 2
+        },
+        {
+          "questionAr": "لمن كان الكيس الأول؟",
+          "options": [
+            "لعلي حساني وكلبه ماكس",
+            "لعلي حسن",
+            "للصيدلانية"
+          ],
+          "answer": 0
+        },
+        {
+          "questionAr": "ماذا ستفعل الصيدلانية من الآن؟",
+          "options": [
+            "تقرأ كل ملصق مرتين",
+            "تكتب الأسماء بالعربي",
+            "تغلق الصيدلية مبكرًا"
+          ],
+          "answer": 0
+        }
+      ]
     },
     {
       "id": "review",
       "type": "review",
-      "titleAr": "مراجعة",
-      "introAr": "راجع عبارات وكلمات هذا الكلاس. في المرحلة 4 سيختار نظام التكرار المتباعد ما تحتاج مراجعته حسب أدائك."
+      "titleAr": "مراجعة ذكية",
+      "introAr": "راجع عبارات وتعابير وكلمات هذا الكلاس. قريبًا سيختار نظام التكرار المتباعد ما تحتاج مراجعته حسب أدائك."
     }
   ]
 }

@@ -19,6 +19,13 @@ export interface Progress {
   lessons: Record<string, LessonRecord> // المفتاح: "classId/lessonId"
   lastLesson: { classId: string; lessonId: string } | null
   activity: Record<string, DayActivity> // المفتاح: يوم مثل "2026-10-25"
+  difficulty?: Record<string, Difficulty> // رأي المتعلم في صعوبة كل درس
+}
+
+export type Difficulty = 'easy' | 'ok' | 'hard'
+
+export function setDifficulty(p: Progress, classId: string, lessonId: string, d: Difficulty): Progress {
+  return { ...p, difficulty: { ...p.difficulty, [lessonKey(classId, lessonId)]: d } }
 }
 
 export function emptyProgress(): Progress {

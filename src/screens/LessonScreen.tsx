@@ -4,38 +4,45 @@ import type { ClassContent, Lesson } from '../content/types'
 import { Icon } from '../components/Icon'
 import { completeLesson, type CompletionResult } from '../logic/rewards'
 import { href } from '../router'
-import { setLastLesson } from '../storage/progress'
+import { lessonKey, setDifficulty, setLastLesson } from '../storage/progress'
 import { useProgress } from '../storage/ProgressContext'
+import { playComplete } from '../audio/sfx'
 import { AiChatView } from '../lessons/AiChatView'
-import { ExerciseRunner } from '../lessons/ExerciseRunner'
+import { FilmView } from '../lessons/FilmView'
 import { GrammarView } from '../lessons/GrammarView'
-import { IdiomView } from '../lessons/IdiomView'
 import { IntroView } from '../lessons/IntroView'
-import { ListeningView } from '../lessons/ListeningView'
+import { ListenChooseView } from '../lessons/ListenChooseView'
 import { PhrasesView } from '../lessons/PhrasesView'
+import { PodcastView } from '../lessons/PodcastView'
 import { ReviewView } from '../lessons/ReviewView'
+import { SceneView } from '../lessons/SceneView'
 import { VocabView } from '../lessons/VocabView'
-import { Stars, type Finish } from '../lessons/common'
+import { type Finish } from '../lessons/common'
+import { DoneCard } from './DoneCard'
+import { SoundToggle } from '../components/SoundToggle'
+import { Thomson } from '../ai/Thomson'
 
 function LessonBody({ cls, lesson, onFinish }: { cls: ClassContent; lesson: Lesson; onFinish: Finish }) {
   switch (lesson.type) {
     case 'intro':
       return <IntroView lesson={lesson} onFinish={onFinish} />
+    case 'listen-choose':
+      return <ListenChooseView lesson={lesson} onFinish={onFinish} />
     case 'phrases':
       return <PhrasesView lesson={lesson} onFinish={onFinish} />
+    case 'podcast':
+      return <PodcastView lesson={lesson} onFinish={onFinish} />
     case 'vocab':
       return <VocabView lesson={lesson} onFinish={onFinish} />
-    case 'vocab-practice':
-      return <ExerciseRunner exercises={lesson.exercises} onFinish={onFinish} />
-    case 'idiom':
-      return <IdiomView lesson={lesson} onFinish={onFinish} />
-    case 'listening':
-      return <ListeningView lesson={lesson} onFinish={onFinish} />
+    case 'film':
+      return <FilmView lesson={lesson} onFinish={onFinish} />
+    case 'scene':
+      return <SceneView lesson={lesson} onFinish={onFinish} />
     case 'grammar':
       return <GrammarView lesson={lesson} onFinish={onFinish} />
     case 'ai-chat': {
       const phrases = cls.lessons.flatMap((l) => (l.type === 'phrases' ? l.phrases : []))
-      return <AiChatView lesson={lesson} phrases={phrases} />
+      return <AiChatView lesson={lesson} phrases={phrases} onFinish={onFinish} />
     }
     case 'review':
       return <ReviewView cls={cls} introAr={lesson.introAr} onFinish={onFinish} />
@@ -69,6 +76,7 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
     const r = completeLesson(progress, classId, lessonId, stars, next?.id ?? null)
     update(() => r.progress)
     setResult(r)
+    if (r.passed) playComplete()
     window.scrollTo(0, 0)
   }
 
@@ -84,38 +92,28 @@ export function LessonScreen({ classId, lessonId }: { classId: string; lessonId:
           <span className="eyebrow">الدرس {index + 1} من {cls.lessons.length}</span>
           <h1>{lesson.titleAr}</h1>
         </div>
+        <SoundToggle />
       </header>
 
       {result ? (
-        <section className="card done-card" role="status">
-          <Stars count={result.stars} size={40} />
-          <h2>{result.stars >= 2 ? 'أحسنت!' : 'انتهى الدرس'}</h2>
-          <p className="xp-gain">
-            {result.xpGained > 0 ? `+${result.xpGained} نقطة` : 'لا نقاط جديدة هذه المرة'}
-          </p>
-          {result.stars < 2 && <p className="muted">أعد الدرس لتحصل على نجوم أكثر.</p>}
-          <div className="done-actions">
-            {next && (
-              <a className="primary-button" href={href({ name: 'lesson', classId, lessonId: next.id })}>
-                الدرس التالي: {next.titleAr}
-              </a>
-            )}
-            <button
-              type="button"
-              className="button"
-              onClick={() => {
-                setResult(null)
-                setAttempt(attempt + 1)
-              }}
-            >
-              أعد الدرس
-            </button>
-            <a className="button" href={href({ name: 'class', classId })}>رجوع للكلاس</a>
-          </div>
-        </section>
+        <DoneCard
+          cls={cls}
+          lesson={lesson}
+          next={next}
+          result={result}
+          feeling={progress.difficulty?.[lessonKey(classId, lessonId)]}
+          onFeeling={(d) => update((p) => setDifficulty(p, classId, lessonId, d))}
+          onRetry={() => {
+            setResult(null)
+            setAttempt(attempt + 1)
+          }}
+        />
       ) : (
-        <LessonBody key={`${lessonId}-${attempt}`} cls={cls} lesson={lesson} onFinish={finish} />
+        <div className="lesson-body">
+          <LessonBody key={`${lessonId}-${attempt}`} cls={cls} lesson={lesson} onFinish={finish} />
+        </div>
       )}
+      <Thomson cls={cls} lesson={lesson} />
     </main>
   )
 }

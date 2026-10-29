@@ -9,6 +9,7 @@ export function LevelMap() {
       <header>
         <h1>خريطة المستويات</h1>
         <p className="muted">ثمانية مستويات، كل كلاس فيها موقف من الحياة.</p>
+        <a className="link-button" href={href({ name: 'welcome' })}>🧭 الجولة الترحيبية: عن الدورة</a>
       </header>
 
       <ol className="path">

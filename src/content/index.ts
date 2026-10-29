@@ -29,12 +29,13 @@ export function findLevelOfClass(classId: string): Level | undefined {
 
 export const LESSON_ICONS: Record<string, string> = {
   intro: '📖',
+  'listen-choose': '👂',
   phrases: '🗣️',
+  podcast: '🎙️',
   vocab: '🔤',
-  'vocab-practice': '✍️',
-  idiom: '💡',
-  listening: '🎧',
   grammar: '🧩',
   'ai-chat': '🤖',
+  scene: '🎧',
+  film: '🎬',
   review: '🔁',
 }
