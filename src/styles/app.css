@@ -2129,7 +2129,7 @@ mark.key {
   display: block;
   width: calc(100% + 40px);
   margin: 0 -20px 14px;
-  aspect-ratio: 640 / 300;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -2137,6 +2137,7 @@ mark.key {
   display: block;
   width: calc(100% + 36px);
   margin: -18px -18px 4px;
-  aspect-ratio: 640 / 300;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: var(--radius) var(--radius) 0 0;
 }

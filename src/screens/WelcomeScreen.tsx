@@ -47,7 +47,7 @@ export function WelcomeScreen() {
 
       <section key={i} className="card welcome-card">
         {i === 0 ? (
-          <img className="welcome-art" src={`${import.meta.env.BASE_URL}art/covers/welcome.svg`} alt="" />
+          <img className="welcome-art" src={`${import.meta.env.BASE_URL}art/covers/welcome.webp`} alt="" />
         ) : (
           <span className="welcome-emoji" aria-hidden>{step.emoji}</span>
         )}

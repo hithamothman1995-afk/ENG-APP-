@@ -3,7 +3,7 @@
   "levelId": "intro",
   "titleAr": "الصيدلية",
   "titleEn": "At the Pharmacy",
-  "cover": "art/covers/pharmacy.svg",
+  "cover": "art/covers/pharmacy.webp",
   "lessons": [
     {
       "id": "intro",
