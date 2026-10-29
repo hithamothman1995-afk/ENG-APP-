@@ -6,6 +6,25 @@ export const ttsSupported =
 
 let voices: SpeechSynthesisVoice[] = []
 
+export type Gender = 'female' | 'male'
+
+// أصوات "مضحكة" أو آلية في آيفون وماك (تطلع كأنها مكهربة)، ما نستخدمها أبدًا
+const NOVELTY =
+  /\b(albert|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|deranged|hysterical|princess|eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley|junior|ralph|fred|kathy|vicki|victoria)\b/i
+
+// نعرف جنس الصوت من اسمه، لأن المتصفح ما يعطينا هذي المعلومة
+const FEMALE =
+  /\b(samantha|ava|allison|susan|zoe|karen|moira|tessa|fiona|serena|kate|nicky|veena|martha|catherine|joelle|noelle|zira|aria|jenny|hazel|libby|sonia|emma|michelle|ana|female)\b|en-us-x-(iob|iog|sfg|tpc|tpf)|en-gb-x-(gba|gbc|gbg)/i
+const MALE =
+  /\b(alex|daniel|tom|aaron|arthur|oliver|gordon|rishi|evan|nathan|david|mark|guy|george|ryan|christopher|eric|brian|andrew|male)\b|en-us-x-(iol|iom|tpd)|en-gb-x-(gbb|gbd|rjs)/i
+
+export function genderOf(name: string): Gender | null {
+  // "Female" لازم يُفحص قبل "Male" لأن الكلمة الثانية داخل الأولى
+  if (FEMALE.test(name)) return 'female'
+  if (MALE.test(name)) return 'male'
+  return null
+}
+
 // الأصوات الأوضح أولًا: الأمريكي ثم البريطاني، والأصوات المحسّنة قبل العادية
 function rank(v: SpeechSynthesisVoice): number {
   let score = 0
@@ -20,8 +39,9 @@ function refreshVoices() {
   if (!ttsSupported) return
   voices = window.speechSynthesis
     .getVoices()
-    .filter((v) => v.lang.toLowerCase().startsWith('en'))
-    .sort((a, b) => rank(b) - rank(a))
+    .filter((v) => v.lang.toLowerCase().startsWith('en') && !NOVELTY.test(v.name))
+    // الترتيب بالاسم عند التساوي عشان يطلع نفس الصوت كل مرة
+    .sort((a, b) => rank(b) - rank(a) || a.name.localeCompare(b.name))
 }
 
 // يُستدعى مرة عند فتح التطبيق، لأن بعض المتصفحات تحمّل الأصوات متأخرًا
@@ -40,13 +60,19 @@ export interface Voice {
   pitch: number
 }
 
-// صوت مختلف لكل شخصية. إذا كان في الجهاز صوت واحد فقط نغيّر طبقة الصوت للتمييز.
-export function voiceFor(index: number): Voice {
-  const pitches = [1, 0.85, 1.2]
-  if (voices.length === 0) return { voice: null, pitch: pitches[index % pitches.length] }
-  const voice = voices[index % voices.length]
-  const pitch = voices.length > index ? 1 : pitches[index % pitches.length]
-  return { voice, pitch }
+// صوت ثابت لكل شخصية: نختار صوت بنت أو ولد حسب الشخصية، ورقمها يحدد أي صوت من نفس النوع.
+// إذا ما لقينا صوت من النوع المطلوب نغيّر طبقة الصوت شوي بس، عشان ما يطلع مكهرب.
+export function voiceFor(index: number, gender?: Gender): Voice {
+  if (voices.length === 0) refreshVoices() // بعض المتصفحات تحمّل الأصوات متأخرًا
+  if (voices.length === 0) return { voice: null, pitch: gender === 'male' ? 0.9 : gender === 'female' ? 1.1 : 1 }
+  if (gender) {
+    const same = voices.filter((v) => genderOf(v.name) === gender)
+    if (same.length) return { voice: same[Math.floor(index / 2) % same.length], pitch: 1 }
+    const unknown = voices.filter((v) => genderOf(v.name) === null)
+    const pool = unknown.length ? unknown : voices
+    return { voice: pool[index % pool.length], pitch: gender === 'male' ? 0.9 : 1.1 }
+  }
+  return { voice: voices[index % voices.length], pitch: voices.length > index ? 1 : 0.9 }
 }
 
 // مدة تقديرية للجملة، تُستخدم كاحتياط إذا لم يرسل المتصفح حدث النهاية

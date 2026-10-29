@@ -29,7 +29,7 @@ export function PodcastView({ lesson, onFinish }: { lesson: PodcastLesson; onFin
   const { play, stop, speaking, lineIndex, rate } = useSpeech()
 
   const segment = lesson.segments[seg]
-  const lines = segment.lines.map((l) => ({ text: l.en, voice: lesson.characters[l.speaker].voice }))
+  const lines = segment.lines.map((l) => ({ text: l.en, voice: lesson.characters[l.speaker].voice, gender: lesson.characters[l.speaker].gender }))
   const totalSeconds = lesson.segments.reduce((sum, s) => sum + s.lines.reduce((a, l) => a + estimateSeconds(l.en, rate) + 0.35, 0), 0)
   const segSeconds = segment.lines.reduce((a, l) => a + estimateSeconds(l.en, rate) + 0.35, 0)
   const current = speaking ? lineIndex : resumeAt

@@ -57,7 +57,7 @@ export function AiChatView({ lesson, phrases, onFinish }: { lesson: AiChatLesson
   const shown: ChatTurn[] = [{ role: 'assistant', content: opening }, ...chat]
 
   function say(raw: string) {
-    void play([{ text: parseRoleLine(raw).en, voice: ROLE_VOICE }])
+    void play([{ text: parseRoleLine(raw).en, voice: ROLE_VOICE, gender: 'male' }])
   }
 
   async function run(turns: ChatTurn[], onDone: (text: string) => void) {

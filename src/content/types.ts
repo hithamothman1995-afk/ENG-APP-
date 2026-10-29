@@ -115,6 +115,7 @@ export interface Character {
   nameAr: string
   nameEn: string
   voice: number // رقم الصوت، لكل شخصية صوت مختلف
+  gender: 'female' | 'male'
   emoji: string
 }
 

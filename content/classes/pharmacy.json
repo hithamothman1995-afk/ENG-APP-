@@ -243,13 +243,15 @@
           "nameAr": "مايا",
           "nameEn": "Maya",
           "voice": 0,
-          "emoji": "🎙️"
+          "emoji": "🎙️",
+          "gender": "female"
         },
         "sam": {
           "nameAr": "سام",
           "nameEn": "Sam",
           "voice": 1,
-          "emoji": "🧑‍⚕️"
+          "emoji": "🧑‍⚕️",
+          "gender": "male"
         }
       },
       "segments": [
@@ -1416,19 +1418,22 @@
           "nameAr": "الصيدلانية",
           "nameEn": "Ms. Green",
           "voice": 1,
-          "emoji": "👩‍⚕️"
+          "emoji": "👩‍⚕️",
+          "gender": "female"
         },
         "ali": {
           "nameAr": "علي حسن",
           "nameEn": "Ali Hassan",
           "voice": 0,
-          "emoji": "🧔"
+          "emoji": "🧔",
+          "gender": "male"
         },
         "hassani": {
           "nameAr": "علي حساني",
           "nameEn": "Ali Hassani",
           "voice": 2,
-          "emoji": "👴"
+          "emoji": "👴",
+          "gender": "male"
         }
       },
       "lines": [

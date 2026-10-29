@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { speak, stopSpeaking, voiceFor, type Voice } from './speech'
+import { speak, stopSpeaking, voiceFor, type Gender, type Voice } from './speech'
 import { useRate } from './prefs'
 
 export interface SpokenLine {
   text: string
   voice?: number // رقم الشخصية، لاختيار صوت مختلف
+  gender?: Gender // بنت أو ولد، عشان الصوت يناسب الشخصية
 }
 
 let sequence = 0
@@ -41,7 +42,7 @@ export function useSpeech() {
       for (let i = opts.from ?? 0; i < list.length; i++) {
         if (mine !== sequence) return false
         if (mounted.current) setLineIndex(i)
-        const voice: Voice = voiceFor(list[i].voice ?? 0)
+        const voice: Voice = voiceFor(list[i].voice ?? 0, list[i].gender)
         await speak(list[i].text, { rate: opts.rate ?? rate, voice })
         // وقفة قصيرة بين المتكلمين ليسهل الفهم
         if (list.length > 1) await new Promise((r) => setTimeout(r, 350))

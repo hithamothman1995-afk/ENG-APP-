@@ -25,7 +25,7 @@ export function SceneView({ lesson, onFinish }: { lesson: SceneLesson; onFinish:
   const { play, stop, speaking, lineIndex } = useSpeech()
 
   const first = Object.keys(lesson.characters)[0]
-  const lines = lesson.lines.map((l) => ({ text: l.en, voice: lesson.characters[l.speaker].voice }))
+  const lines = lesson.lines.map((l) => ({ text: l.en, voice: lesson.characters[l.speaker].voice, gender: lesson.characters[l.speaker].gender }))
   const r = ROUNDS[round]
   const nowSpeaker = speaking ? lesson.lines[lineIndex]?.speaker : undefined
 
@@ -97,7 +97,7 @@ export function SceneView({ lesson, onFinish }: { lesson: SceneLesson; onFinish:
               <span className="bubble-speaker">{lesson.characters[l.speaker].nameAr}</span>
               <div className="phrase-row">
                 <p><En>{l.en}</En></p>
-                {round === 1 && <ListenButton lines={[{ text: l.en, voice: lesson.characters[l.speaker].voice }]} />}
+                {round === 1 && <ListenButton lines={[{ text: l.en, voice: lesson.characters[l.speaker].voice, gender: lesson.characters[l.speaker].gender }]} />}
               </div>
               {round === 1 && <p className="muted">{l.ar}</p>}
             </li>
