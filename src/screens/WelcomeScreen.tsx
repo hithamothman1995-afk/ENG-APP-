@@ -28,6 +28,7 @@ interface Step {
   bodyAr: string
   pointsAr: string[]
   noteAr?: string
+  image?: string
 }
 
 // الجولة الترحيبية: معلومات الدورة، ايش بنتعلم، وايش بتستفيد في آخرها
@@ -46,10 +47,10 @@ export function WelcomeScreen() {
       </div>
 
       <section key={i} className="card welcome-card">
-        {i === 0 ? (
-          <img className="welcome-art" src={`${import.meta.env.BASE_URL}art/covers/welcome.webp`} alt="" />
+        {step.image ? (
+          <img className="hero-art" src={`${import.meta.env.BASE_URL}${step.image}`} alt="" />
         ) : (
-          <span className="welcome-emoji" aria-hidden>{step.emoji}</span>
+          <span className="hero-art placeholder" aria-hidden>{step.emoji}</span>
         )}
         <h1>{step.titleAr}</h1>
         {step.bodyAr && <p className="lead"><ArText text={step.bodyAr} /></p>}

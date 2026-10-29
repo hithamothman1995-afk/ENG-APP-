@@ -1979,10 +1979,6 @@ button.button {
   margin: 0;
 }
 
-.welcome-emoji {
-  font-size: 3rem;
-}
-
 .welcome-points {
   list-style: none;
   margin: 0;
@@ -2119,25 +2115,21 @@ mark.key {
   .word-picture, .word-picture img.boing { animation: none; }
 }
 
-/* ===== أغلفة ===== */
-.class-hero.with-cover {
-  padding-top: 0;
-  overflow: hidden;
-}
-
-.class-cover {
+/* ===== أغلفة: كل صور الأقسام بنفس المقاس داخل البطاقة ===== */
+.hero-art {
   display: block;
-  width: calc(100% + 40px);
-  margin: 0 -20px 14px;
+  width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  margin-bottom: 12px;
 }
 
-.welcome-art {
-  display: block;
-  width: calc(100% + 36px);
-  margin: -18px -18px 4px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: var(--radius) var(--radius) 0 0;
+.hero-art.placeholder {
+  display: grid;
+  place-items: center;
+  font-size: 3.5rem;
+  background: radial-gradient(circle at 50% 45%, var(--accent-soft), transparent 70%), var(--surface-2);
 }

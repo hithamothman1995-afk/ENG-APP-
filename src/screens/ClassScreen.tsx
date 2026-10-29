@@ -28,9 +28,9 @@ export function ClassScreen({ classId }: { classId: string }) {
         <Icon name="back" size={20} />
         المستويات
       </a>
-      <header className={`class-hero ${cls.cover ? 'with-cover' : ''}`}>
+      <header className="class-hero">
         {cls.cover ? (
-          <img className="class-cover" src={`${import.meta.env.BASE_URL}${cls.cover}`} alt="" />
+          <img className="hero-art" src={`${import.meta.env.BASE_URL}${cls.cover}`} alt="" />
         ) : (
           <span className="class-hero-icon" aria-hidden>{icon}</span>
         )}
