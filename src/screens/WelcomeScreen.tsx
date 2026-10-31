@@ -2,7 +2,8 @@ import { useState } from 'react'
 import course from '../../content/course.json'
 import { ArText } from '../components/ArText'
 import { Notice, PrimaryButton } from '../lessons/common'
-import { href } from '../router'
+import { loadPlacement } from '../storage/placement'
+import { startHref } from './PlacementScreen'
 
 const SEEN_KEY = 'eng-app:welcome-seen'
 
@@ -65,7 +66,7 @@ export function WelcomeScreen() {
       {last ? (
         <a
           className="primary-button"
-          href={href({ name: 'class', classId: 'pharmacy' })}
+          href={startHref(loadPlacement()?.levelIndex ?? 0)}
           onClick={markSeen}
         >
           يلّا نبدأ أول كلاس 🚀

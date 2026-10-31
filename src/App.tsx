@@ -4,6 +4,7 @@ import { ClassScreen } from './screens/ClassScreen'
 import { Dashboard } from './screens/Dashboard'
 import { LessonScreen } from './screens/LessonScreen'
 import { LevelMap } from './screens/LevelMap'
+import { PlacementScreen } from './screens/PlacementScreen'
 import { WelcomeScreen } from './screens/WelcomeScreen'
 import { useStudyTimer } from './storage/useStudyTimer'
 
@@ -16,9 +17,10 @@ export function App() {
       {route.name === 'home' && <Dashboard />}
       {route.name === 'map' && <LevelMap />}
       {route.name === 'welcome' && <WelcomeScreen />}
+      {route.name === 'placement' && <PlacementScreen />}
       {route.name === 'class' && <ClassScreen classId={route.classId} />}
       {route.name === 'lesson' && <LessonScreen classId={route.classId} lessonId={route.lessonId} />}
-      <BottomNav route={route} />
+      {route.name !== 'placement' && <BottomNav route={route} />}
     </div>
   )
 }

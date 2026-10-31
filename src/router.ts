@@ -5,6 +5,7 @@ export type Route =
   | { name: 'home' }
   | { name: 'map' }
   | { name: 'welcome' }
+  | { name: 'placement' }
   | { name: 'class'; classId: string }
   | { name: 'lesson'; classId: string; lessonId: string }
 
@@ -12,6 +13,7 @@ export function parseRoute(hash: string): Route {
   const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean)
   if (parts[0] === 'map') return { name: 'map' }
   if (parts[0] === 'welcome') return { name: 'welcome' }
+  if (parts[0] === 'placement') return { name: 'placement' }
   if (parts[0] === 'class' && parts[1]) {
     if (parts[2]) return { name: 'lesson', classId: parts[1], lessonId: parts[2] }
     return { name: 'class', classId: parts[1] }
@@ -27,6 +29,8 @@ export function href(route: Route): string {
       return '#/map'
     case 'welcome':
       return '#/welcome'
+    case 'placement':
+      return '#/placement'
     case 'class':
       return `#/class/${route.classId}`
     case 'lesson':

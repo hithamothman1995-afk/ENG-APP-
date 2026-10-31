@@ -2133,3 +2133,45 @@ mark.key {
   font-size: 3.5rem;
   background: radial-gradient(circle at 50% 45%, var(--accent-soft), transparent 70%), var(--surface-2);
 }
+
+/* ===== اختبار تحديد المستوى ===== */
+.placement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.placement-card .lead {
+  margin: 0;
+}
+
+.blank {
+  display: inline-block;
+  min-width: 3.5em;
+  margin-inline: 4px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.reading {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  text-align: left;
+  line-height: 1.6;
+}
+
+.reading p {
+  margin: 0;
+}
+
+.reading p + p {
+  margin-top: 6px;
+}
+
+.placement-result h1 {
+  margin-bottom: 0;
+}
