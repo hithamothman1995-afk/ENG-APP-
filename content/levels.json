@@ -3,7 +3,7 @@
     {
       "id": "trial",
       "titleAr": "الجولة التجريبية",
-      "descriptionAr": "تعرّف على طريقة التعلم بالمواقف في دقائق.",
+      "descriptionAr": "خمسة مواقف للمبتدئين، من التعارف لين التسوّق.",
       "classes": [
         { "id": "introductions", "titleAr": "التعارف", "titleEn": "Introductions", "icon": "👋" },
         { "id": "daily-routine", "titleAr": "الروتين اليومي", "titleEn": "Daily Routine", "icon": "☀️" },

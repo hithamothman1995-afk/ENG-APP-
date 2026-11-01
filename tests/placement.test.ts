@@ -53,7 +53,7 @@ describe('startClassFor', () => {
   it('sends every level to the nearest ready class', async () => {
     const { startClassFor } = await import('../src/content')
     expect(startClassFor(1)).toEqual({ classId: 'pharmacy', levelIndex: 1 })
-    expect(startClassFor(0)?.classId).toBe('pharmacy')
+    expect(startClassFor(0)).toEqual({ classId: 'introductions', levelIndex: 0 })
     expect(startClassFor(6)?.classId).toBe('pharmacy')
   })
 })

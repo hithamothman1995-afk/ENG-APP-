@@ -1,0 +1,596 @@
+{
+  "id": "introductions",
+  "levelId": "trial",
+  "titleAr": "التعارف",
+  "titleEn": "Introductions",
+  "lessons": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "titleAr": "مقدمة الكلاس",
+      "situationAr": "قابلت شخص جديد لأول مرة: جار، أو زميل في الدراسة، أو أحد في الشغل. تبغى تسلّم عليه، وتعرّف بنفسك، وتعرف اسمه ومن وين هو ووش يشتغل، وبعدين تودّعه بطريقة لطيفة.",
+      "goalsAr": [
+        "تسلّم وتقول اسمك",
+        "تسأل الشخص عن اسمه ومن وين هو",
+        "تقول من وين أنت ووين ساكن",
+        "تتكلم عن شغلك أو دراستك وتسأل عن شغله",
+        "تودّع بطريقة طبيعية، وتفهم 5 عبارات يقولها أهل اللغة كل يوم"
+      ],
+      "soundsAr": "في هذا الكلاس نركّز على أصوات تلخبط المتحدث بالعربي: الفرق بين i القصيرة في live والطويلة في meet، وصوت v في live (وليس f)، وصوت p في please وpleasure (وليس b)، وصوت ng في morning.",
+      "noteAr": "كلاس للمبتدئين: الجمل قصيرة، وكل جملة معها ترجمة وصوت. خذ وقتك وكرّر بصوتك."
+    },
+    {
+      "id": "listen-first",
+      "type": "listen-choose",
+      "titleAr": "اسمع واختر",
+      "mode": "sentence",
+      "introAr": "تسمع جمل من أول لقاء بين شخصين. اختر الجملة اللي سمعتها بالضبط. انتبه، الخيارات متقاربة.",
+      "items": [
+        {
+          "audioEn": "Nice to meet you.",
+          "ar": "تشرفت بمعرفتك.",
+          "options": [
+            "Nice to see you.",
+            "Nice to meet you.",
+            "Nice to meet them."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "Where are you from?",
+          "ar": "من وين أنت؟",
+          "options": [
+            "Where are you from?",
+            "Where are you now?",
+            "Who are you with?"
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "I live in Riyadh.",
+          "ar": "أنا ساكن في الرياض.",
+          "options": [
+            "I leave Riyadh.",
+            "I lived in Riyadh.",
+            "I live in Riyadh."
+          ],
+          "answer": 2,
+          "noteAr": "live بـi قصيرة تعني «أسكن»، وleave بـi طويلة تعني «أغادر». فرق صغير في الصوت، وكبير في المعنى."
+        },
+        {
+          "audioEn": "My name is Sara.",
+          "ar": "اسمي سارة.",
+          "options": [
+            "Her name is Sara.",
+            "My name is Sara.",
+            "My name was Sara."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "I'm a teacher.",
+          "ar": "أنا معلم.",
+          "options": [
+            "I'm a teacher.",
+            "I'm a teenager.",
+            "I was a teacher."
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "Can you spell that, please?",
+          "ar": "ممكن تتهجّاها لو سمحت؟",
+          "options": [
+            "Can you tell that, please?",
+            "Can you sell that, please?",
+            "Can you spell that, please?"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "phrases",
+      "type": "phrases",
+      "titleAr": "العبارات وأشهر 5 تعابير",
+      "phrases": [
+        {
+          "id": "good-morning",
+          "promptAr": "دخلت مكان فيه ناس الصبح. سلّم على الكل.",
+          "en": "Good morning, everyone.",
+          "ar": "صباح الخير يا جماعة.",
+          "focus": {
+            "sound": "ŋ",
+            "word": "morning",
+            "wrong": "morning-g",
+            "tipAr": "في آخر morning صوت ng يطلع من الأنف، وبدون ما تقول g في الآخر. لا تقل «مورنينق»، خلّ الصوت يوقف في أنفك."
+          }
+        },
+        {
+          "id": "my-name",
+          "promptAr": "قابلت شخص لأول مرة. سلّم عليه وقل اسمك.",
+          "en": "Hi, my name is Omar.",
+          "ar": "أهلًا، اسمي عمر."
+        },
+        {
+          "id": "nice-to-meet",
+          "promptAr": "الشخص قال لك اسمه. قل له إنك تشرفت بمعرفته.",
+          "en": "Nice to meet you.",
+          "ar": "تشرفت بمعرفتك.",
+          "focus": {
+            "sound": "iː",
+            "contrast": "ɪ",
+            "word": "meet",
+            "wrong": "mitt",
+            "tipAr": "الـee في meet طويلة، مدّها مثل «ميييت». إذا قصّرتها تطلع mitt، وهي كلمة ثانية تمامًا."
+          }
+        },
+        {
+          "id": "whats-your-name",
+          "promptAr": "اسأل الشخص عن اسمه.",
+          "en": "What's your name?",
+          "ar": "ايش اسمك؟"
+        },
+        {
+          "id": "where-from",
+          "promptAr": "اسأله من وين هو.",
+          "en": "Where are you from?",
+          "ar": "من وين أنت؟"
+        },
+        {
+          "id": "im-from",
+          "promptAr": "قل له إنك من السعودية.",
+          "en": "I'm from Saudi Arabia.",
+          "ar": "أنا من السعودية."
+        },
+        {
+          "id": "i-live",
+          "promptAr": "قل له إنك ساكن في جدة.",
+          "en": "I live in Jeddah.",
+          "ar": "أنا ساكن في جدة.",
+          "focus": {
+            "sound": "v",
+            "contrast": "f",
+            "word": "live",
+            "wrong": "lif",
+            "tipAr": "صوت v مثل f بالضبط، بس مع صوت من الحنجرة: حط أسنانك على شفتك التحتية وخلّ حنجرتك تهتز. إذا ما اهتزت تطلع lif. وخلّ الـi قصيرة، لأن الطويلة تطلع leave يعني «أغادر»."
+          }
+        },
+        {
+          "id": "what-do-you-do",
+          "promptAr": "قل إنك معلم، واسأله وش يشتغل.",
+          "en": "I'm a teacher. What do you do?",
+          "ar": "أنا معلم. وأنت وش تشتغل؟"
+        },
+        {
+          "id": "spell-please",
+          "promptAr": "ما فهمت اسمه. اطلب منه يتهجّاه.",
+          "en": "Can you spell that, please?",
+          "ar": "ممكن تتهجّاه لو سمحت؟",
+          "focus": {
+            "sound": "p",
+            "contrast": "b",
+            "word": "please",
+            "wrong": "blease",
+            "tipAr": "صوت p في please نفخة هواء من الشفتين بدون صوت من الحنجرة. حط يدك قدام فمك: لازم تحس بالهوا. إذا اهتزت حنجرتك فقد قلت b."
+          }
+        },
+        {
+          "id": "see-you",
+          "promptAr": "خلصت السوالف. ودّعه.",
+          "en": "It was nice talking to you. See you later!",
+          "ar": "كان حلو الكلام معك. أشوفك بعدين!"
+        }
+      ],
+      "idioms": [
+        {
+          "id": "hows-it-going",
+          "en": "How's it going?",
+          "meaningAr": "كيف الأمور؟ كيفك؟",
+          "literalAr": "كيف هي ماشية؟",
+          "exampleEn": "Hey Ali, how's it going?",
+          "exampleAr": "هلا علي، كيف الأمور؟"
+        },
+        {
+          "id": "whats-up",
+          "en": "What's up?",
+          "meaningAr": "وش الأخبار؟ وش عندك؟",
+          "literalAr": "ايش فوق؟",
+          "exampleEn": "Hi! What's up?",
+          "exampleAr": "هلا! وش الأخبار؟"
+        },
+        {
+          "id": "long-time",
+          "en": "Long time no see.",
+          "meaningAr": "من زمان ما شفتك",
+          "literalAr": "وقت طويل، لا رؤية",
+          "exampleEn": "Sara! Long time no see. How are you?",
+          "exampleAr": "سارة! من زمان ما شفتك. كيفك؟"
+        },
+        {
+          "id": "same-here",
+          "en": "Same here.",
+          "meaningAr": "وأنا كذلك",
+          "literalAr": "نفس الشي هنا",
+          "exampleEn": "Nice to meet you. — Same here!",
+          "exampleAr": "تشرفت بمعرفتك. — وأنا كذلك!"
+        },
+        {
+          "id": "take-care",
+          "en": "Take care.",
+          "meaningAr": "انتبه لنفسك، مع السلامة",
+          "literalAr": "خذ عناية",
+          "exampleEn": "See you tomorrow. Take care!",
+          "exampleAr": "أشوفك بكرة. انتبه لنفسك!"
+        }
+      ]
+    },
+    {
+      "id": "vocab",
+      "type": "vocab",
+      "titleAr": "كلمات التعارف",
+      "words": [
+        {
+          "id": "name",
+          "en": "name",
+          "ar": "اسم",
+          "ipa": "/neɪm/",
+          "stress": "NAME",
+          "exampleEn": "My name is Sara.",
+          "exampleAr": "اسمي سارة.",
+          "distractors": [
+            "number",
+            "nation"
+          ],
+          "noteAr": "الـa في name تُنطق «اي»: نيم، مو نام."
+        },
+        {
+          "id": "friend",
+          "en": "friend",
+          "ar": "صديق",
+          "ipa": "/frend/",
+          "stress": "FRIEND",
+          "exampleEn": "This is my friend Ali.",
+          "exampleAr": "هذا صديقي علي.",
+          "distractors": [
+            "family",
+            "free"
+          ]
+        },
+        {
+          "id": "neighbor",
+          "en": "neighbor",
+          "ar": "جار",
+          "ipa": "/ˈneɪbər/",
+          "stress": "NEIGH-bor",
+          "exampleEn": "My neighbor is very kind.",
+          "exampleAr": "جاري لطيف مرة.",
+          "distractors": [
+            "number",
+            "nephew"
+          ],
+          "noteAr": "الـgh ما تنطق أبدًا: نيبر."
+        },
+        {
+          "id": "teacher",
+          "en": "teacher",
+          "ar": "معلم",
+          "ipa": "/ˈtiːtʃər/",
+          "stress": "TEA-cher",
+          "exampleEn": "She is an English teacher.",
+          "exampleAr": "هي معلمة إنجليزي.",
+          "distractors": [
+            "student",
+            "doctor"
+          ]
+        },
+        {
+          "id": "student",
+          "en": "student",
+          "ar": "طالب",
+          "ipa": "/ˈstuːdənt/",
+          "stress": "STU-dent",
+          "exampleEn": "I'm a student at the university.",
+          "exampleAr": "أنا طالب في الجامعة.",
+          "distractors": [
+            "study",
+            "teacher"
+          ],
+          "noteAr": "لا تضف حركة قبل st: قل student، مو «إستيودنت»."
+        },
+        {
+          "id": "country",
+          "en": "country",
+          "ar": "دولة، بلد",
+          "ipa": "/ˈkʌntri/",
+          "stress": "COUN-try",
+          "exampleEn": "Which country are you from?",
+          "exampleAr": "من أي دولة أنت؟",
+          "distractors": [
+            "city",
+            "company"
+          ]
+        },
+        {
+          "id": "city",
+          "en": "city",
+          "ar": "مدينة",
+          "ipa": "/ˈsɪti/",
+          "stress": "CI-ty",
+          "exampleEn": "Riyadh is a big city.",
+          "exampleAr": "الرياض مدينة كبيرة.",
+          "distractors": [
+            "country",
+            "street"
+          ]
+        },
+        {
+          "id": "job",
+          "en": "job",
+          "ar": "وظيفة، شغل",
+          "ipa": "/dʒɑːb/",
+          "stress": "JOB",
+          "exampleEn": "I like my job.",
+          "exampleAr": "أحب شغلي.",
+          "distractors": [
+            "shop",
+            "joke"
+          ]
+        },
+        {
+          "id": "number",
+          "en": "number",
+          "ar": "رقم",
+          "ipa": "/ˈnʌmbər/",
+          "stress": "NUM-ber",
+          "exampleEn": "What's your phone number?",
+          "exampleAr": "وش رقم جوالك؟",
+          "distractors": [
+            "name",
+            "neighbor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar",
+      "type": "grammar",
+      "titleAr": "جرامر: فعل الكون",
+      "ruleTitleAr": "فعل الكون: أنا، هو، هم",
+      "explanationAr": "بالعربي نقول «أنا عمر» بدون فعل. بالإنجليزي لازم نحط فعل بين الشخص والوصف: am أو is أو are. وهذا أكثر خطأ يقع فيه المبتدئ العربي.",
+      "points": [
+        {
+          "ar": "مع I نستخدم am، واختصارها I'm",
+          "en": "I am Omar. = I'm Omar."
+        },
+        {
+          "ar": "مع he وshe وit نستخدم is",
+          "en": "She is a teacher. = She's a teacher."
+        },
+        {
+          "ar": "مع you وwe وthey نستخدم are",
+          "en": "They are from Egypt. = They're from Egypt."
+        },
+        {
+          "ar": "لا تحذف الفعل مثل العربي",
+          "en": "I am a student. ✓   I a student. ✗"
+        }
+      ],
+      "exercises": [
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "I ___ from Saudi Arabia.",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "She ___ my neighbor.",
+          "options": [
+            "are",
+            "is",
+            "am"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "Where ___ you from?",
+          "options": [
+            "is",
+            "am",
+            "are"
+          ],
+          "answer": 2
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "My name ___ Lina.",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "We ___ students.",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "choice",
+          "questionAr": "أي جملة صحيحة؟",
+          "options": [
+            "I a teacher.",
+            "I am a teacher.",
+            "I is a teacher."
+          ],
+          "answer": 1,
+          "optionsLtr": true
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "type": "scene",
+      "titleAr": "مشهد: الجار الجديد",
+      "titleEn": "The New Neighbor",
+      "introAr": "عمر سكن في عمارة جديدة، وقابل جارته لينا عند الباب. تسمع المشهد 3 مرات: مرة بالنص الإنجليزي، ومرة مع الترجمة وشرح الكلمات، ومرة بدون أي نص.",
+      "characters": {
+        "lina": {
+          "nameAr": "لينا",
+          "nameEn": "Lina",
+          "voice": 0,
+          "gender": "female",
+          "emoji": "👩"
+        },
+        "omar": {
+          "nameAr": "عمر",
+          "nameEn": "Omar",
+          "voice": 1,
+          "gender": "male",
+          "emoji": "🧑"
+        }
+      },
+      "lines": [
+        {
+          "speaker": "lina",
+          "en": "Hi! Are you the new neighbor?",
+          "ar": "مرحبًا! أنت الجار الجديد؟"
+        },
+        {
+          "speaker": "omar",
+          "en": "Yes, I am. I'm Omar. I'm in number five.",
+          "ar": "إيه، أنا. أنا عمر، ساكن في رقم خمسة."
+        },
+        {
+          "speaker": "lina",
+          "en": "Nice to meet you, Omar. I'm Lina. I live next door.",
+          "ar": "تشرفت يا عمر. أنا لينا، ساكنة في الشقة اللي جنبك."
+        },
+        {
+          "speaker": "omar",
+          "en": "Nice to meet you too. Where are you from, Lina?",
+          "ar": "وأنا تشرفت. من وين أنتِ يا لينا؟"
+        },
+        {
+          "speaker": "lina",
+          "en": "I'm from Jordan. And you?",
+          "ar": "أنا من الأردن. وأنت؟"
+        },
+        {
+          "speaker": "omar",
+          "en": "I'm from Saudi Arabia, from Jeddah.",
+          "ar": "أنا من السعودية، من جدة."
+        },
+        {
+          "speaker": "lina",
+          "en": "Oh, nice! What do you do?",
+          "ar": "حلو! وش تشتغل؟"
+        },
+        {
+          "speaker": "omar",
+          "en": "I'm a nurse. What about you?",
+          "ar": "أنا ممرض. وأنتِ؟"
+        },
+        {
+          "speaker": "lina",
+          "en": "I'm a teacher. My school is near here.",
+          "ar": "أنا معلمة. مدرستي قريبة من هنا."
+        },
+        {
+          "speaker": "omar",
+          "en": "Great. Well, see you later, Lina!",
+          "ar": "حلو. طيب، أشوفك بعدين يا لينا!"
+        },
+        {
+          "speaker": "lina",
+          "en": "See you! Take care.",
+          "ar": "أشوفك! انتبه لنفسك."
+        }
+      ],
+      "keyWords": [
+        {
+          "en": "neighbor",
+          "ar": "جار"
+        },
+        {
+          "en": "next door",
+          "ar": "في البيت أو الشقة اللي جنبك"
+        },
+        {
+          "en": "What do you do?",
+          "ar": "وش تشتغل؟"
+        },
+        {
+          "en": "What about you?",
+          "ar": "وأنت؟"
+        },
+        {
+          "en": "Take care.",
+          "ar": "انتبه لنفسك، مع السلامة"
+        }
+      ],
+      "questions": [
+        {
+          "questionAr": "من وين لينا؟",
+          "options": [
+            "من السعودية",
+            "من الأردن",
+            "من مصر"
+          ],
+          "answer": 1
+        },
+        {
+          "questionAr": "وش يشتغل عمر؟",
+          "options": [
+            "ممرض",
+            "معلم",
+            "طالب"
+          ],
+          "answer": 0
+        },
+        {
+          "questionAr": "وين ساكنة لينا؟",
+          "options": [
+            "في جدة",
+            "جنب مدرستها",
+            "في الشقة اللي جنب عمر"
+          ],
+          "answer": 2
+        },
+        {
+          "questionAr": "ايش معنى What about you? في المشهد؟",
+          "options": [
+            "وأنت؟",
+            "وين أنت؟",
+            "مين أنت؟"
+          ],
+          "answer": 0,
+          "sayEn": "What about you?"
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "type": "review",
+      "titleAr": "مراجعة ذكية",
+      "introAr": "راجع عبارات وتعابير وكلمات كلاس التعارف."
+    }
+  ]
+}
