@@ -1,0 +1,581 @@
+{
+  "id": "directions",
+  "levelId": "trial",
+  "titleAr": "الاتجاهات",
+  "titleEn": "Directions",
+  "lessons": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "titleAr": "مقدمة الكلاس",
+      "situationAr": "أنت في مدينة ما تعرفها، وتبغى توصل لمكان: محطة، أو بنك، أو صيدلية. تبغى تسأل أحد بأدب، وتفهم وصفه: يمين، يسار، على طول، جنب، مقابل.",
+      "goalsAr": [
+        "تسأل عن مكان بأدب: Excuse me, where is…?",
+        "تفهم الاتجاهات: يمين، يسار، على طول",
+        "تفهم أماكن الأشياء: جنب، بين، مقابل",
+        "تسأل كم يبعد المكان، وتطلب يعيد الكلام",
+        "تفهم 5 تعابير يقولها أهل اللغة لمن يوصفون الطريق"
+      ],
+      "soundsAr": "نركّز في هذا الكلاس على صوت p في pharmacy وstop وplease (وليس b)، وصوت v في very وavenue (وليس f)، والفرق بين left وlift، وعدم إضافة حركة قبل st في street وstraight.",
+      "noteAr": "كلاس للمبتدئين: الجمل قصيرة، وكل جملة معها ترجمة وصوت. خذ وقتك وكرّر بصوتك."
+    },
+    {
+      "id": "listen-first",
+      "type": "listen-choose",
+      "titleAr": "اسمع واختر",
+      "mode": "sentence",
+      "introAr": "اسمع الجملة واختر اللي سمعته بالضبط. انتبه، الخيارات متقاربة.",
+      "items": [
+        {
+          "audioEn": "Excuse me, where is the bank?",
+          "ar": "لو سمحت، وين البنك؟",
+          "options": [
+            "Excuse me, where is the bank?",
+            "Excuse me, where is the park?",
+            "Excuse me, where was the bank?"
+          ],
+          "answer": 0,
+          "noteAr": "bank بصوت b، وpark بصوت p ونفخة هواء. والفرق كبير في المعنى."
+        },
+        {
+          "audioEn": "Turn left at the corner.",
+          "ar": "لف يسار عند الزاوية.",
+          "options": [
+            "Turn right at the corner.",
+            "Turn left at the corner.",
+            "Turn left at the counter."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "Go straight for two blocks.",
+          "ar": "امشِ على طول شارعين.",
+          "options": [
+            "Go straight for ten blocks.",
+            "Go straight for two blocks.",
+            "Go street for two blocks."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "It's next to the pharmacy.",
+          "ar": "هو جنب الصيدلية.",
+          "options": [
+            "It's next to the pharmacy.",
+            "It's near the pharmacy.",
+            "It's next to the factory."
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "It's across from the hotel.",
+          "ar": "هو مقابل الفندق.",
+          "options": [
+            "It's behind the hotel.",
+            "It's across from the hospital.",
+            "It's across from the hotel."
+          ],
+          "answer": 2
+        },
+        {
+          "audioEn": "Is it far from here?",
+          "ar": "هو بعيد من هنا؟",
+          "options": [
+            "Is it far from here?",
+            "Is it fun from here?",
+            "Is it near here?"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "phrases",
+      "type": "phrases",
+      "titleAr": "العبارات وأشهر 5 تعابير",
+      "phrases": [
+        {
+          "id": "excuse-me",
+          "promptAr": "وقّف شخص بأدب واسأله وين المحطة.",
+          "en": "Excuse me, where is the train station?",
+          "ar": "لو سمحت، وين محطة القطار؟"
+        },
+        {
+          "id": "im-lost",
+          "promptAr": "قل إنك ضايع وتحتاج مساعدة.",
+          "en": "Sorry, I'm lost. Can you help me?",
+          "ar": "آسف، أنا ضايع. ممكن تساعدني؟"
+        },
+        {
+          "id": "pharmacy-near",
+          "promptAr": "اسأل إذا فيه صيدلية قريبة.",
+          "en": "Is there a pharmacy near here?",
+          "ar": "فيه صيدلية قريبة من هنا؟"
+        },
+        {
+          "id": "go-straight",
+          "promptAr": "قل للشخص يمشي على طول.",
+          "en": "Go straight on this street.",
+          "ar": "امشِ على طول في هذا الشارع.",
+          "focus": {
+            "sound": "st",
+            "word": "straight",
+            "wrong": "istraight",
+            "tipAr": "لا تضف حركة قبل st: قل straight وstreet مباشرة، مو «إستريت»."
+          }
+        },
+        {
+          "id": "turn-left",
+          "promptAr": "قل له يلف يسار عند الإشارة.",
+          "en": "Turn left at the traffic light.",
+          "ar": "لف يسار عند الإشارة."
+        },
+        {
+          "id": "turn-right",
+          "promptAr": "قل له يلف يمين بعد البنك.",
+          "en": "Turn right after the bank.",
+          "ar": "لف يمين بعد البنك."
+        },
+        {
+          "id": "next-to",
+          "promptAr": "قل إن المكان جنب المسجد.",
+          "en": "It's next to the mosque.",
+          "ar": "هو جنب المسجد."
+        },
+        {
+          "id": "how-far",
+          "promptAr": "اسأل كم يبعد مشي.",
+          "en": "How far is it on foot?",
+          "ar": "كم يبعد مشي؟"
+        },
+        {
+          "id": "say-again",
+          "promptAr": "ما فهمت. اطلب منه يعيد ببطء.",
+          "en": "Sorry, can you say that again, slowly please?",
+          "ar": "آسف، ممكن تعيد ببطء لو سمحت؟",
+          "focus": {
+            "sound": "p",
+            "contrast": "b",
+            "word": "please",
+            "wrong": "blease",
+            "tipAr": "حرف p في please نفخة هواء بدون صوت من الحنجرة. حط يدك قدام فمك وحس بالهوا."
+          }
+        },
+        {
+          "id": "thanks-help",
+          "promptAr": "اشكره على المساعدة.",
+          "en": "Thank you very much for your help.",
+          "ar": "شكرًا جزيلًا على مساعدتك.",
+          "focus": {
+            "sound": "v",
+            "contrast": "f",
+            "word": "very",
+            "wrong": "fery",
+            "tipAr": "في very صوت v مع اهتزاز في الحنجرة. لو قلت fery طلعت بدون اهتزاز."
+          }
+        }
+      ],
+      "idioms": [
+        {
+          "id": "cant-miss",
+          "en": "You can't miss it.",
+          "meaningAr": "بتشوفه على طول، واضح",
+          "literalAr": "ما تقدر تفوّته",
+          "exampleEn": "It's a big red building. You can't miss it.",
+          "exampleAr": "مبنى أحمر كبير، بتشوفه على طول."
+        },
+        {
+          "id": "around-corner",
+          "en": "just around the corner",
+          "meaningAr": "قريب جدًا",
+          "literalAr": "بالضبط حول الزاوية",
+          "exampleEn": "The café is just around the corner.",
+          "exampleAr": "الكوفي قريب مرة من هنا."
+        },
+        {
+          "id": "stones-throw",
+          "en": "a stone's throw from",
+          "meaningAr": "قريب جدًا من",
+          "literalAr": "رمية حجر من",
+          "exampleEn": "My hotel is a stone's throw from the beach.",
+          "exampleAr": "فندقي قريب مرة من البحر."
+        },
+        {
+          "id": "on-the-way",
+          "en": "on the way",
+          "meaningAr": "في الطريق",
+          "literalAr": "على الطريق",
+          "exampleEn": "The bank is on the way to the mall.",
+          "exampleAr": "البنك في الطريق للمول."
+        },
+        {
+          "id": "shortcut",
+          "en": "take a shortcut",
+          "meaningAr": "تاخذ طريق مختصر",
+          "literalAr": "تاخذ قطعًا قصيرًا",
+          "exampleEn": "Let's take a shortcut through the park.",
+          "exampleAr": "خلّونا ناخذ طريق مختصر من الحديقة."
+        }
+      ]
+    },
+    {
+      "id": "vocab",
+      "type": "vocab",
+      "titleAr": "كلمات الاتجاهات",
+      "words": [
+        {
+          "id": "street",
+          "en": "street",
+          "ar": "شارع",
+          "ipa": "/striːt/",
+          "stress": "STREET",
+          "exampleEn": "The bank is on King Fahd Street.",
+          "exampleAr": "البنك في شارع الملك فهد.",
+          "distractors": [
+            "straight",
+            "sweet"
+          ],
+          "noteAr": "لا تقول «إستريت»، ابدأ بـ st مباشرة."
+        },
+        {
+          "id": "left",
+          "en": "left",
+          "ar": "يسار",
+          "ipa": "/left/",
+          "stress": "LEFT",
+          "exampleEn": "Turn left here.",
+          "exampleAr": "لف يسار هنا.",
+          "distractors": [
+            "lift",
+            "light"
+          ]
+        },
+        {
+          "id": "right",
+          "en": "right",
+          "ar": "يمين",
+          "ipa": "/raɪt/",
+          "stress": "RIGHT",
+          "exampleEn": "The hotel is on the right.",
+          "exampleAr": "الفندق على اليمين.",
+          "distractors": [
+            "light",
+            "write"
+          ]
+        },
+        {
+          "id": "corner",
+          "en": "corner",
+          "ar": "زاوية، رأس الشارع",
+          "ipa": "/ˈkɔːrnər/",
+          "stress": "COR-ner",
+          "exampleEn": "The shop is on the corner.",
+          "exampleAr": "المحل على الزاوية.",
+          "distractors": [
+            "counter",
+            "cover"
+          ]
+        },
+        {
+          "id": "traffic-light",
+          "en": "traffic light",
+          "ar": "إشارة المرور",
+          "ipa": "/ˈtræfɪk laɪt/",
+          "stress": "TRAF-fic light",
+          "exampleEn": "Stop at the traffic light.",
+          "exampleAr": "وقّف عند الإشارة.",
+          "distractors": [
+            "traffic jam",
+            "flashlight"
+          ]
+        },
+        {
+          "id": "station",
+          "en": "station",
+          "ar": "محطة",
+          "ipa": "/ˈsteɪʃn/",
+          "stress": "STA-tion",
+          "exampleEn": "The station is far from here.",
+          "exampleAr": "المحطة بعيدة من هنا.",
+          "distractors": [
+            "situation",
+            "nation"
+          ]
+        },
+        {
+          "id": "map",
+          "en": "map",
+          "ar": "خريطة",
+          "ipa": "/mæp/",
+          "stress": "MAP",
+          "exampleEn": "Can you show me on the map?",
+          "exampleAr": "ممكن توريني على الخريطة؟",
+          "distractors": [
+            "mop",
+            "nap"
+          ]
+        },
+        {
+          "id": "near",
+          "en": "near",
+          "ar": "قريب",
+          "ipa": "/nɪr/",
+          "stress": "NEAR",
+          "exampleEn": "Is there a café near here?",
+          "exampleAr": "فيه كوفي قريب من هنا؟",
+          "distractors": [
+            "far",
+            "next"
+          ]
+        },
+        {
+          "id": "between",
+          "en": "between",
+          "ar": "بين",
+          "ipa": "/bɪˈtwiːn/",
+          "stress": "be-TWEEN",
+          "exampleEn": "The bank is between the café and the hotel.",
+          "exampleAr": "البنك بين الكوفي والفندق.",
+          "distractors": [
+            "behind",
+            "beside"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar",
+      "type": "grammar",
+      "titleAr": "جرامر: حروف المكان",
+      "ruleTitleAr": "حروف المكان: next to وbetween وacross from",
+      "explanationAr": "عشان توصف مكان شي نستخدم كلمات صغيرة قبل المكان الثاني. وبالعربي نقول «جنب» و«بين» و«مقابل».",
+      "points": [
+        {
+          "ar": "next to = جنب",
+          "en": "The bank is next to the hotel."
+        },
+        {
+          "ar": "between = بين شيئين",
+          "en": "The café is between the bank and the mosque."
+        },
+        {
+          "ar": "across from = مقابل، في الجهة الثانية",
+          "en": "The park is across from the school."
+        },
+        {
+          "ar": "on the corner = على الزاوية",
+          "en": "The pharmacy is on the corner."
+        }
+      ],
+      "exercises": [
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "The bank is ___ to the hotel.",
+          "options": [
+            "next",
+            "near",
+            "between"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "The café is ___ the bank and the mosque.",
+          "options": [
+            "across",
+            "between",
+            "next"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "The park is across ___ the school.",
+          "options": [
+            "to",
+            "of",
+            "from"
+          ],
+          "answer": 2
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "The shop is ___ the corner.",
+          "options": [
+            "on",
+            "in",
+            "at"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "___ left at the traffic light.",
+          "options": [
+            "Go",
+            "Turn",
+            "Take"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "choice",
+          "questionAr": "ايش معنى across from؟",
+          "options": [
+            "جنب",
+            "مقابل",
+            "ورا"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "type": "scene",
+      "titleAr": "مشهد: وين المحطة؟",
+      "titleEn": "Where Is the Station?",
+      "introAr": "آدم سائح في مدينة جديدة، ويسأل هدى عن محطة القطار. تسمع المشهد 3 مرات: بالنص، ومع الترجمة، وبدون أي نص.",
+      "characters": {
+        "huda": {
+          "nameAr": "هدى",
+          "nameEn": "Huda",
+          "voice": 0,
+          "gender": "female",
+          "emoji": "🧕"
+        },
+        "adam": {
+          "nameAr": "آدم",
+          "nameEn": "Adam",
+          "voice": 1,
+          "gender": "male",
+          "emoji": "🧑‍🦱"
+        }
+      },
+      "lines": [
+        {
+          "speaker": "adam",
+          "en": "Excuse me, I'm lost. Where is the train station?",
+          "ar": "لو سمحتي، أنا ضايع. وين محطة القطار؟"
+        },
+        {
+          "speaker": "huda",
+          "en": "The station? It's not far. Go straight on this street.",
+          "ar": "المحطة؟ مو بعيدة. امشِ على طول في هذا الشارع."
+        },
+        {
+          "speaker": "adam",
+          "en": "Go straight… OK.",
+          "ar": "على طول… طيب."
+        },
+        {
+          "speaker": "huda",
+          "en": "Then turn left at the traffic light.",
+          "ar": "بعدين لف يسار عند الإشارة."
+        },
+        {
+          "speaker": "adam",
+          "en": "Left at the traffic light. And then?",
+          "ar": "يسار عند الإشارة. وبعدين؟"
+        },
+        {
+          "speaker": "huda",
+          "en": "The station is on the right, next to a big hotel. You can't miss it.",
+          "ar": "المحطة على اليمين، جنب فندق كبير. بتشوفها على طول."
+        },
+        {
+          "speaker": "adam",
+          "en": "How far is it on foot?",
+          "ar": "كم تبعد مشي؟"
+        },
+        {
+          "speaker": "huda",
+          "en": "About ten minutes. It's on the way to the mall.",
+          "ar": "حوالي عشر دقايق. هي في طريق المول."
+        },
+        {
+          "speaker": "adam",
+          "en": "Thank you very much!",
+          "ar": "شكرًا جزيلًا!"
+        },
+        {
+          "speaker": "huda",
+          "en": "You're welcome. Have a nice trip!",
+          "ar": "العفو. رحلة سعيدة!"
+        }
+      ],
+      "keyWords": [
+        {
+          "en": "I'm lost.",
+          "ar": "أنا ضايع"
+        },
+        {
+          "en": "go straight",
+          "ar": "امشِ على طول"
+        },
+        {
+          "en": "traffic light",
+          "ar": "الإشارة"
+        },
+        {
+          "en": "You can't miss it.",
+          "ar": "بتشوفه على طول"
+        },
+        {
+          "en": "on foot",
+          "ar": "مشي"
+        }
+      ],
+      "questions": [
+        {
+          "questionAr": "وين يبغى يروح آدم؟",
+          "options": [
+            "المول",
+            "محطة القطار",
+            "الفندق"
+          ],
+          "answer": 1
+        },
+        {
+          "questionAr": "وين يلف آدم يسار؟",
+          "options": [
+            "عند الإشارة",
+            "عند الفندق",
+            "عند المول"
+          ],
+          "answer": 0
+        },
+        {
+          "questionAr": "المحطة جنب ايش؟",
+          "options": [
+            "جنب المول",
+            "جنب الإشارة",
+            "جنب فندق كبير"
+          ],
+          "answer": 2
+        },
+        {
+          "questionAr": "كم تبعد المحطة مشي؟",
+          "options": [
+            "خمس دقايق",
+            "حوالي عشر دقايق",
+            "ساعة"
+          ],
+          "answer": 1,
+          "sayEn": "About ten minutes."
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "type": "review",
+      "titleAr": "مراجعة ذكية",
+      "introAr": "راجع عبارات وتعابير وكلمات كلاس الاتجاهات."
+    }
+  ]
+}

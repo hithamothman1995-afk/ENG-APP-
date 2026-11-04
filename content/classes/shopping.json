@@ -1,0 +1,585 @@
+{
+  "id": "shopping",
+  "levelId": "trial",
+  "titleAr": "التسوّق",
+  "titleEn": "Shopping",
+  "lessons": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "titleAr": "مقدمة الكلاس",
+      "situationAr": "أنت في محل ملابس. تبغى تسأل عن سعر قطعة، وتطلب مقاس ثاني أو لون ثاني، وتجرّبها، وبعدين تدفع أو تقول إنك تتفرج بس.",
+      "goalsAr": [
+        "تقول إنك تتفرج أو تطلب مساعدة",
+        "تسأل عن السعر: How much is…? وHow much are…?",
+        "تطلب مقاس أو لون ثاني، وتسأل وين غرفة القياس",
+        "تدفع بالبطاقة أو كاش وتطلب الفاتورة",
+        "تفهم 5 تعابير يقولها أهل اللغة في التسوّق"
+      ],
+      "soundsAr": "نركّز في هذا الكلاس على صوت p في pay وprice وplease (وليس b)، وصوت v في have وfive (وليس f)، والفرق بين i القصيرة في fit والطويلة في these، والأرقام اللي تتلخبط: fifteen وfifty.",
+      "noteAr": "كلاس للمبتدئين: الجمل قصيرة، وكل جملة معها ترجمة وصوت. خذ وقتك وكرّر بصوتك."
+    },
+    {
+      "id": "listen-first",
+      "type": "listen-choose",
+      "titleAr": "اسمع واختر",
+      "mode": "sentence",
+      "introAr": "اسمع الجملة واختر اللي سمعته بالضبط. انتبه، الخيارات متقاربة.",
+      "items": [
+        {
+          "audioEn": "How much is this shirt?",
+          "ar": "بكم هذا القميص؟",
+          "options": [
+            "How much is this shirt?",
+            "How much is this skirt?",
+            "How much are these shirts?"
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "Do you have this in blue?",
+          "ar": "عندكم هذا باللون الأزرق؟",
+          "options": [
+            "Do you have this in black?",
+            "Do you have this in blue?",
+            "Do you have these in blue?"
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "It's fifteen riyals.",
+          "ar": "بخمسطعش ريال.",
+          "options": [
+            "It's fifty riyals.",
+            "It's five riyals.",
+            "It's fifteen riyals."
+          ],
+          "answer": 2,
+          "noteAr": "fifteen (15) النبرة في آخرها fif-TEEN، وfifty (50) النبرة في أولها FIF-ty. انتبه لها وقت الدفع!"
+        },
+        {
+          "audioEn": "Can I try it on?",
+          "ar": "ممكن أجرّبه؟",
+          "options": [
+            "Can I try it on?",
+            "Can I buy it now?",
+            "Can I try one?"
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "Can I pay by card?",
+          "ar": "ممكن أدفع بالبطاقة؟",
+          "options": [
+            "Can I pay by cash?",
+            "Can I pay by card?",
+            "Can I play by card?"
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "These shoes are too small.",
+          "ar": "هالجزمة صغيرة مرة.",
+          "options": [
+            "This shoe is too small.",
+            "These shoes are too big.",
+            "These shoes are too small."
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "phrases",
+      "type": "phrases",
+      "titleAr": "العبارات وأشهر 5 تعابير",
+      "phrases": [
+        {
+          "id": "just-looking",
+          "promptAr": "البائع سألك إذا تحتاج مساعدة. قل إنك تتفرج بس.",
+          "en": "No, thanks. I'm just looking.",
+          "ar": "لا شكرًا، أتفرج بس."
+        },
+        {
+          "id": "how-much",
+          "promptAr": "اسأل عن سعر هذا القميص.",
+          "en": "How much is this shirt?",
+          "ar": "بكم هذا القميص؟"
+        },
+        {
+          "id": "how-much-are",
+          "promptAr": "اسأل عن سعر هالجزمة.",
+          "en": "How much are these shoes?",
+          "ar": "بكم هالجزمة؟",
+          "focus": {
+            "sound": "iː",
+            "contrast": "ɪ",
+            "word": "these",
+            "wrong": "this",
+            "tipAr": "الـee في these طويلة «ذييز» وتعني «هذول»، وthis قصيرة وتعني «هذا». الطول يغيّر المعنى."
+          }
+        },
+        {
+          "id": "in-blue",
+          "promptAr": "اسأل إذا عندهم نفس الشي باللون الأزرق.",
+          "en": "Do you have this in blue?",
+          "ar": "عندكم هذا باللون الأزرق؟",
+          "focus": {
+            "sound": "v",
+            "contrast": "f",
+            "word": "have",
+            "wrong": "haf",
+            "tipAr": "آخر have صوت v مع اهتزاز في الحنجرة، مو f."
+          }
+        },
+        {
+          "id": "size",
+          "promptAr": "اطلب مقاس أكبر.",
+          "en": "Do you have a bigger size?",
+          "ar": "عندكم مقاس أكبر؟"
+        },
+        {
+          "id": "try-on",
+          "promptAr": "اسأل إذا تقدر تجرّبه.",
+          "en": "Can I try it on?",
+          "ar": "ممكن أجرّبه؟"
+        },
+        {
+          "id": "fitting-room",
+          "promptAr": "اسأل وين غرفة القياس.",
+          "en": "Where is the fitting room?",
+          "ar": "وين غرفة القياس؟"
+        },
+        {
+          "id": "ill-take",
+          "promptAr": "قل إنك بتاخذه.",
+          "en": "It fits well. I'll take it.",
+          "ar": "مقاسه مضبوط، باخذه."
+        },
+        {
+          "id": "pay-card",
+          "promptAr": "اسأل إذا تقدر تدفع بالبطاقة.",
+          "en": "Can I pay by card, please?",
+          "ar": "ممكن أدفع بالبطاقة لو سمحت؟",
+          "focus": {
+            "sound": "p",
+            "contrast": "b",
+            "word": "pay",
+            "wrong": "bay",
+            "tipAr": "حرف p في pay وplease نفخة هواء بدون صوت من الحنجرة. إذا قلت bay تطلع كلمة ثانية (خليج)."
+          }
+        },
+        {
+          "id": "receipt",
+          "promptAr": "اطلب الفاتورة.",
+          "en": "Can I have the receipt?",
+          "ar": "ممكن الفاتورة؟"
+        }
+      ],
+      "idioms": [
+        {
+          "id": "window-shopping",
+          "en": "window shopping",
+          "meaningAr": "تتفرج على المحلات بدون ما تشتري",
+          "literalAr": "تسوّق الشبابيك",
+          "exampleEn": "I don't have money today. Just window shopping!",
+          "exampleAr": "ما معي فلوس اليوم، أتفرج بس!"
+        },
+        {
+          "id": "good-deal",
+          "en": "a good deal",
+          "meaningAr": "صفقة حلوة، سعر ممتاز",
+          "literalAr": "صفقة جيدة",
+          "exampleEn": "Two shirts for fifty riyals? That's a good deal.",
+          "exampleAr": "قميصين بخمسين ريال؟ سعر ممتاز."
+        },
+        {
+          "id": "on-sale",
+          "en": "on sale",
+          "meaningAr": "عليه تخفيض",
+          "literalAr": "على البيع",
+          "exampleEn": "These jeans are on sale today.",
+          "exampleAr": "هالجينز عليه تخفيض اليوم."
+        },
+        {
+          "id": "break-the-bank",
+          "en": "It won't break the bank.",
+          "meaningAr": "مو غالي، ما بيخلّص فلوسك",
+          "literalAr": "ما بيكسر البنك",
+          "exampleEn": "It's only twenty riyals. It won't break the bank.",
+          "exampleAr": "بس عشرين ريال، مو غالي."
+        },
+        {
+          "id": "rip-off",
+          "en": "a rip-off",
+          "meaningAr": "غالي بزيادة، نصب",
+          "literalAr": "تمزيق",
+          "exampleEn": "Two hundred riyals for a T-shirt? What a rip-off!",
+          "exampleAr": "مية ريالين لتيشيرت؟ هذا نصب!"
+        }
+      ]
+    },
+    {
+      "id": "vocab",
+      "type": "vocab",
+      "titleAr": "كلمات التسوّق",
+      "words": [
+        {
+          "id": "price",
+          "en": "price",
+          "ar": "سعر",
+          "ipa": "/praɪs/",
+          "stress": "PRICE",
+          "exampleEn": "What's the price of this bag?",
+          "exampleAr": "ايش سعر هالشنطة؟",
+          "distractors": [
+            "prize",
+            "rice"
+          ],
+          "noteAr": "آخرها s خفيفة، وprize (جائزة) آخرها z."
+        },
+        {
+          "id": "size",
+          "en": "size",
+          "ar": "مقاس",
+          "ipa": "/saɪz/",
+          "stress": "SIZE",
+          "exampleEn": "What size are you?",
+          "exampleAr": "وش مقاسك؟",
+          "distractors": [
+            "side",
+            "sign"
+          ]
+        },
+        {
+          "id": "cheap",
+          "en": "cheap",
+          "ar": "رخيص",
+          "ipa": "/tʃiːp/",
+          "stress": "CHEAP",
+          "exampleEn": "This shop is cheap.",
+          "exampleAr": "هذا المحل رخيص.",
+          "distractors": [
+            "chip",
+            "cheat"
+          ],
+          "noteAr": "الـee طويلة، وإذا قصّرتها تطلع chip."
+        },
+        {
+          "id": "expensive",
+          "en": "expensive",
+          "ar": "غالي",
+          "ipa": "/ɪkˈspensɪv/",
+          "stress": "ex-PEN-sive",
+          "exampleEn": "This watch is very expensive.",
+          "exampleAr": "هالساعة غالية مرة.",
+          "distractors": [
+            "extensive",
+            "excellent"
+          ]
+        },
+        {
+          "id": "cash",
+          "en": "cash",
+          "ar": "كاش، نقد",
+          "ipa": "/kæʃ/",
+          "stress": "CASH",
+          "exampleEn": "I'll pay in cash.",
+          "exampleAr": "بدفع كاش.",
+          "distractors": [
+            "catch",
+            "card"
+          ]
+        },
+        {
+          "id": "receipt",
+          "en": "receipt",
+          "ar": "فاتورة، إيصال",
+          "ipa": "/rɪˈsiːt/",
+          "stress": "re-CEIPT",
+          "exampleEn": "Keep the receipt, please.",
+          "exampleAr": "خلّ الفاتورة معك لو سمحت.",
+          "distractors": [
+            "recipe",
+            "receive"
+          ],
+          "noteAr": "حرف p ما ينطق أبدًا: «رِسييت»."
+        },
+        {
+          "id": "shirt",
+          "en": "shirt",
+          "ar": "قميص",
+          "ipa": "/ʃɜːrt/",
+          "stress": "SHIRT",
+          "exampleEn": "I need a white shirt.",
+          "exampleAr": "أحتاج قميص أبيض.",
+          "distractors": [
+            "skirt",
+            "short"
+          ]
+        },
+        {
+          "id": "shoes",
+          "en": "shoes",
+          "ar": "جزمة، أحذية",
+          "ipa": "/ʃuːz/",
+          "stress": "SHOES",
+          "exampleEn": "These shoes are comfortable.",
+          "exampleAr": "هالجزمة مريحة.",
+          "distractors": [
+            "socks",
+            "shows"
+          ]
+        },
+        {
+          "id": "fitting-room",
+          "en": "fitting room",
+          "ar": "غرفة القياس",
+          "ipa": "/ˈfɪtɪŋ ruːm/",
+          "stress": "FIT-ting room",
+          "exampleEn": "The fitting room is over there.",
+          "exampleAr": "غرفة القياس هناك.",
+          "distractors": [
+            "living room",
+            "waiting room"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar",
+      "type": "grammar",
+      "titleAr": "جرامر: this وthese، وhow much",
+      "ruleTitleAr": "this وthat وthese وthose",
+      "explanationAr": "لواحد قريب نقول this، ولواحد بعيد that. للجمع القريب these، وللجمع البعيد those. ومعهم نسأل عن السعر: How much is للمفرد، وHow much are للجمع.",
+      "points": [
+        {
+          "ar": "this = هذا (قريب، مفرد)",
+          "en": "How much is this shirt?"
+        },
+        {
+          "ar": "that = ذاك (بعيد، مفرد)",
+          "en": "I like that bag."
+        },
+        {
+          "ar": "these = هذول (قريب، جمع)",
+          "en": "How much are these shoes?"
+        },
+        {
+          "ar": "those = هذوليك (بعيد، جمع)",
+          "en": "Can I see those jeans?"
+        }
+      ],
+      "exercises": [
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "How much ___ this shirt?",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "How much ___ these shoes?",
+          "options": [
+            "is",
+            "are",
+            "be"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "I like ___ shoes. (قريبة منك)",
+          "options": [
+            "this",
+            "these",
+            "that"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "Can I see ___ bag over there?",
+          "options": [
+            "these",
+            "those",
+            "that"
+          ],
+          "answer": 2
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "___ jeans are on sale. (بعيدة عنك)",
+          "options": [
+            "Those",
+            "That",
+            "This"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "choice",
+          "questionAr": "أي جملة صحيحة؟",
+          "options": [
+            "How much are this shirt?",
+            "How much is these shoes?",
+            "How much are these shoes?"
+          ],
+          "answer": 2,
+          "optionsLtr": true
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "type": "scene",
+      "titleAr": "مشهد: في محل الملابس",
+      "titleEn": "At the Clothes Shop",
+      "introAr": "يوسف في محل ملابس، ويتكلم مع البائعة ميا عن قميص. تسمع المشهد 3 مرات: بالنص، ومع الترجمة، وبدون أي نص.",
+      "characters": {
+        "mia": {
+          "nameAr": "ميا",
+          "nameEn": "Mia",
+          "voice": 0,
+          "gender": "female",
+          "emoji": "👩‍🦰"
+        },
+        "yousef": {
+          "nameAr": "يوسف",
+          "nameEn": "Yousef",
+          "voice": 1,
+          "gender": "male",
+          "emoji": "🧑"
+        }
+      },
+      "lines": [
+        {
+          "speaker": "mia",
+          "en": "Hi! Can I help you?",
+          "ar": "هلا! أقدر أساعدك؟"
+        },
+        {
+          "speaker": "yousef",
+          "en": "Yes, please. How much is this shirt?",
+          "ar": "إيه لو سمحتي. بكم هذا القميص؟"
+        },
+        {
+          "speaker": "mia",
+          "en": "It's sixty riyals, but it's on sale today. Only forty.",
+          "ar": "بستين ريال، بس عليه تخفيض اليوم. بأربعين بس."
+        },
+        {
+          "speaker": "yousef",
+          "en": "That's a good deal! Do you have it in blue?",
+          "ar": "سعر ممتاز! عندكم منه أزرق؟"
+        },
+        {
+          "speaker": "mia",
+          "en": "Yes. What size are you?",
+          "ar": "إيه. وش مقاسك؟"
+        },
+        {
+          "speaker": "yousef",
+          "en": "Medium, I think. Can I try it on?",
+          "ar": "ميديم، أظن. ممكن أجرّبه؟"
+        },
+        {
+          "speaker": "mia",
+          "en": "Sure. The fitting room is over there.",
+          "ar": "أكيد. غرفة القياس هناك."
+        },
+        {
+          "speaker": "yousef",
+          "en": "It fits well. I'll take it. Can I pay by card?",
+          "ar": "مقاسه مضبوط، باخذه. ممكن أدفع بالبطاقة؟"
+        },
+        {
+          "speaker": "mia",
+          "en": "Of course. Here's your receipt.",
+          "ar": "أكيد. تفضل الفاتورة."
+        },
+        {
+          "speaker": "yousef",
+          "en": "Thanks a lot!",
+          "ar": "شكرًا مرة!"
+        }
+      ],
+      "keyWords": [
+        {
+          "en": "on sale",
+          "ar": "عليه تخفيض"
+        },
+        {
+          "en": "a good deal",
+          "ar": "سعر ممتاز"
+        },
+        {
+          "en": "try it on",
+          "ar": "أجرّبه"
+        },
+        {
+          "en": "fitting room",
+          "ar": "غرفة القياس"
+        },
+        {
+          "en": "It fits well.",
+          "ar": "مقاسه مضبوط"
+        }
+      ],
+      "questions": [
+        {
+          "questionAr": "كم سعر القميص اليوم؟",
+          "options": [
+            "ستين ريال",
+            "أربعين ريال",
+            "خمسين ريال"
+          ],
+          "answer": 1
+        },
+        {
+          "questionAr": "ايش اللون اللي طلبه يوسف؟",
+          "options": [
+            "أزرق",
+            "أسود",
+            "أبيض"
+          ],
+          "answer": 0
+        },
+        {
+          "questionAr": "كيف دفع يوسف؟",
+          "options": [
+            "كاش",
+            "ما دفع",
+            "بالبطاقة"
+          ],
+          "answer": 2
+        },
+        {
+          "questionAr": "ايش معنى on sale؟",
+          "options": [
+            "للبيع بس",
+            "عليه تخفيض",
+            "خلص من المحل"
+          ],
+          "answer": 1,
+          "sayEn": "on sale"
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "type": "review",
+      "titleAr": "مراجعة ذكية",
+      "introAr": "راجع عبارات وتعابير وكلمات كلاس التسوّق."
+    }
+  ]
+}

@@ -35,3 +35,14 @@ export function PrimaryButton({ children, onClick, disabled }: { children: React
     </button>
   )
 }
+
+// نقاط صغيرة تبين نتيجة كل سؤال: صح (فيروزي)، خطأ (برتقالي)، لم يُجب بعد (رمادي)
+export function Dots({ results, total }: { results: boolean[]; total: number }) {
+  return (
+    <span className="dots" aria-label={`${results.length} من ${total}`}>
+      {Array.from({ length: total }, (_, i) => (
+        <i key={i} className={i < results.length ? (results[i] ? 'right' : 'wrong') : ''} />
+      ))}
+    </span>
+  )
+}

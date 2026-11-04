@@ -2,13 +2,19 @@ import { isClassAvailable, levels } from '../content'
 import { En } from '../components/En'
 import { Icon } from '../components/Icon'
 import { href } from '../router'
+import { loadPlacement } from '../storage/placement'
 
 export function LevelMap() {
+  const placed = loadPlacement()
   return (
     <main className="screen">
       <header>
         <h1>خريطة المستويات</h1>
         <p className="muted">ثمانية مستويات، كل كلاس فيها موقف من الحياة.</p>
+        <a className="link-button" href={href({ name: 'welcome' })}>🧭 الجولة الترحيبية: عن الدورة</a>
+        <a className="link-button" href={href({ name: 'placement' })}>
+          🎯 {placed ? `مستواك: ${levels[placed.levelIndex].titleAr}، شوف النتيجة أو أعد الاختبار` : 'حدّد مستواك'}
+        </a>
       </header>
 
       <ol className="path">

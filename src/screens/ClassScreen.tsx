@@ -29,7 +29,11 @@ export function ClassScreen({ classId }: { classId: string }) {
         المستويات
       </a>
       <header className="class-hero">
-        <span className="class-hero-icon" aria-hidden>{icon}</span>
+        {cls.cover ? (
+          <img className="hero-art" src={`${import.meta.env.BASE_URL}${cls.cover}`} alt="" />
+        ) : (
+          <span className="class-hero-icon" aria-hidden>{icon}</span>
+        )}
         <span className="eyebrow">المستوى {levelNumber} · {level?.titleAr}</span>
         <h1>{cls.titleAr}</h1>
         <En>{cls.titleEn}</En>
@@ -38,6 +42,13 @@ export function ClassScreen({ classId }: { classId: string }) {
         </div>
         <span className="muted small">{done} من {cls.lessons.length} دروس</span>
       </header>
+
+      {done === cls.lessons.length && (
+        <a className="badge-earned" href={level ? href({ name: 'certificate', levelId: level.id }) : '#/'}>
+          <span aria-hidden>🏅</span>
+          <span>أخذت شارة كلاس {cls.titleAr}! شوف شهادة المستوى</span>
+        </a>
+      )}
 
       <ol className="lesson-list">
         {cls.lessons.map((l, i) => {

@@ -1,0 +1,214 @@
+{
+  "introAr": "قبل ما نبدأ، نبغى نعرف مستواك عشان نبدأ معك من المكان الصح. الأسئلة تبدأ سهلة وتصعب شوي شوي، ونوقف لمن نعرف مستواك.",
+  "noteAr": "إذا ما عرفت الجواب اضغط «ما أعرف» بدل التخمين، عشان النتيجة تطلع أدق.",
+  "bands": [
+    {
+      "levelId": "trial",
+      "items": [
+        {
+          "id": "t-listen",
+          "kind": "listen",
+          "audioEn": "Good morning.",
+          "promptAr": "ايش معنى الجملة اللي سمعتها؟",
+          "options": ["صباح الخير", "تصبح على خير", "مع السلامة", "شكرًا لك"]
+        },
+        {
+          "id": "t-gap",
+          "kind": "gap",
+          "textEn": "My name ___ Sara.",
+          "promptAr": "اختر الكلمة اللي تكمّل الجملة",
+          "options": ["is", "am", "are", "be"]
+        },
+        {
+          "id": "t-read",
+          "kind": "read",
+          "textEn": "A: How are you?\nB: I'm fine, thanks.",
+          "promptAr": "كيف حال الشخص الثاني (B)؟",
+          "options": ["بخير", "تعبان", "زعلان", "جوعان"]
+        }
+      ]
+    },
+    {
+      "levelId": "intro",
+      "items": [
+        {
+          "id": "i-listen",
+          "kind": "listen",
+          "audioEn": "Where is the pharmacy?",
+          "promptAr": "ايش معنى الجملة اللي سمعتها؟",
+          "options": ["وين الصيدلية؟", "متى تفتح الصيدلية؟", "هل الصيدلية بعيدة؟", "كم سعر الدواء؟"]
+        },
+        {
+          "id": "i-gap",
+          "kind": "gap",
+          "textEn": "I ___ a headache.",
+          "promptAr": "اختر الكلمة اللي تكمّل الجملة",
+          "options": ["have", "has", "am", "having"]
+        },
+        {
+          "id": "i-read",
+          "kind": "read",
+          "textEn": "Take one pill twice a day after meals.",
+          "promptAr": "متى ياخذ الحبة؟",
+          "options": ["مرتين في اليوم بعد الأكل", "مرة وحدة قبل النوم", "كل ساعتين", "مرتين في اليوم قبل الأكل"]
+        }
+      ]
+    },
+    {
+      "levelId": "practice",
+      "items": [
+        {
+          "id": "p-listen",
+          "kind": "listen",
+          "audioEn": "Could you cut it a little shorter on the sides?",
+          "promptAr": "ايش معنى الجملة اللي سمعتها؟",
+          "options": ["تقدر تقصّه أقصر شوي من الجوانب؟", "تقدر تخلّيه أطول من فوق؟", "كم ياخذ القص من وقت؟", "أبغى أغسل شعري بس"]
+        },
+        {
+          "id": "p-gap",
+          "kind": "gap",
+          "textEn": "Yesterday I ___ to the gym after work.",
+          "promptAr": "اختر الكلمة اللي تكمّل الجملة",
+          "options": ["went", "go", "goes", "going"]
+        },
+        {
+          "id": "p-read",
+          "kind": "read",
+          "textEn": "The gym opens at 6 a.m. on weekdays, but at 9 a.m. on weekends.",
+          "promptAr": "متى يفتح الجيم في الويكند؟",
+          "options": ["الساعة 9 الصبح", "الساعة 6 الصبح", "الساعة 9 بالليل", "ما يفتح أبدًا"]
+        }
+      ]
+    },
+    {
+      "levelId": "confidence",
+      "items": [
+        {
+          "id": "c-listen",
+          "kind": "listen",
+          "audioEn": "I've been feeling tired for about a week.",
+          "promptAr": "ايش معنى الجملة اللي سمعتها؟",
+          "options": ["صار لي أسبوع تقريبًا وأنا تعبان", "بعد أسبوع بكون تعبان", "كنت تعبان أمس بس", "تمرّنت لمدة أسبوع"]
+        },
+        {
+          "id": "c-gap",
+          "kind": "gap",
+          "textEn": "You ___ see a doctor if the pain gets worse.",
+          "promptAr": "اختر الكلمة اللي تكمّل الجملة",
+          "options": ["should", "would", "must to", "are"]
+        },
+        {
+          "id": "c-read",
+          "kind": "read",
+          "textEn": "The library will be closed on Monday for repairs. Books due that day can be returned on Tuesday without a fine.",
+          "promptAr": "لو كتابك لازم يرجع يوم الاثنين، ايش تسوي؟",
+          "options": ["ترجعه الثلاثاء بدون غرامة", "تدفع غرامة", "ترجعه يوم الأحد", "المكتبة بتسكّر على طول"]
+        }
+      ]
+    },
+    {
+      "levelId": "fluency",
+      "items": [
+        {
+          "id": "f-listen",
+          "kind": "listen",
+          "audioEn": "I'd like to open an account, but I'm not sure which one suits me best.",
+          "promptAr": "ايش معنى الجملة اللي سمعتها؟",
+          "options": ["أبغى أفتح حساب بس مو متأكد أي واحد يناسبني", "فتحت حساب وما عجبني", "أبغى أسكّر حسابي", "عندي حسابين وأبغى أدمجهم"]
+        },
+        {
+          "id": "f-gap",
+          "kind": "gap",
+          "textEn": "If I ___ more time, I would visit my family more often.",
+          "promptAr": "اختر الكلمة اللي تكمّل الجملة",
+          "options": ["had", "have", "will have", "having"]
+        },
+        {
+          "id": "f-read",
+          "kind": "read",
+          "textEn": "Visitors are allowed between 4 and 8 p.m. Children under 12 must be accompanied by an adult.",
+          "promptAr": "طفل عمره 10 سنين يبغى يزور الساعة 5. ايش لازم؟",
+          "options": ["يجي مع شخص كبير", "ما يقدر يزور أبدًا", "يجي الساعة 9", "يقدر يجي لحاله"]
+        }
+      ]
+    },
+    {
+      "levelId": "conversation",
+      "items": [
+        {
+          "id": "v-listen",
+          "kind": "listen",
+          "audioEn": "I see where you're coming from, but I'd look at it differently.",
+          "promptAr": "ايش معنى الجملة اللي سمعتها؟",
+          "options": ["أفهم وجهة نظرك، بس أنا أشوفها بشكل مختلف", "أنا موافقك تمامًا", "من وين جاي؟", "ما فهمت كلامك أبدًا"]
+        },
+        {
+          "id": "v-gap",
+          "kind": "gap",
+          "textEn": "She's used to ___ up early for work.",
+          "promptAr": "اختر الكلمة اللي تكمّل الجملة",
+          "options": ["getting", "get", "got", "gets"]
+        },
+        {
+          "id": "v-read",
+          "kind": "read",
+          "textEn": "A: Do you fancy grabbing lunch later?\nB: I'd love to, but I'm swamped today. Rain check?",
+          "promptAr": "ايش قصد الشخص الثاني (B)؟",
+          "options": ["يبغى يأجّل الغدا لوقت ثاني لأنه مشغول", "يبغى يتغدى الحين", "ما يحب الأكل برّا", "يسأل عن المطر"]
+        }
+      ]
+    },
+    {
+      "levelId": "interviews",
+      "items": [
+        {
+          "id": "j-listen",
+          "kind": "listen",
+          "audioEn": "Could you walk me through a project you're particularly proud of?",
+          "promptAr": "ايش معنى الجملة اللي سمعتها؟",
+          "options": ["تقدر تشرح لي بالتفصيل مشروع تفتخر فيه؟", "تقدر تمشي معي للمكتب؟", "ايش المشروع اللي ما عجبك؟", "كم مشروع سوّيت؟"]
+        },
+        {
+          "id": "j-gap",
+          "kind": "gap",
+          "textEn": "By the time I joined, the team ___ the product for two years.",
+          "promptAr": "اختر الكلمات اللي تكمّل الجملة",
+          "options": ["had been developing", "has developed", "develops", "was develop"]
+        },
+        {
+          "id": "j-read",
+          "kind": "read",
+          "textEn": "While the role is primarily remote, the successful candidate will be expected to attend quarterly on-site meetings.",
+          "promptAr": "ايش المطلوب من الموظف؟",
+          "options": ["أغلب الشغل من البيت، مع اجتماعات في المكتب كل 3 شهور", "الدوام كله في المكتب", "اجتماعات في المكتب كل أسبوع", "الشغل من البيت بدون أي اجتماعات"]
+        }
+      ]
+    },
+    {
+      "levelId": "professional",
+      "items": [
+        {
+          "id": "w-listen",
+          "kind": "listen",
+          "audioEn": "Let's table this for now and circle back once we have the figures.",
+          "promptAr": "ايش معنى الجملة اللي سمعتها؟",
+          "options": ["خلّونا نأجّل الموضوع ونرجع له لمن توصلنا الأرقام", "خلّونا نحط الأرقام على الطاولة الحين", "خلّونا نلغي الموضوع نهائيًا", "خلّونا ندوّر على الأرقام الحين"]
+        },
+        {
+          "id": "w-gap",
+          "kind": "gap",
+          "textEn": "Had we known about the delay, we ___ the client earlier.",
+          "promptAr": "اختر الكلمات اللي تكمّل الجملة",
+          "options": ["would have informed", "would inform", "had informed", "will inform"]
+        },
+        {
+          "id": "w-read",
+          "kind": "read",
+          "textEn": "Pending legal review, the agreement is expected to be finalised by the end of Q3, though this timeline remains subject to change.",
+          "promptAr": "متى يُتوقع يخلص الاتفاق؟",
+          "options": ["آخر الربع الثالث، بس الموعد ممكن يتغير", "خلص الاتفاق خلاص", "آخر الربع الثالث أكيد وبدون تغيير", "بعد ما تخلص السنة"]
+        }
+      ]
+    }
+  ]
+}
