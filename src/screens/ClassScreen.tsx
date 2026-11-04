@@ -43,6 +43,13 @@ export function ClassScreen({ classId }: { classId: string }) {
         <span className="muted small">{done} من {cls.lessons.length} دروس</span>
       </header>
 
+      {done === cls.lessons.length && (
+        <a className="badge-earned" href={level ? href({ name: 'certificate', levelId: level.id }) : '#/'}>
+          <span aria-hidden>🏅</span>
+          <span>أخذت شارة كلاس {cls.titleAr}! شوف شهادة المستوى</span>
+        </a>
+      )}
+
       <ol className="lesson-list">
         {cls.lessons.map((l, i) => {
           const record = progress.lessons[lessonKey(cls.id, l.id)]

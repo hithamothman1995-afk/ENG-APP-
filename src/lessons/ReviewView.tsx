@@ -1,39 +1,29 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import type { ClassContent } from '../content/types'
 import { ArText } from '../components/ArText'
 import { ListenButton } from '../components/Audio'
 import { En } from '../components/En'
+import { playCorrect } from '../audio/sfx'
 import { starsFromAccuracy } from '../logic/rewards'
+import { classItems, gradeItem, type ReviewItem } from '../logic/srs'
+import { useProgress } from '../storage/ProgressContext'
 import { Notice, PrimaryButton, StepBar, type Finish } from './common'
 
-interface Card {
-  ar: string
-  en: string
-}
-
-// مؤقتًا: يراجع كل عبارات وكلمات الكلاس. في المرحلة 4 يختارها التكرار المتباعد.
-export function ReviewView({ cls, introAr, onFinish }: { cls: ClassContent; introAr: string; onFinish: Finish }) {
-  const cards = useMemo(() => {
-    const list: Card[] = []
-    for (const l of cls.lessons) {
-      if (l.type === 'phrases') {
-        l.phrases.forEach((p) => list.push({ ar: p.ar, en: p.en }))
-        l.idioms.forEach((i) => list.push({ ar: i.meaningAr, en: i.en }))
-      }
-      if (l.type === 'vocab') l.words.forEach((w) => list.push({ ar: w.ar, en: w.en }))
-    }
-    return list
-  }, [cls])
-
+// بطاقات المراجعة: تشوف العربي، تحاول تتذكر الإنجليزي، تكشف، وتقول عرفتها أو لا.
+// كل جواب يحدّث موعد البطاقة الجاي في المراجعة الذكية.
+export function ReviewDeck({ items, onDone }: { items: ReviewItem[]; onDone: (known: number, total: number) => void }) {
+  const { update } = useProgress()
   const [index, setIndex] = useState(0)
   const [known, setKnown] = useState(0)
   const [revealed, setRevealed] = useState(false)
-  const card = cards[index]
+  const card = items[index]
 
   function answer(knewIt: boolean) {
+    if (knewIt) playCorrect()
+    update((p) => gradeItem(p, card.key, knewIt, new Date()))
     const nextKnown = known + (knewIt ? 1 : 0)
-    if (index === cards.length - 1) {
-      onFinish(starsFromAccuracy(nextKnown, cards.length))
+    if (index === items.length - 1) {
+      onDone(nextKnown, items.length)
       return
     }
     setKnown(nextKnown)
@@ -43,8 +33,7 @@ export function ReviewView({ cls, introAr, onFinish }: { cls: ClassContent; intr
 
   return (
     <>
-      <Notice><ArText text={introAr} /></Notice>
-      <StepBar done={index} total={cards.length} />
+      <StepBar done={index} total={items.length} />
       <section className="card phrase-card">
         <span className="eyebrow">كيف تقول بالإنجليزية؟</span>
         <p className="word-ar">{card.ar}</p>
@@ -65,6 +54,23 @@ export function ReviewView({ cls, introAr, onFinish }: { cls: ClassContent; intr
           <PrimaryButton onClick={() => answer(true)}>عرفتها</PrimaryButton>
         </div>
       )}
+    </>
+  )
+}
+
+// درس المراجعة داخل الكلاس: كل عبارات وكلمات الكلاس، والمستحق منها أول
+export function ReviewView({ cls, introAr, onFinish }: { cls: ClassContent; introAr: string; onFinish: Finish }) {
+  const { progress } = useProgress()
+  // نرتّبها مرة وحدة عند فتح الدرس، عشان الترتيب ما يتغير وأنت تراجع
+  const [items] = useState(() => {
+    const srs = progress.srs ?? {}
+    return [...classItems(cls)].sort((a, b) => (srs[a.key]?.due ?? '').localeCompare(srs[b.key]?.due ?? ''))
+  })
+
+  return (
+    <>
+      <Notice><ArText text={introAr} /></Notice>
+      <ReviewDeck items={items} onDone={(known, total) => onFinish(starsFromAccuracy(known, total))} />
     </>
   )
 }

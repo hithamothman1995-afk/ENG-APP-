@@ -1,5 +1,6 @@
 // كل تقدم المتعلم محفوظ على الجهاز في localStorage تحت مفتاح واحد
 import { dayKey } from '../logic/dates'
+import type { StoredCard } from '../logic/srs'
 
 const STORAGE_KEY = 'eng-app:progress:v1'
 
@@ -20,6 +21,7 @@ export interface Progress {
   lastLesson: { classId: string; lessonId: string } | null
   activity: Record<string, DayActivity> // المفتاح: يوم مثل "2026-10-25"
   difficulty?: Record<string, Difficulty> // رأي المتعلم في صعوبة كل درس
+  srs?: Record<string, StoredCard> // بطاقات المراجعة الذكية، المفتاح "classId/itemId"
 }
 
 export type Difficulty = 'easy' | 'ok' | 'hard'
