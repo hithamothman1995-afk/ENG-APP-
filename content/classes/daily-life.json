@@ -1,0 +1,585 @@
+{
+  "id": "daily-life",
+  "levelId": "trial",
+  "titleAr": "الحياة اليومية",
+  "titleEn": "Daily Life",
+  "lessons": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "titleAr": "مقدمة الكلاس",
+      "situationAr": "تتكلم مع صديق عن حياتك: عائلتك، وبيتك، وايش تحب تسوي في وقت فراغك، وايش ما تحب. تبغى تقول جمل بسيطة صح، وتسأله عن حياته.",
+      "goalsAr": [
+        "تتكلم عن عائلتك: عندي أخوين وأخت",
+        "توصف بيتك أو شقتك بكلمات بسيطة",
+        "تقول ايش تحب وايش ما تحب",
+        "تسأل صديقك عن حياته وتفهم جوابه",
+        "تفهم 5 تعابير يومية يقولها أهل اللغة"
+      ],
+      "soundsAr": "نركّز في هذا الكلاس على صوت v في have وlove وlive (وليس f)، وصوت p في apartment وplay (وليس b)، والفرق بين i القصيرة في sister والطويلة في three.",
+      "noteAr": "كلاس للمبتدئين: الجمل قصيرة، وكل جملة معها ترجمة وصوت. خذ وقتك وكرّر بصوتك."
+    },
+    {
+      "id": "listen-first",
+      "type": "listen-choose",
+      "titleAr": "اسمع واختر",
+      "mode": "sentence",
+      "introAr": "اسمع الجملة واختر اللي سمعته بالضبط. انتبه، الخيارات متقاربة.",
+      "items": [
+        {
+          "audioEn": "I have two brothers.",
+          "ar": "عندي أخوين.",
+          "options": [
+            "I have two brothers.",
+            "I had two brothers.",
+            "I have two sisters."
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "We live in a small apartment.",
+          "ar": "نسكن في شقة صغيرة.",
+          "options": [
+            "We leave a small apartment.",
+            "We live in a small apartment.",
+            "We live in a big apartment."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "I don't like coffee.",
+          "ar": "ما أحب القهوة.",
+          "options": [
+            "I like coffee.",
+            "I didn't like coffee.",
+            "I don't like coffee."
+          ],
+          "answer": 2
+        },
+        {
+          "audioEn": "My sister loves cooking.",
+          "ar": "أختي تحب الطبخ.",
+          "options": [
+            "My sister loves cooking.",
+            "My sister loves looking.",
+            "My sister lives cooking."
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "Do you have any pets?",
+          "ar": "عندك حيوانات أليفة؟",
+          "options": [
+            "Do you have any pens?",
+            "Do you have any pets?",
+            "Do you have any bets?"
+          ],
+          "answer": 1,
+          "noteAr": "pets بصوت p يعني حيوانات أليفة، وbets بصوت b يعني رهانات. حرف واحد يغيّر المعنى."
+        },
+        {
+          "audioEn": "On weekends, I play football.",
+          "ar": "في الويكند ألعب كورة.",
+          "options": [
+            "On weekends, I watch football.",
+            "On Wednesday, I play football.",
+            "On weekends, I play football."
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "phrases",
+      "type": "phrases",
+      "titleAr": "العبارات وأشهر 5 تعابير",
+      "phrases": [
+        {
+          "id": "big-family",
+          "promptAr": "قل إن عائلتك كبيرة.",
+          "en": "I have a big family.",
+          "ar": "عائلتي كبيرة.",
+          "focus": {
+            "sound": "v",
+            "contrast": "f",
+            "word": "have",
+            "wrong": "haf",
+            "tipAr": "آخر have صوت v مع اهتزاز في الحنجرة، مو f. قل «هاڤ» وحس بالاهتزاز."
+          }
+        },
+        {
+          "id": "brothers",
+          "promptAr": "قل إن عندك أخوين وأخت.",
+          "en": "I have two brothers and one sister.",
+          "ar": "عندي أخوين وأخت وحدة."
+        },
+        {
+          "id": "apartment",
+          "promptAr": "قل إنك ساكن في شقة صغيرة.",
+          "en": "I live in a small apartment.",
+          "ar": "ساكن في شقة صغيرة.",
+          "focus": {
+            "sound": "p",
+            "contrast": "b",
+            "word": "apartment",
+            "wrong": "abartment",
+            "tipAr": "في apartment صوت p بنفخة هواء بدون صوت من الحنجرة. لا تقول «أبارتمنت» بصوت b."
+          }
+        },
+        {
+          "id": "three-rooms",
+          "promptAr": "قل إن فيها ثلاث غرف.",
+          "en": "It has three rooms.",
+          "ar": "فيها ثلاث غرف.",
+          "focus": {
+            "sound": "iː",
+            "contrast": "ɪ",
+            "word": "three",
+            "wrong": "thri",
+            "tipAr": "الـee في three طويلة: «ثريي». ولاحظ th: طرف لسانك بين أسنانك، مو «تري» ولا «سري»."
+          }
+        },
+        {
+          "id": "love-cooking",
+          "promptAr": "قل إنك تحب الطبخ.",
+          "en": "I love cooking.",
+          "ar": "أحب الطبخ."
+        },
+        {
+          "id": "dont-like",
+          "promptAr": "قل إنك ما تحب الجو الحار.",
+          "en": "I don't like hot weather.",
+          "ar": "ما أحب الجو الحار."
+        },
+        {
+          "id": "free-time",
+          "promptAr": "اسأل صديقك ايش يسوي في وقت فراغه.",
+          "en": "What do you do in your free time?",
+          "ar": "ايش تسوي في وقت فراغك؟"
+        },
+        {
+          "id": "play-football",
+          "promptAr": "قل إنك تلعب كورة في الويكند.",
+          "en": "On weekends, I play football with my friends.",
+          "ar": "في الويكند ألعب كورة مع أصحابي."
+        },
+        {
+          "id": "any-pets",
+          "promptAr": "اسأله إذا عنده حيوانات أليفة.",
+          "en": "Do you have any pets?",
+          "ar": "عندك حيوانات أليفة؟"
+        },
+        {
+          "id": "my-cat",
+          "promptAr": "قل إن عندك قطة اسمها لولو.",
+          "en": "I have a cat. Her name is Lulu.",
+          "ar": "عندي قطة، اسمها لولو."
+        }
+      ],
+      "idioms": [
+        {
+          "id": "home-sweet-home",
+          "en": "Home sweet home.",
+          "meaningAr": "ما أحلى البيت (تقولها لمن ترجع بيتك)",
+          "literalAr": "بيت حلو بيت",
+          "exampleEn": "After a long trip: home sweet home!",
+          "exampleAr": "بعد سفرة طويلة: ما أحلى البيت!"
+        },
+        {
+          "id": "make-yourself",
+          "en": "Make yourself at home.",
+          "meaningAr": "خذ راحتك، البيت بيتك",
+          "literalAr": "اجعل نفسك في البيت",
+          "exampleEn": "Come in! Make yourself at home.",
+          "exampleAr": "تفضّل! خذ راحتك، البيت بيتك."
+        },
+        {
+          "id": "piece-of-cake",
+          "en": "a piece of cake",
+          "meaningAr": "سهل جدًا",
+          "literalAr": "قطعة كيك",
+          "exampleEn": "Cooking rice is a piece of cake.",
+          "exampleAr": "طبخ الرز سهل مرة."
+        },
+        {
+          "id": "couch-potato",
+          "en": "a couch potato",
+          "meaningAr": "شخص يقعد كثير على الكنبة قدام التلفزيون",
+          "literalAr": "بطاطس الكنبة",
+          "exampleEn": "On weekends, my brother is a couch potato.",
+          "exampleAr": "في الويكند أخوي ما يقوم من الكنبة."
+        },
+        {
+          "id": "cup-of-tea",
+          "en": "not my cup of tea",
+          "meaningAr": "مو من الأشياء اللي أحبها",
+          "literalAr": "مو كوب الشاي حقي",
+          "exampleEn": "Horror movies are not my cup of tea.",
+          "exampleAr": "أفلام الرعب مو من الأشياء اللي أحبها."
+        }
+      ]
+    },
+    {
+      "id": "vocab",
+      "type": "vocab",
+      "titleAr": "كلمات الحياة اليومية",
+      "words": [
+        {
+          "id": "family",
+          "en": "family",
+          "ar": "عائلة",
+          "ipa": "/ˈfæməli/",
+          "stress": "FAM-i-ly",
+          "exampleEn": "My family is very big.",
+          "exampleAr": "عائلتي كبيرة مرة.",
+          "distractors": [
+            "famous",
+            "friend"
+          ]
+        },
+        {
+          "id": "brother",
+          "en": "brother",
+          "ar": "أخ",
+          "ipa": "/ˈbrʌðər/",
+          "stress": "BROTH-er",
+          "exampleEn": "My brother is a doctor.",
+          "exampleAr": "أخوي دكتور.",
+          "distractors": [
+            "mother",
+            "bother"
+          ]
+        },
+        {
+          "id": "sister",
+          "en": "sister",
+          "ar": "أخت",
+          "ipa": "/ˈsɪstər/",
+          "stress": "SIS-ter",
+          "exampleEn": "My sister lives in Dammam.",
+          "exampleAr": "أختي ساكنة في الدمام.",
+          "distractors": [
+            "sitter",
+            "mister"
+          ]
+        },
+        {
+          "id": "house",
+          "en": "house",
+          "ar": "بيت",
+          "ipa": "/haʊs/",
+          "stress": "HOUSE",
+          "exampleEn": "Their house has a garden.",
+          "exampleAr": "بيتهم فيه حديقة.",
+          "distractors": [
+            "horse",
+            "home"
+          ],
+          "noteAr": "house هو المبنى، وhome هو المكان اللي تحس إنه بيتك."
+        },
+        {
+          "id": "apartment",
+          "en": "apartment",
+          "ar": "شقة",
+          "ipa": "/əˈpɑːrtmənt/",
+          "stress": "a-PART-ment",
+          "exampleEn": "Our apartment is on the third floor.",
+          "exampleAr": "شقتنا في الدور الثالث.",
+          "distractors": [
+            "department",
+            "appointment"
+          ]
+        },
+        {
+          "id": "kitchen",
+          "en": "kitchen",
+          "ar": "مطبخ",
+          "ipa": "/ˈkɪtʃɪn/",
+          "stress": "KITCH-en",
+          "exampleEn": "My mother is in the kitchen.",
+          "exampleAr": "أمي في المطبخ.",
+          "distractors": [
+            "chicken",
+            "kitten"
+          ],
+          "noteAr": "لا تخلطها مع chicken (دجاج)، ترتيب الأصوات مقلوب."
+        },
+        {
+          "id": "weekend",
+          "en": "weekend",
+          "ar": "الويكند، نهاية الأسبوع",
+          "ipa": "/ˈwiːkend/",
+          "stress": "WEEK-end",
+          "exampleEn": "What do you do on the weekend?",
+          "exampleAr": "ايش تسوي في الويكند؟",
+          "distractors": [
+            "weekday",
+            "week"
+          ]
+        },
+        {
+          "id": "hobby",
+          "en": "hobby",
+          "ar": "هواية",
+          "ipa": "/ˈhɑːbi/",
+          "stress": "HOB-by",
+          "exampleEn": "My hobby is reading.",
+          "exampleAr": "هوايتي القراءة.",
+          "distractors": [
+            "happy",
+            "holiday"
+          ]
+        },
+        {
+          "id": "pet",
+          "en": "pet",
+          "ar": "حيوان أليف",
+          "ipa": "/pet/",
+          "stress": "PET",
+          "exampleEn": "Do you have a pet?",
+          "exampleAr": "عندك حيوان أليف؟",
+          "distractors": [
+            "bet",
+            "pen"
+          ],
+          "noteAr": "صوت p بنفخة هواء، وإلا تطلع bet."
+        }
+      ]
+    },
+    {
+      "id": "grammar",
+      "type": "grammar",
+      "titleAr": "جرامر: النفي بـ don't وdoesn't",
+      "ruleTitleAr": "النفي في المضارع: don't وdoesn't",
+      "explanationAr": "عشان تقول «ما أحب» أو «ما يسكن» نحط don't أو doesn't قبل الفعل، ويرجع الفعل لأصله بدون s.",
+      "points": [
+        {
+          "ar": "مع I وyou وwe وthey نستخدم don't",
+          "en": "I don't like coffee."
+        },
+        {
+          "ar": "مع he وshe وit نستخدم doesn't",
+          "en": "She doesn't like coffee."
+        },
+        {
+          "ar": "بعد doesn't الفعل بدون s",
+          "en": "He doesn't live here. ✓   He doesn't lives here. ✗"
+        },
+        {
+          "ar": "don't = do not، وdoesn't = does not",
+          "en": "I do not like it. = I don't like it."
+        }
+      ],
+      "exercises": [
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "I ___ like hot weather.",
+          "options": [
+            "don't",
+            "doesn't",
+            "not"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "My brother ___ have a car.",
+          "options": [
+            "don't",
+            "doesn't",
+            "isn't"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "We ___ live in Riyadh.",
+          "options": [
+            "doesn't",
+            "don't",
+            "aren't"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "She doesn't ___ TV.",
+          "options": [
+            "watches",
+            "watch",
+            "watching"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "They ___ have any pets.",
+          "options": [
+            "doesn't",
+            "isn't",
+            "don't"
+          ],
+          "answer": 2
+        },
+        {
+          "kind": "choice",
+          "questionAr": "أي جملة صحيحة؟",
+          "options": [
+            "He don't like tea.",
+            "He doesn't likes tea.",
+            "He doesn't like tea."
+          ],
+          "answer": 2,
+          "optionsLtr": true
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "type": "scene",
+      "titleAr": "مشهد: مكالمة فيديو",
+      "titleEn": "A Video Call",
+      "introAr": "ريم تكلّم ولد عمها خالد بمكالمة فيديو، ويتكلمون عن بيته الجديد وحياته. تسمع المشهد 3 مرات: بالنص، ومع الترجمة، وبدون أي نص.",
+      "characters": {
+        "reem": {
+          "nameAr": "ريم",
+          "nameEn": "Reem",
+          "voice": 0,
+          "gender": "female",
+          "emoji": "👩"
+        },
+        "khalid": {
+          "nameAr": "خالد",
+          "nameEn": "Khalid",
+          "voice": 1,
+          "gender": "male",
+          "emoji": "🧔"
+        }
+      },
+      "lines": [
+        {
+          "speaker": "reem",
+          "en": "Hi Khalid! Is that your new apartment?",
+          "ar": "هلا خالد! هذي شقتك الجديدة؟"
+        },
+        {
+          "speaker": "khalid",
+          "en": "Yes! Home sweet home. It has three rooms and a big kitchen.",
+          "ar": "إيه! ما أحلى البيت. فيها ثلاث غرف ومطبخ كبير."
+        },
+        {
+          "speaker": "reem",
+          "en": "Nice! Do you like cooking?",
+          "ar": "حلو! تحب الطبخ؟"
+        },
+        {
+          "speaker": "khalid",
+          "en": "I love it. Cooking is a piece of cake for me.",
+          "ar": "أحبه مرة. الطبخ سهل علي."
+        },
+        {
+          "speaker": "reem",
+          "en": "Not for me! I don't like cooking. I order food.",
+          "ar": "أنا لا! ما أحب الطبخ، أطلب أكل."
+        },
+        {
+          "speaker": "khalid",
+          "en": "Ha! What do you do in your free time?",
+          "ar": "هه! ايش تسوين في وقت فراغك؟"
+        },
+        {
+          "speaker": "reem",
+          "en": "I read and I play with my cat.",
+          "ar": "أقرأ وألعب مع قطتي."
+        },
+        {
+          "speaker": "khalid",
+          "en": "You have a cat? What's her name?",
+          "ar": "عندك قطة؟ ايش اسمها؟"
+        },
+        {
+          "speaker": "reem",
+          "en": "Lulu. She doesn't like visitors!",
+          "ar": "لولو. ما تحب الضيوف!"
+        },
+        {
+          "speaker": "khalid",
+          "en": "Then I'm not visiting!",
+          "ar": "أجل ما راح أزوركم!"
+        }
+      ],
+      "keyWords": [
+        {
+          "en": "Home sweet home.",
+          "ar": "ما أحلى البيت"
+        },
+        {
+          "en": "a piece of cake",
+          "ar": "سهل جدًا"
+        },
+        {
+          "en": "free time",
+          "ar": "وقت الفراغ"
+        },
+        {
+          "en": "order food",
+          "ar": "أطلب أكل"
+        },
+        {
+          "en": "visitors",
+          "ar": "ضيوف، زوّار"
+        }
+      ],
+      "questions": [
+        {
+          "questionAr": "كم غرفة في شقة خالد؟",
+          "options": [
+            "غرفتين",
+            "ثلاث غرف",
+            "أربع غرف"
+          ],
+          "answer": 1
+        },
+        {
+          "questionAr": "ريم تحب الطبخ؟",
+          "options": [
+            "لا، تطلب أكل",
+            "إيه، تحبه مرة",
+            "تطبخ في الويكند بس"
+          ],
+          "answer": 0
+        },
+        {
+          "questionAr": "ايش تسوي ريم في وقت فراغها؟",
+          "options": [
+            "تطبخ وتشوف تلفزيون",
+            "تلعب كورة",
+            "تقرأ وتلعب مع قطتها"
+          ],
+          "answer": 2
+        },
+        {
+          "questionAr": "ايش معنى a piece of cake في المشهد؟",
+          "options": [
+            "قطعة كيك",
+            "سهل جدًا",
+            "أكل حلو"
+          ],
+          "answer": 1,
+          "sayEn": "a piece of cake"
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "type": "review",
+      "titleAr": "مراجعة ذكية",
+      "introAr": "راجع عبارات وتعابير وكلمات كلاس الحياة اليومية."
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+{
+  "id": "daily-routine",
+  "levelId": "trial",
+  "titleAr": "الروتين اليومي",
+  "titleEn": "Daily Routine",
+  "lessons": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "titleAr": "مقدمة الكلاس",
+      "situationAr": "صديق جديد يسألك عن يومك: متى تصحى، ومتى تروح الشغل أو الدراسة، وايش تسوي بعد الدوام وقبل النوم. تبغى تحكي يومك بجمل بسيطة، وتقول الوقت صح.",
+      "goalsAr": [
+        "تقول متى تصحى ومتى تنام",
+        "تحكي ايش تسوي الصبح وبعد الشغل",
+        "تسأل عن الوقت وتقوله: at seven، at half past eight",
+        "تسأل صديقك عن روتينه",
+        "تفهم 5 تعابير عن اليوم يقولها أهل اللغة"
+      ],
+      "soundsAr": "نركّز في هذا الكلاس على صوت v في seven وevening (وليس f)، وصوت p في up وsleep (وليس b)، والفرق بين i القصيرة في fifty والطويلة في fifteen، وصوت ng في morning وevening.",
+      "noteAr": "كلاس للمبتدئين: الجمل قصيرة، وكل جملة معها ترجمة وصوت. خذ وقتك وكرّر بصوتك."
+    },
+    {
+      "id": "listen-first",
+      "type": "listen-choose",
+      "titleAr": "اسمع واختر",
+      "mode": "sentence",
+      "introAr": "اسمع الجملة واختر اللي سمعته بالضبط. انتبه، الخيارات متقاربة.",
+      "items": [
+        {
+          "audioEn": "I get up at seven.",
+          "ar": "أصحى الساعة سبعة.",
+          "options": [
+            "I get up at seven.",
+            "I got up at seven.",
+            "I get up at eleven."
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "She goes to work by bus.",
+          "ar": "هي تروح الشغل بالباص.",
+          "options": [
+            "She goes to work by bike.",
+            "She goes to work by bus.",
+            "She goes to school by bus."
+          ],
+          "answer": 1
+        },
+        {
+          "audioEn": "I have breakfast at home.",
+          "ar": "أفطر في البيت.",
+          "options": [
+            "I have lunch at home.",
+            "I had breakfast at home.",
+            "I have breakfast at home."
+          ],
+          "answer": 2
+        },
+        {
+          "audioEn": "What time do you finish work?",
+          "ar": "متى تخلص شغلك؟",
+          "options": [
+            "What time do you finish work?",
+            "What time did you finish work?",
+            "What time do you start work?"
+          ],
+          "answer": 0
+        },
+        {
+          "audioEn": "It's fifteen minutes past eight.",
+          "ar": "الساعة ثمانية وربع.",
+          "options": [
+            "It's fifty minutes past eight.",
+            "It's fifteen minutes past eight.",
+            "It's fifteen minutes to eight."
+          ],
+          "answer": 1,
+          "noteAr": "fifteen (15) نبرتها في الآخر: fif-TEEN، وfifty (50) نبرتها في الأول: FIF-ty. هذا أسهل طريقة تفرق بينهم."
+        },
+        {
+          "audioEn": "I usually sleep at eleven.",
+          "ar": "عادة أنام الساعة 11.",
+          "options": [
+            "I usually sleep at seven.",
+            "I really sleep at eleven.",
+            "I usually sleep at eleven."
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "phrases",
+      "type": "phrases",
+      "titleAr": "العبارات وأشهر 5 تعابير",
+      "phrases": [
+        {
+          "id": "get-up",
+          "promptAr": "قل لصديقك إنك تصحى الساعة سبعة.",
+          "en": "I get up at seven.",
+          "ar": "أصحى الساعة سبعة.",
+          "focus": {
+            "sound": "v",
+            "contrast": "f",
+            "word": "seven",
+            "wrong": "sefen",
+            "tipAr": "في seven صوت v: الأسنان على الشفة التحتية مع اهتزاز في الحنجرة. إذا طلع هواء بس فقد قلت f."
+          }
+        },
+        {
+          "id": "shower",
+          "promptAr": "قل إنك تتروش وتلبس.",
+          "en": "I take a shower and get dressed.",
+          "ar": "أتروّش وألبس."
+        },
+        {
+          "id": "breakfast",
+          "promptAr": "قل إنك تفطر الساعة سبعة ونص.",
+          "en": "I have breakfast at half past seven.",
+          "ar": "أفطر الساعة سبعة ونص."
+        },
+        {
+          "id": "go-to-work",
+          "promptAr": "قل إنك تروح الشغل بالسيارة.",
+          "en": "I go to work by car.",
+          "ar": "أروح الشغل بالسيارة."
+        },
+        {
+          "id": "start-work",
+          "promptAr": "قل إن شغلك يبدأ الساعة ثمانية.",
+          "en": "I start work at eight.",
+          "ar": "أبدأ الشغل الساعة ثمانية."
+        },
+        {
+          "id": "what-time",
+          "promptAr": "اسأل صديقك متى يصحى.",
+          "en": "What time do you get up?",
+          "ar": "متى تصحى؟",
+          "focus": {
+            "sound": "p",
+            "contrast": "b",
+            "word": "up",
+            "wrong": "ub",
+            "tipAr": "آخر up صوت p: سكّر شفايفك وافتحها بنفخة هواء بدون صوت من الحنجرة. لا تقول «أب» بصوت b."
+          }
+        },
+        {
+          "id": "after-work",
+          "promptAr": "قل إنك بعد الشغل تروح الجيم.",
+          "en": "After work, I go to the gym.",
+          "ar": "بعد الشغل أروح الجيم."
+        },
+        {
+          "id": "evening",
+          "promptAr": "قل إنك تتعشى مع عائلتك بالليل.",
+          "en": "In the evening, I have dinner with my family.",
+          "ar": "بالليل أتعشى مع عائلتي.",
+          "focus": {
+            "sound": "ŋ",
+            "word": "evening",
+            "wrong": "eveninge",
+            "tipAr": "آخر evening صوت ng من الأنف، بدون g في الآخر. وفي أولها v مع اهتزاز في الحنجرة."
+          }
+        },
+        {
+          "id": "sleep",
+          "promptAr": "قل إنك عادة تنام الساعة 11.",
+          "en": "I usually go to sleep at eleven.",
+          "ar": "عادة أنام الساعة 11.",
+          "focus": {
+            "sound": "iː",
+            "contrast": "ɪ",
+            "word": "sleep",
+            "wrong": "slip",
+            "tipAr": "الـee في sleep طويلة: «سلييب». إذا قصّرتها تطلع slip يعني «يتزحلق». ولا تضف حركة قبل sl، فلا تقل «إسليب»."
+          }
+        },
+        {
+          "id": "every-day",
+          "promptAr": "قل إنك تقرأ شوي كل يوم.",
+          "en": "I read a little every day.",
+          "ar": "أقرأ شوي كل يوم."
+        }
+      ],
+      "idioms": [
+        {
+          "id": "early-bird",
+          "en": "an early bird",
+          "meaningAr": "شخص يصحى بدري",
+          "literalAr": "طير بدري",
+          "exampleEn": "My sister is an early bird. She gets up at five.",
+          "exampleAr": "أختي تصحى بدري، تقوم الساعة خمسة."
+        },
+        {
+          "id": "running-late",
+          "en": "I'm running late.",
+          "meaningAr": "أنا متأخر شوي",
+          "literalAr": "أنا أركض متأخر",
+          "exampleEn": "Sorry, I'm running late. I'll be there in ten minutes.",
+          "exampleAr": "آسف، تأخرت شوي. بوصل بعد عشر دقايق."
+        },
+        {
+          "id": "on-the-go",
+          "en": "on the go",
+          "meaningAr": "مشغول ومتحرك طول الوقت",
+          "literalAr": "على الذهاب",
+          "exampleEn": "I'm always on the go in the morning.",
+          "exampleAr": "الصبح دايم مشغول ومتحرك."
+        },
+        {
+          "id": "call-it-a-day",
+          "en": "Let's call it a day.",
+          "meaningAr": "خلّونا نوقف لليوم",
+          "literalAr": "خلّونا نسميه يوم",
+          "exampleEn": "It's six o'clock. Let's call it a day.",
+          "exampleAr": "الساعة ستة، خلّونا نوقف لليوم."
+        },
+        {
+          "id": "same-old",
+          "en": "Same old, same old.",
+          "meaningAr": "نفس الروتين، ما فيه جديد",
+          "literalAr": "نفس القديم، نفس القديم",
+          "exampleEn": "How's your week? — Same old, same old.",
+          "exampleAr": "كيف أسبوعك؟ — نفس الروتين."
+        }
+      ]
+    },
+    {
+      "id": "vocab",
+      "type": "vocab",
+      "titleAr": "كلمات اليوم",
+      "words": [
+        {
+          "id": "morning",
+          "en": "morning",
+          "ar": "الصبح",
+          "ipa": "/ˈmɔːrnɪŋ/",
+          "stress": "MOR-ning",
+          "exampleEn": "I drink coffee every morning.",
+          "exampleAr": "أشرب قهوة كل صبح.",
+          "distractors": [
+            "evening",
+            "meeting"
+          ]
+        },
+        {
+          "id": "evening",
+          "en": "evening",
+          "ar": "المساء، الليل",
+          "ipa": "/ˈiːvnɪŋ/",
+          "stress": "EVE-ning",
+          "exampleEn": "I watch TV in the evening.",
+          "exampleAr": "أتفرج تلفزيون بالليل.",
+          "distractors": [
+            "morning",
+            "even"
+          ],
+          "noteAr": "نقولها بمقطعين بس: EEV-ning، مو «إيفينينق»."
+        },
+        {
+          "id": "breakfast",
+          "en": "breakfast",
+          "ar": "فطور",
+          "ipa": "/ˈbrekfəst/",
+          "stress": "BREAK-fast",
+          "exampleEn": "Breakfast is ready.",
+          "exampleAr": "الفطور جاهز.",
+          "distractors": [
+            "break",
+            "lunch"
+          ],
+          "noteAr": "مكتوبة break بس تنطق «بريك» قصيرة: بريكفست."
+        },
+        {
+          "id": "lunch",
+          "en": "lunch",
+          "ar": "غدا",
+          "ipa": "/lʌntʃ/",
+          "stress": "LUNCH",
+          "exampleEn": "We have lunch at one.",
+          "exampleAr": "نتغدى الساعة وحدة.",
+          "distractors": [
+            "launch",
+            "dinner"
+          ]
+        },
+        {
+          "id": "dinner",
+          "en": "dinner",
+          "ar": "عشا",
+          "ipa": "/ˈdɪnər/",
+          "stress": "DIN-ner",
+          "exampleEn": "Dinner is at eight.",
+          "exampleAr": "العشا الساعة ثمانية.",
+          "distractors": [
+            "diner",
+            "lunch"
+          ]
+        },
+        {
+          "id": "work",
+          "en": "work",
+          "ar": "شغل، دوام",
+          "ipa": "/wɜːrk/",
+          "stress": "WORK",
+          "exampleEn": "I go to work at eight.",
+          "exampleAr": "أروح الدوام الساعة ثمانية.",
+          "distractors": [
+            "walk",
+            "word"
+          ]
+        },
+        {
+          "id": "shower",
+          "en": "shower",
+          "ar": "دش، روش",
+          "ipa": "/ˈʃaʊər/",
+          "stress": "SHOW-er",
+          "exampleEn": "I take a shower every morning.",
+          "exampleAr": "أتروّش كل صبح.",
+          "distractors": [
+            "flower",
+            "show"
+          ]
+        },
+        {
+          "id": "clock",
+          "en": "clock",
+          "ar": "ساعة (حائط أو منبّه)",
+          "ipa": "/klɑːk/",
+          "stress": "CLOCK",
+          "exampleEn": "The clock says seven.",
+          "exampleAr": "الساعة تقول سبعة.",
+          "distractors": [
+            "lock",
+            "cloud"
+          ],
+          "noteAr": "ساعة اليد اسمها watch، وكم الساعة نقول What time is it?"
+        },
+        {
+          "id": "usually",
+          "en": "usually",
+          "ar": "عادةً",
+          "ipa": "/ˈjuːʒuəli/",
+          "stress": "U-su-al-ly",
+          "exampleEn": "I usually walk to work.",
+          "exampleAr": "عادة أمشي للشغل.",
+          "distractors": [
+            "really",
+            "early"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar",
+      "type": "grammar",
+      "titleAr": "جرامر: المضارع البسيط",
+      "ruleTitleAr": "المضارع البسيط: الأشياء اللي تسويها كل يوم",
+      "explanationAr": "نستخدم المضارع البسيط للروتين والعادات. الفعل يبقى زي ما هو مع I وyou وwe وthey، ومع he وshe وit نضيف له s. ونحط at قبل الوقت.",
+      "points": [
+        {
+          "ar": "مع I وyou وwe وthey الفعل بدون إضافة",
+          "en": "I get up at seven."
+        },
+        {
+          "ar": "مع he وshe وit نضيف s",
+          "en": "She gets up at six."
+        },
+        {
+          "ar": "بعض الأفعال تاخذ es",
+          "en": "He goes to work. She watches TV."
+        },
+        {
+          "ar": "الوقت بعد at",
+          "en": "at seven / at half past eight"
+        }
+      ],
+      "exercises": [
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "She ___ up at six.",
+          "options": [
+            "get",
+            "gets",
+            "getting"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "I ___ to work by bus.",
+          "options": [
+            "go",
+            "goes",
+            "going"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "My father ___ the news every evening.",
+          "options": [
+            "watch",
+            "watches",
+            "watching"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "We have lunch ___ one o'clock.",
+          "options": [
+            "at",
+            "in",
+            "on"
+          ],
+          "answer": 0
+        },
+        {
+          "kind": "fill",
+          "questionAr": "اختر الكلمة الصحيحة",
+          "sentence": "They ___ dinner at eight.",
+          "options": [
+            "has",
+            "have",
+            "having"
+          ],
+          "answer": 1
+        },
+        {
+          "kind": "choice",
+          "questionAr": "أي جملة صحيحة؟",
+          "options": [
+            "He work at a bank.",
+            "He works at a bank.",
+            "He working at a bank."
+          ],
+          "answer": 1,
+          "optionsLtr": true
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "type": "scene",
+      "titleAr": "مشهد: صباح مستعجل",
+      "titleEn": "A Busy Morning",
+      "introAr": "نورة وفيصل يشتغلون في نفس المكتب، ويتكلمون عن صباحهم قبل الاجتماع. تسمع المشهد 3 مرات: بالنص، ومع الترجمة، وبدون أي نص.",
+      "characters": {
+        "noura": {
+          "nameAr": "نورة",
+          "nameEn": "Noura",
+          "voice": 0,
+          "gender": "female",
+          "emoji": "👩‍💼"
+        },
+        "faisal": {
+          "nameAr": "فيصل",
+          "nameEn": "Faisal",
+          "voice": 1,
+          "gender": "male",
+          "emoji": "🧑‍💼"
+        }
+      },
+      "lines": [
+        {
+          "speaker": "faisal",
+          "en": "Good morning, Noura! You look tired.",
+          "ar": "صباح الخير يا نورة! شكلك تعبانة."
+        },
+        {
+          "speaker": "noura",
+          "en": "Morning! I'm running late today. I got up at eight.",
+          "ar": "صباح النور! تأخرت اليوم، صحيت الساعة ثمانية."
+        },
+        {
+          "speaker": "faisal",
+          "en": "Eight? What time do you usually get up?",
+          "ar": "ثمانية؟ عادة متى تصحين؟"
+        },
+        {
+          "speaker": "noura",
+          "en": "I usually get up at six thirty. I'm an early bird.",
+          "ar": "عادة أصحى ستة ونص. أنا أصحى بدري."
+        },
+        {
+          "speaker": "faisal",
+          "en": "Me too. I get up at six and go to the gym.",
+          "ar": "وأنا. أصحى ستة وأروح الجيم."
+        },
+        {
+          "speaker": "noura",
+          "en": "Wow. Do you have breakfast at home?",
+          "ar": "واو. تفطر في البيت؟"
+        },
+        {
+          "speaker": "faisal",
+          "en": "No, I have breakfast here, at the office.",
+          "ar": "لا، أفطر هنا في المكتب."
+        },
+        {
+          "speaker": "noura",
+          "en": "Good idea. What time is the meeting?",
+          "ar": "فكرة حلوة. متى الاجتماع؟"
+        },
+        {
+          "speaker": "faisal",
+          "en": "At nine. We have ten minutes.",
+          "ar": "الساعة تسعة. عندنا عشر دقايق."
+        },
+        {
+          "speaker": "noura",
+          "en": "Great. Coffee first!",
+          "ar": "ممتاز. القهوة أول!"
+        }
+      ],
+      "keyWords": [
+        {
+          "en": "I'm running late.",
+          "ar": "أنا متأخر"
+        },
+        {
+          "en": "usually",
+          "ar": "عادةً"
+        },
+        {
+          "en": "an early bird",
+          "ar": "شخص يصحى بدري"
+        },
+        {
+          "en": "Me too.",
+          "ar": "وأنا كذلك"
+        },
+        {
+          "en": "the meeting",
+          "ar": "الاجتماع"
+        }
+      ],
+      "questions": [
+        {
+          "questionAr": "متى صحت نورة اليوم؟",
+          "options": [
+            "ستة ونص",
+            "الساعة ثمانية",
+            "الساعة تسعة"
+          ],
+          "answer": 1
+        },
+        {
+          "questionAr": "عادة متى تصحى نورة؟",
+          "options": [
+            "ستة ونص",
+            "ثمانية",
+            "ستة"
+          ],
+          "answer": 0
+        },
+        {
+          "questionAr": "وين يفطر فيصل؟",
+          "options": [
+            "في البيت",
+            "في الجيم",
+            "في المكتب"
+          ],
+          "answer": 2
+        },
+        {
+          "questionAr": "ايش معنى I'm running late؟",
+          "options": [
+            "أنا متأخر",
+            "أنا أركض",
+            "أنا تعبان"
+          ],
+          "answer": 0,
+          "sayEn": "I'm running late."
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "type": "review",
+      "titleAr": "مراجعة ذكية",
+      "introAr": "راجع عبارات وتعابير وكلمات كلاس الروتين اليومي."
+    }
+  ]
+}
